@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdf6;
+  --foreground: #1a1a1a;
+  --brand-egg: #ffd75e; /* warm egg yellow */
+  --brand-deep: #0f3d2e; /* deep forest green */
+  --brand-cream: #fff6dd;
+  --brand-ink: #111111;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-egg: var(--brand-egg);
+  --color-brand-deep: var(--brand-deep);
+  --color-cream: var(--brand-cream);
+  --color-ink: var(--brand-ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0b0b09;
     --foreground: #ededed;
   }
 }
 
+/* Display font for headlines */
+.display { font-family: var(--font-display), var(--font-geist-sans), ui-serif, Georgia, serif; }
+
+html { scroll-behavior: smooth; }
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
+}
+
+/***** Decorative helpers *****/
+.bg-egg-sheen {
+  background-image: radial-gradient(1200px 600px at 10% -10%, rgba(255, 215, 94, 0.35), transparent 60%),
+    radial-gradient(800px 400px at 90% -20%, rgba(15, 61, 46, 0.18), transparent 60%);
+}
+
+.egg-shadow {
+  box-shadow: 0 10px 0 rgba(0,0,0,0.06);
 }

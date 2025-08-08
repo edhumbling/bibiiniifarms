@@ -1,103 +1,115 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="relative">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-32 -left-24 w-[480px] h-[480px] rounded-full bg-brand-egg/40 blur-3xl" />
+          <div className="absolute -top-24 right-0 w-[520px] h-[520px] rounded-[50%_50%_60%_40%] bg-brand-deep/20 blur-3xl" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-3 py-1 text-xs font-semibold ring-1 ring-black/5">
+                Fresh • Traceable • Farmer-first
+              </span>
+              <h1 className="display mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink">
+                Building Wealth with Integrity.
+                <br />
+                <span className="text-brand-deep">Feeding Ghana with Purpose.</span>
+              </h1>
+              <p className="mt-5 text-lg text-neutral-700 max-w-2xl">
+                We source eggs directly from vetted local farmers and deliver them straight to your door. No middlemen. No stale stock. Just clean, safe, traceable eggs—always fresh.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-deep text-white px-6 py-3 font-semibold shadow-sm hover:opacity-95">
+                  Order Eggs
+                </Link>
+                <Link href="/track" className="inline-flex items-center justify-center rounded-full bg-white text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:bg-cream">
+                  Track Your Crate
+                </Link>
+                <Link href="/culture" className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95">
+                  Our Culture
+                </Link>
+              </div>
+              <div className="mt-8 grid grid-cols-3 gap-6 max-w-xl">
+                <div>
+                  <div className="text-3xl font-extrabold text-ink">30–60%</div>
+                  <div className="text-sm text-neutral-600">Typical farmer underpayment we eliminate</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-extrabold text-ink">40%</div>
+                  <div className="text-sm text-neutral-600">Supply lost to poor storage—we fix the cold chain</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-extrabold text-ink">24–48h</div>
+                  <div className="text-sm text-neutral-600">From farm to doorstep freshness</div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-cream egg-shadow ring-1 ring-black/5">
+                <div className="absolute inset-6 rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-white ring-1 ring-black/5" />
+                <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-white/80 p-4 ring-1 ring-black/5 backdrop-blur">
+                  <p className="text-sm text-neutral-700">
+                    “We pay farmers fairly and deliver fresher eggs to homes. That’s how we build wealth with integrity.”
+                  </p>
+                  <p className="mt-2 text-xs text-neutral-500">— The Bibinii Farms Team</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Bibinii */}
+      <section className="relative py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Farmer-first pricing",
+                desc:
+                  "We cut out predatory middlemen so farmers earn what they deserve—creating a stronger, more resilient local supply.",
+              },
+              {
+                title: "Fresher, safer eggs",
+                desc:
+                  "Direct sourcing plus better storage and distribution means your eggs arrive clean, safe, and truly fresh.",
+              },
+              {
+                title: "Flexible ordering",
+                desc:
+                  "Set-and-forget subscriptions or on‑demand delivery when you need it. You choose what works for you.",
+              },
+            ].map((card) => (
+              <div key={card.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-sm">
+                <h3 className="text-lg font-semibold text-ink">{card.title}</h3>
+                <p className="mt-2 text-sm text-neutral-700">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl bg-brand-deep text-white p-10 sm:p-12">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Ready for fresher eggs?</h2>
+                <p className="mt-2 text-white/80 max-w-xl">Order today and taste the difference in 24–48 hours. Traceable, farmer‑fair, delivered to your door.</p>
+              </div>
+              <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95">
+                Start an Order
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

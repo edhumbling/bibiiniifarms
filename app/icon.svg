@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FFE79A"/>
+      <stop offset="100%" stop-color="#FFD75E"/>
+    </linearGradient>
+  </defs>
+  <!-- Organic egg shape -->
+  <path d="M64 8c20 0 44 30 44 60s-22 52-44 52S20 98 20 68 44 8 64 8z" fill="url(#g)"/>
+  <circle cx="46" cy="40" r="10" fill="rgba(255,255,255,0.35)"/>
+</svg>
+
