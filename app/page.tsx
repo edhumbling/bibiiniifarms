@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/app/components/Reveal";
 
 export default function Home() {
   return (
@@ -12,17 +13,23 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-3 py-1 text-xs font-semibold ring-1 ring-black/5">
-                Fresh • Traceable • Farmer-first
-              </span>
-              <h1 className="display mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink">
-                Building Wealth with Integrity.
-                <br />
-                <span className="text-brand-deep">Feeding Ghana with Purpose.</span>
-              </h1>
-              <p className="mt-5 text-lg text-neutral-700 max-w-2xl">
-                We source eggs directly from vetted local farmers and deliver them straight to your door. No middlemen. No stale stock. Just clean, safe, traceable eggs—always fresh.
-              </p>
+              <Reveal>
+                <span className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-3 py-1 text-xs font-semibold ring-1 ring-black/5">
+                  Fresh • Traceable • Farmer-first
+                </span>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h1 className="display mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink">
+                  Building Wealth with Integrity.
+                  <br />
+                  <span className="text-brand-deep">Feeding Ghana with Purpose.</span>
+                </h1>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-5 text-lg text-neutral-700 max-w-2xl">
+                  We source eggs directly from vetted local farmers and deliver them straight to your door. No middlemen. No stale stock. Just clean, safe, traceable eggs—always fresh.
+                </p>
+              </Reveal>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-deep text-white px-6 py-3 font-semibold shadow-sm hover:opacity-95">
                   Order Eggs
