@@ -102,6 +102,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Image Carousel */}
+      <ImageCarousel />
+
       {/* CTA */}
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -118,9 +121,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Image Carousel */}
-      <ImageCarousel />
     </div>
   );
 }
