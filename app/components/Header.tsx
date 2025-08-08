@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Logo from "../bibinii logo white text.svg";
 
 const nav = [
   { href: "/culture", label: "Our Culture" },
@@ -14,11 +16,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-black/5 dark:bg-[#0b0b09]/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="inline-block w-8 h-8 rounded-full bg-brand-egg shadow-[0_4px_0_0_rgba(0,0,0,0.08)] ring-1 ring-black/5" />
-            <span className="font-semibold tracking-tight text-xl group-hover:text-brand-deep transition-colors">
-              Bibinii Farms
-            </span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image src={Logo} alt="Bibinii Farms" className="h-7 w-auto" priority />
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
