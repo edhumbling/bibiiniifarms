@@ -7,7 +7,7 @@ import Certifications from "@/app/components/Certifications";
 import SustainabilityAnimated from "@/app/components/SustainabilityAnimated";
 
 export const metadata: Metadata = {
-  title: "Our Culture — Bibinii Farms",
+  title: "Bibinii Farms • Culture",
   description:
     "Our values: integrity, transparency, farmer empowerment, and excellence in cold-chain logistics.",
 };

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Find Bibinii — Locations",
+  title: "Bibinii Farms • Find",
   description: "Where to find Bibinii Farms products and pickup points.",
 };
 

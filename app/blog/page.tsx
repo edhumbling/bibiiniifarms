@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibinii Farms • Blog",
+  description: "Stories, insights, and updates from the world of sustainable farming and ethical egg production.",
+};
 
 const blogPosts = [
   {

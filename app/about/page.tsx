@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibinii Farms • About",
+  description: "We're passionate about producing the finest eggs while caring for our chickens, our farmers, and our planet.",
+};
 
 export default function AboutPage() {
   return (

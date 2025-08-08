@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibinii Farms • Contact",
+  description: "We'd love to hear from you. Get in touch with our team for any questions or support.",
+};
 
 const contactMethods = [
   {

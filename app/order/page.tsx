@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import OrderForm from "@/app/components/OrderForm";
 
 export const metadata: Metadata = {
-  title: "Order Eggs — Bibinii Farms",
+  title: "Bibinii Farms • Order",
   description: "Fresh, traceable eggs delivered to your door across Accra and beyond.",
 };
 

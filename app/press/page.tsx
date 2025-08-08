@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibinii Farms • Press",
+  description: "Latest news, press releases, and media resources from Bibinii Farms.",
+};
 
 const pressReleases = [
   {

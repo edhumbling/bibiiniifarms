@@ -1,5 +1,9 @@
 "use client";
 import { useState } from "react";
+import { Metadata } from "next";
+
+// Note: metadata export not available in client components, handled in layout
+// Title: "Bibinii Farms • FAQs"
 
 const faqs = [
   {

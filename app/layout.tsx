@@ -22,7 +22,7 @@ const display = Marcellus({
 });
 
 export const metadata: Metadata = {
-  title: "Bibinii Farms — Building Wealth with Integrity",
+  title: "Bibinii Farms • Home",
   description:
     "Sourcing fresh eggs directly from Ghanaian farmers. Home delivery, subscriptions, and crate tracking.",
   metadataBase: new URL("https://bibiniifarms.com"),

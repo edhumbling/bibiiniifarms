@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibinii Farms • Products",
+  description: "Premium eggs from happy, free-range chickens raised with care and compassion on our sustainable farms.",
+};
 
 export default function ProductsPage() {
   return (

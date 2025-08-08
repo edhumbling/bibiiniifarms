@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Track Your Crate — Bibinii Farms",
+  title: "Bibinii Farms • Track",
   description: "Enter your crate ID to see sourcing, freshness, and delivery status.",
 };
 

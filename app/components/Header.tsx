@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-happy-orange">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-20 grid grid-cols-3 items-center">
+        <div className="h-24 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
           <div className="flex">
             <button
@@ -49,7 +49,7 @@ export default function Header() {
           {/* Centered logo - 3x size */}
           <div className="flex justify-center">
             <Link href="/" className="block">
-              <Image src={Logo} alt="Bibinii Farms" className="h-12 w-auto" priority />
+              <Image src={Logo} alt="Bibinii Farms" className="h-16 w-auto" priority />
             </Link>
           </div>
 
@@ -59,7 +59,7 @@ export default function Header() {
               href="/order"
               className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
             >
-              <Image src={OrderNowLogo} alt="Order Now" className="h-10 w-auto" />
+              <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
             </Link>
           </div>
         </div>
@@ -70,15 +70,15 @@ export default function Header() {
         <div className={`absolute inset-0 bg-happy-orange transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
             {/* Header space */}
-            <div className="h-20"></div>
+            <div className="h-24"></div>
 
             {/* Main content */}
             <div className="flex-1 px-6 py-8 relative">
-              {/* Close button positioned over Products */}
+              {/* Close button positioned above Products */}
               <button
                 aria-label="Close menu"
                 onClick={() => setOpen(false)}
-                className="absolute top-8 left-6 z-10 inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
+                className="absolute top-2 left-6 z-10 inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
               >
                 <div className="relative w-6 h-6">
                   <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
@@ -86,7 +86,7 @@ export default function Header() {
                 </div>
               </button>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full mt-8">
                 {/* Main Navigation - Left Column */}
                 <div className="lg:col-span-2">
                   <nav className="space-y-4">
@@ -97,7 +97,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                          className={`block text-white hover:text-white/80 transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${index === 0 ? 'relative' : ''}`}
+                          className={`block text-white hover:text-white/80 transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''}`}
                         >
                           {item.label}
                         </Link>

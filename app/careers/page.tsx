@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bibinii Farms • Careers",
+  description: "Build a meaningful career while helping create a more sustainable and ethical food system.",
+};
 
 const openPositions = [
   {
