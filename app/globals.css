@@ -44,8 +44,7 @@ body {
 @keyframes pulse-slow { 0%, 100% { opacity: .7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
 .animate-pulse\/slow { animation: pulse-slow 6s ease-in-out infinite; }
 
-/* Luminescent orange-red gradient */
-.bg-luminescent-orange {
-  background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ff8c42 100%);
-  box-shadow: 0 0 20px rgba(255, 69, 0, 0.3), 0 0 40px rgba(255, 69, 0, 0.1);
+/* Happy Egg style orange gradient */
+.bg-happy-orange {
+  background: linear-gradient(90deg, #ff4500 0%, #ff6600 50%, #ff7700 100%);
 }
