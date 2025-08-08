@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 const images = [
   {
@@ -31,7 +30,7 @@ export default function ImageCarousel() {
   return (
     <section className="py-16 bg-gray-50 overflow-hidden">
       <div className="mb-12 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Farm Life</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Bibinii and Love for Poultry</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           Take a glimpse into the daily life at our sustainable farms where happy chickens roam free.
         </p>
@@ -43,21 +42,20 @@ export default function ImageCarousel() {
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
         
         {/* Scrolling container */}
-        <div className="flex animate-scroll-horizontal">
+        <div className="flex animate-scroll-horizontal items-center">
           {duplicatedImages.map((image, index) => (
             <div
               key={`${image.id}-${index}`}
-              className="flex-shrink-0 w-80 h-64 mx-2 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="flex-shrink-0 mx-2 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <Image
+              <img
                 src={image.src}
                 alt={image.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="h-64 w-auto object-contain hover:scale-105 transition-transform duration-500"
+                loading="lazy"
               />
-              {/* Subtle overlay for better text readability if needed */}
-              <div className="absolute inset-0 bg-black/10 hover:bg-black/5 transition-colors duration-300"></div>
+              {/* Subtle overlay for better visual effect */}
+              <div className="absolute inset-0 bg-black/5 hover:bg-black/0 transition-colors duration-300"></div>
             </div>
           ))}
         </div>
