@@ -1,0 +1,8 @@
+export default function VideoPlaceholder({ label = "Promo Video" }: { label?: string }) {
+  return (
+    <div className="aspect-video rounded-2xl bg-black/5 ring-1 ring-black/10 grid place-items-center">
+      <div className="text-neutral-600 text-sm">{label} (embed coming soon)</div>
+    </div>
+  );
+}
+

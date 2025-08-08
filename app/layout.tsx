@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Marcellus } from "next/font/google";
 import "./globals.css";
@@ -25,11 +26,7 @@ export const metadata: Metadata = {
   description:
     "Sourcing fresh eggs directly from Ghanaian farmers. Home delivery, subscriptions, and crate tracking.",
   metadataBase: new URL("https://bibiniifarms.com"),
-  icons: {
-    icon: "/bibinii logo white text.svg",
-    shortcut: "/bibinii logo white text.svg",
-    apple: "/bibinii logo white text.svg",
-  },
+  icons: { icon: "/bibinii logo white text.svg", shortcut: "/bibinii logo white text.svg", apple: "/bibinii logo white text.svg" },
   openGraph: {
     title: "Bibinii Farms — Building Wealth with Integrity",
     description:

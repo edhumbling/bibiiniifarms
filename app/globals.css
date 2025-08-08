@@ -44,6 +44,7 @@ body {
     radial-gradient(800px 400px at 90% -20%, rgba(15, 61, 46, 0.18), transparent 60%);
 }
 
-.egg-shadow {
-  box-shadow: 0 10px 0 rgba(0,0,0,0.06);
-}
+.egg-shadow { box-shadow: 0 10px 0 rgba(0,0,0,0.06); }
+
+@keyframes pulse-slow { 0%, 100% { opacity: .7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+.animate-pulse\/slow { animation: pulse-slow 6s ease-in-out infinite; }
