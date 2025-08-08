@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${interSans.variable} ${geistMono.variable} antialiased bg-egg-sheen`}>
+      <body className={`${interSans.variable} ${geistMono.variable} antialiased bg-white`}>
         <div className="min-h-dvh flex flex-col">
           {/* Header */}
           <Header />

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffdf6;
+  --background: #ffffff;
   --foreground: #1a1a1a;
   --brand-egg: #ffd75e; /* warm egg yellow */
   --brand-deep: #0f3d2e; /* deep forest green */

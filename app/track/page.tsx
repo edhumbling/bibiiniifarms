@@ -19,13 +19,13 @@ export default function TrackPage() {
         <input
           id="crate"
           placeholder="e.g. BF-AC-2025-000123"
-          className="rounded-xl px-4 py-3 ring-1 ring-black/10 bg-white placeholder:text-neutral-400 focus:outline-none focus:ring-brand-deep"
+          className="rounded-xl px-4 py-3 ring-1 ring-neutral-300 bg-white placeholder:text-neutral-400 focus:outline-none focus:ring-brand-deep"
         />
         <div className="flex gap-3">
-          <button className="inline-flex rounded-full bg-brand-deep text-white px-5 py-2 font-semibold">
+          <button className="inline-flex items-center justify-center rounded-full bg-brand-deep text-white px-5 py-2 font-semibold hover:bg-brand-deep/90 transition-colors">
             Track
           </button>
-          <Link href="#" className="inline-flex rounded-full bg-cream px-5 py-2 font-semibold ring-1 ring-black/10 text-ink">
+          <Link href="#" className="inline-flex items-center justify-center rounded-full bg-cream px-5 py-2 font-semibold ring-1 ring-neutral-200 text-ink hover:bg-cream/80 transition-colors">
             Where to find Crate ID?
           </Link>
         </div>

@@ -57,9 +57,9 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-cream egg-shadow ring-1 ring-black/5">
-                <div className="absolute inset-6 rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-white ring-1 ring-black/5" />
-                <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-white/80 p-4 ring-1 ring-black/5 backdrop-blur">
+              <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-cream egg-shadow ring-1 ring-neutral-200">
+                <div className="absolute inset-6 rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-white ring-1 ring-neutral-200" />
+                <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-white/95 p-4 ring-1 ring-neutral-200 backdrop-blur shadow-sm">
                   <p className="text-sm text-neutral-700">
                     “We pay farmers fairly and deliver fresher eggs to homes. That’s how we build wealth with integrity.”
                   </p>
@@ -92,7 +92,7 @@ export default function Home() {
                   "Set-and-forget subscriptions or on‑demand delivery when you need it. You choose what works for you.",
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-sm">
+              <div key={card.title} className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow-sm">
                 <h3 className="text-lg font-semibold text-ink">{card.title}</h3>
                 <p className="mt-2 text-sm text-neutral-700">{card.desc}</p>
               </div>
