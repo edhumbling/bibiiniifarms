@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "../bibinii logo white text.svg";
+import OrderNowLogo from "../order now logo.svg";
 
 const mainNav = [
   { href: "/products", label: "Products" },
@@ -29,45 +30,36 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-happy-orange">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-16 grid grid-cols-3 items-center">
+        <div className="h-20 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
           <div className="flex">
             <button
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen(!open)}
-              className="inline-flex items-center justify-center h-10 w-10 hover:bg-white/10 rounded transition-colors"
+              className="inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                {open ? (
-                  <>
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </>
-                ) : (
-                  <>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                  </>
-                )}
-              </svg>
+              <div className="relative w-6 h-6">
+                <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out ${open ? 'rotate-45 translate-y-2.5' : 'translate-y-0'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out translate-y-2.5 ${open ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out translate-y-5 ${open ? '-rotate-45 -translate-y-2.5' : 'translate-y-0'}`}></span>
+              </div>
             </button>
           </div>
 
-          {/* Centered logo */}
+          {/* Centered logo - 3x size */}
           <div className="flex justify-center">
             <Link href="/" className="block">
-              <Image src={Logo} alt="Bibinii Farms" className="h-8 w-auto" priority />
+              <Image src={Logo} alt="Bibinii Farms" className="h-12 w-auto" priority />
             </Link>
           </div>
 
-          {/* Right: CTA */}
+          {/* Right: Order Now Logo */}
           <div className="flex justify-end">
             <Link
-              href="/find"
-              className="inline-flex items-center justify-center rounded-full bg-white text-orange-600 h-9 px-4 text-sm font-semibold hover:bg-white/90 transition-colors"
+              href="/order"
+              className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
             >
-              Find Bibinii
+              <Image src={OrderNowLogo} alt="Order Now" className="h-10 w-auto" />
             </Link>
           </div>
         </div>
@@ -78,22 +70,34 @@ export default function Header() {
         <div className={`absolute inset-0 bg-happy-orange transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
             {/* Header space */}
-            <div className="h-16"></div>
+            <div className="h-20"></div>
 
             {/* Main content */}
-            <div className="flex-1 px-6 py-8">
+            <div className="flex-1 px-6 py-8 relative">
+              {/* Close button positioned over Products */}
+              <button
+                aria-label="Close menu"
+                onClick={() => setOpen(false)}
+                className="absolute top-8 left-6 z-10 inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
+              >
+                <div className="relative w-6 h-6">
+                  <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
+                  <span className="absolute block h-0.5 w-6 bg-white transform -rotate-45 translate-y-2.5"></span>
+                </div>
+              </button>
+
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div className="lg:col-span-2">
                   <nav className="space-y-4">
-                    {mainNav.map((item) => {
+                    {mainNav.map((item, index) => {
                       const active = pathname === item.href;
                       return (
                         <Link
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                          className={`block text-white hover:text-white/80 transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''}`}
+                          className={`block text-white hover:text-white/80 transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${index === 0 ? 'relative' : ''}`}
                         >
                           {item.label}
                         </Link>

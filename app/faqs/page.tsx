@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 const faqs = [
@@ -66,6 +67,16 @@ const faqs = [
 const categories = ["All", "Products", "Farming", "Ordering", "Nutrition", "Partnership"];
 
 export default function FAQsPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredFAQs = faqs.filter(faq => {
+    const matchesCategory = selectedCategory === "All" || faq.category === selectedCategory;
+    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -89,6 +100,8 @@ export default function FAQsPage() {
             <input
               type="text"
               placeholder="Search FAQs..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             />
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

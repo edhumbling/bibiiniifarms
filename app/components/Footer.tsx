@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="mt-24 bg-happy-orange">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col items-center gap-3 text-center">
-          <Image src={Logo} alt="Bibinii Farms" className="h-8 w-auto" />
+          <Image src={Logo} alt="Bibinii Farms" className="h-16 w-auto" />
           <p className="mt-1 text-sm text-white/90 max-w-xl">
             Building Wealth with Integrity. Feeding Ghana with Purpose.
           </p>

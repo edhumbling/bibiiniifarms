@@ -48,3 +48,40 @@ body {
 .bg-happy-orange {
   background: linear-gradient(90deg, #ff4500 0%, #ff6600 50%, #ff7700 100%);
 }
+
+/* Beautiful hamburger animation */
+.hamburger-line {
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-line:nth-child(1) {
+  transform-origin: 50% 50%;
+}
+
+.hamburger-line:nth-child(3) {
+  transform-origin: 50% 50%;
+}
+
+/* Menu slide animation */
+.menu-slide-enter {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.menu-slide-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-slide-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.menu-slide-exit-active {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
