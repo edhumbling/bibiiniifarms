@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/app/components/Reveal";
+import ImageCarousel from "@/app/components/ImageCarousel";
 
 export default function Home() {
   return (
@@ -117,6 +118,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Image Carousel */}
+      <ImageCarousel />
     </div>
   );
 }

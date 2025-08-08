@@ -85,3 +85,21 @@ body {
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
+
+/* Image Carousel Animation */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll-horizontal {
+  animation: scroll-horizontal 60s linear infinite;
+}
+
+.animate-scroll-horizontal:hover {
+  animation-play-state: paused;
+}
