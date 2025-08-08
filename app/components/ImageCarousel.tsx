@@ -51,8 +51,12 @@ export default function ImageCarousel() {
               <img
                 src={image.src}
                 alt={image.alt}
-                className="h-64 w-auto object-contain hover:scale-105 transition-transform duration-500"
+                className="h-64 w-auto object-cover hover:scale-105 transition-transform duration-500 rounded-lg"
                 loading="lazy"
+                onError={(e) => {
+                  console.error('Image failed to load:', image.src);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
               {/* Subtle overlay for better visual effect */}
               <div className="absolute inset-0 bg-black/5 hover:bg-black/0 transition-colors duration-300"></div>
