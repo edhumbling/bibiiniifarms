@@ -15,12 +15,19 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-black/5 dark:bg-[#0b0b09]/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <Image src={Logo} alt="Bibinii Farms" className="h-7 w-auto" priority />
-          </Link>
+        <div className="h-20 grid grid-cols-3 items-center">
+          {/* Left spacer */}
+          <div />
 
-          <nav className="hidden md:flex items-center gap-6">
+          {/* Centered logo */}
+          <div className="flex justify-center">
+            <Link href="/" className="block">
+              <Image src={Logo} alt="Bibinii Farms" className="h-10 md:h-12 lg:h-14 w-auto" priority />
+            </Link>
+          </div>
+
+          {/* Right navigation */}
+          <nav className="hidden md:flex items-center justify-end gap-6">
             {nav.map((item) => {
               const active = pathname === item.href;
               return (
@@ -37,10 +44,6 @@ export default function Header() {
               );
             })}
           </nav>
-
-          <div className="md:hidden">
-            {/* Future: mobile menu */}
-          </div>
         </div>
       </div>
     </header>
