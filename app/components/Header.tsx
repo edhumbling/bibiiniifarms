@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isHomepage && !isScrolled && !open ? '' : 'bg-luminous-green backdrop-blur-sm'
+      isHomepage && !isScrolled ? '' : 'bg-luminous-green backdrop-blur-sm'
     }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-32 grid grid-cols-3 items-center">
@@ -80,16 +80,15 @@ export default function Header() {
       </div>
 
       {/* Full-screen mobile menu */}
-      <div className={`fixed inset-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        {/* Green background that flows from header down */}
+      <div className={`fixed inset-x-0 top-[8rem] bottom-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {/* Green background starting below the header (h-32 => 8rem) */}
         <div
-          className={`absolute top-0 left-0 right-0 bottom-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}
+          className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}
           style={{
             background: 'linear-gradient(135deg, #064e3b 0%, #0d4f3c 25%, #1a7a5e 50%, #10b981 75%, #2dd4bf 100%)',
             boxShadow: '0 0 30px rgba(16, 185, 129, 0.3), 0 0 60px rgba(45, 212, 191, 0.2)'
           }}
-        >
-        </div>
+        />
 
         {/* Menu content overlay */}
         <div className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
