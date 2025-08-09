@@ -81,7 +81,18 @@ export default function Header() {
 
       {/* Full-screen mobile menu */}
       <div className={`fixed inset-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className={`absolute inset-0 bg-luminous-green transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
+        {/* Green background that flows from header down */}
+        <div
+          className={`absolute top-0 left-0 right-0 bottom-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}
+          style={{
+            background: 'linear-gradient(135deg, #064e3b 0%, #0d4f3c 25%, #1a7a5e 50%, #10b981 75%, #2dd4bf 100%)',
+            boxShadow: '0 0 30px rgba(16, 185, 129, 0.3), 0 0 60px rgba(45, 212, 191, 0.2)'
+          }}
+        >
+        </div>
+
+        {/* Menu content overlay */}
+        <div className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
             {/* Header with X button in same position as hamburger */}
             <div className="h-32 flex items-center">
