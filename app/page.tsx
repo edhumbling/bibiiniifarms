@@ -5,69 +5,47 @@ import ImageCarousel from "@/app/components/ImageCarousel";
 export default function Home() {
   return (
     <div className="relative">
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 -left-24 w-[480px] h-[480px] rounded-full bg-brand-egg/40 blur-3xl" />
-          <div className="absolute -top-24 right-0 w-[520px] h-[520px] rounded-[50%_50%_60%_40%] bg-brand-deep/20 blur-3xl" />
+      {/* Hero Section with Full Image */}
+      <section className="relative h-screen overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://ik.imagekit.io/humbling/reve_images_2025-08-04_14-48-38/reve_images_2025-08-05_03-59-11/4811dfb5-4d98-4ba5-9088-236d082bca94.png"
+            alt="Bibinii Farms Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7">
-              <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-3 py-1 text-xs font-semibold ring-1 ring-black/5">
-                  Fresh • Traceable • Farmer-first
-                </span>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <h1 className="display mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink">
-                  Building Wealth with Integrity.
-                  <br />
-                  <span className="text-brand-deep">Feeding Ghana with Purpose.</span>
-                </h1>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="mt-5 text-lg text-neutral-700 max-w-2xl">
-                  We source eggs directly from vetted local farmers and deliver them straight to your door. No middlemen. No stale stock. Just clean, safe, traceable eggs—always fresh.
-                </p>
-              </Reveal>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-deep text-white px-6 py-3 font-semibold shadow-sm hover:opacity-95">
-                  Order Eggs
+        
+        {/* Hero Content */}
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white px-4 sm:px-6 lg:px-8">
+            <Reveal>
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
+                Fresh eggs from{" "}
+                <span className="text-yellow-300">happy chickens</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
+                Sourced directly from Ghanaian farmers. Traceable, farmer‑fair, delivered fresh to your door in 24–48 hours.
+              </p>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/order"
+                  className="inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 font-semibold hover:bg-gray-100 transition-all text-lg"
+                >
+                  Order Fresh Eggs
                 </Link>
-                <Link href="/track" className="inline-flex items-center justify-center rounded-full bg-white text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:bg-cream">
+                <Link
+                  href="/track"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-gray-900 transition-all text-lg"
+                >
                   Track Your Crate
                 </Link>
-                <Link href="/culture" className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95">
-                  Our Culture
-                </Link>
               </div>
-              <div className="mt-8 grid grid-cols-3 gap-6 max-w-xl">
-                <div>
-                  <div className="text-3xl font-extrabold text-ink">30–60%</div>
-                  <div className="text-sm text-neutral-600">Typical farmer underpayment we eliminate</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-extrabold text-ink">40%</div>
-                  <div className="text-sm text-neutral-600">Supply lost to poor storage—we fix the cold chain</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-extrabold text-ink">24–48h</div>
-                  <div className="text-sm text-neutral-600">From farm to doorstep freshness</div>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-cream egg-shadow ring-1 ring-neutral-200">
-                <div className="absolute inset-6 rounded-[44%_56%_50%_50%/60%_52%_48%_40%] bg-white ring-1 ring-neutral-200" />
-                <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-white/95 p-4 ring-1 ring-neutral-200 backdrop-blur shadow-sm">
-                  <p className="text-sm text-neutral-700">
-                    “We pay farmers fairly and deliver fresher eggs to homes. That’s how we build wealth with integrity.”
-                  </p>
-                  <p className="mt-2 text-xs text-neutral-500">— The Bibinii Farms Team</p>
-                </div>
-              </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -75,29 +53,55 @@ export default function Home() {
       {/* Why Bibinii */}
       <section className="relative py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Farmer-first pricing",
-                desc:
-                  "We cut out predatory middlemen so farmers earn what they deserve—creating a stronger, more resilient local supply.",
-              },
-              {
-                title: "Fresher, safer eggs",
-                desc:
-                  "Direct sourcing plus better storage and distribution means your eggs arrive clean, safe, and truly fresh.",
-              },
-              {
-                title: "Flexible ordering",
-                desc:
-                  "Set-and-forget subscriptions or on‑demand delivery when you need it. You choose what works for you.",
-              },
-            ].map((card) => (
-              <div key={card.title} className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow-sm">
-                <h3 className="text-lg font-semibold text-ink">{card.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700">{card.desc}</p>
+          <div className="text-center">
+            <Reveal>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+                Why choose Bibinii?
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
+                We're revolutionizing Ghana's egg supply chain by connecting farmers directly with consumers.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Reveal delay={0.2}>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
+                  <span className="text-2xl">🚚</span>
+                </div>
+                <h3 className="text-xl font-bold text-ink mb-2">Direct Delivery</h3>
+                <p className="text-neutral-600">
+                  From farm to your door in 24-48 hours. No middlemen, no delays.
+                </p>
               </div>
-            ))}
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
+                  <span className="text-2xl">🌾</span>
+                </div>
+                <h3 className="text-xl font-bold text-ink mb-2">Farmer Fair</h3>
+                <p className="text-neutral-600">
+                  We pay farmers 40-60% more than traditional buyers.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.4}>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
+                  <span className="text-2xl">🔍</span>
+                </div>
+                <h3 className="text-xl font-bold text-ink mb-2">Fully Traceable</h3>
+                <p className="text-neutral-600">
+                  Know exactly which farm your eggs came from with our QR tracking.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

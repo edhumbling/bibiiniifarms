@@ -8,6 +8,8 @@
   --brand-cream: #fff6dd;
   --brand-ink: #111111;
   --brand-orange-red: #ff4500; /* luminescent orange-red */
+  --luminous-green: linear-gradient(135deg, #064e3b 0%, #0d4f3c 25%, #1a7a5e 50%, #10b981 75%, #2dd4bf 100%);
+  --deep-green-glow: linear-gradient(90deg, #064e3b 0%, #0d4f3c 50%, #1a7a5e 100%);
 }
 
 @theme inline {
@@ -102,4 +104,15 @@ body {
 
 .animate-scroll-horizontal:hover {
   animation-play-state: paused;
+}
+
+/* Beautiful Deep Green with Luminescent Light */
+.bg-luminous-green {
+  background: linear-gradient(135deg, #064e3b 0%, #0d4f3c 25%, #1a7a5e 50%, #10b981 75%, #2dd4bf 100%);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3), 0 0 60px rgba(45, 212, 191, 0.2);
+}
+
+.bg-deep-green-glow {
+  background: linear-gradient(90deg, #064e3b 0%, #0d4f3c 50%, #1a7a5e 100%);
+  box-shadow: 0 0 20px rgba(26, 122, 94, 0.4), 0 0 40px rgba(16, 185, 129, 0.2);
 }

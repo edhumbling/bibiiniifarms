@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../bibinii logo white text.svg";
 import OrderNowLogo from "../order now logo.svg";
 
@@ -26,9 +26,20 @@ const secondaryNav = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+      setIsScrolled(window.scrollY > heroHeight * 0.8);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-happy-orange">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent'}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-24 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
@@ -67,7 +78,7 @@ export default function Header() {
 
       {/* Full-screen mobile menu */}
       <div className={`fixed inset-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className={`absolute inset-0 bg-happy-orange transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`absolute inset-0 bg-luminous-green transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
             {/* Header space */}
             <div className="h-24"></div>

@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
-    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff4500"/>
-      <stop offset="50%" stop-color="#ff6600"/>
-      <stop offset="100%" stop-color="#ff7700"/>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="25%" stop-color="#0d4f3c"/>
+      <stop offset="50%" stop-color="#1a7a5e"/>
+      <stop offset="75%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
     </linearGradient>
   </defs>
 
   <!-- Background circle -->
-  <circle cx="64" cy="64" r="60" fill="url(#orangeGradient)"/>
+  <circle cx="64" cy="64" r="60" fill="url(#greenGradient)"/>
 
   <!-- Stylized "B" for Bibinii -->
   <path d="M35 25 L35 103 L65 103 C75 103 85 95 85 85 C85 78 80 72 75 70 C80 68 83 62 83 55 C83 45 75 25 65 25 Z M50 40 L62 40 C67 40 70 43 70 48 C70 53 67 56 62 56 L50 56 Z M50 70 L65 70 C70 70 73 73 73 78 C73 83 70 86 65 86 L50 86 Z" fill="white"/>
