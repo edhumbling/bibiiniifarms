@@ -99,8 +99,8 @@ export default function Header() {
       </div>
 
       {/* Full-screen mobile menu */}
-      <div className={`fixed inset-x-0 top-[8rem] bottom-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        {/* Green background starting below the header (h-32 => 8rem) */}
+      <div className={`fixed inset-0 z-60 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {/* Full-screen overlay green background */}
         <div
           className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}
           style={{
@@ -111,9 +111,21 @@ export default function Header() {
 
         {/* Menu content overlay */}
         <div className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
-          <div className="h-full flex flex-col">
+          {/* Single close control (X) like Happy Egg */}
+          <button
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            className="absolute top-4 left-4 z-10 inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
+          >
+            <div className="relative w-6 h-6">
+              <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
+              <span className="absolute block h-0.5 w-6 bg-white transform -rotate-45 translate-y-2.5"></span>
+            </div>
+          </button>
+
+          <div className="h-full flex flex-col pt-16">
             {/* Main content */}
-            <div className="flex-1 px-6 py-8 overflow-y-auto overscroll-contain">
+            <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div className="lg:col-span-2">
