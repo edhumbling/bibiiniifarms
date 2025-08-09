@@ -55,9 +55,12 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isHomepage && !isScrolled ? '' : 'bg-luminous-green backdrop-blur-sm'
-    }`}>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isHomepage && !isScrolled && !open ? '' : 'bg-luminous-green backdrop-blur-sm'
+      }`}
+      style={open ? { background: 'linear-gradient(135deg, #064e3b 0%, #0d4f3c 25%, #1a7a5e 50%, #10b981 75%, #2dd4bf 100%)' } : undefined}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-32 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
