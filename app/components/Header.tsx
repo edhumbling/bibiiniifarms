@@ -39,7 +39,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green backdrop-blur-sm' : ''}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-24 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
