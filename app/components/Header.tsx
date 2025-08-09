@@ -39,6 +39,21 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock background scroll when menu is open (only menu scrolls)
+  useEffect(() => {
+    if (open) {
+      document.documentElement.classList.add('overflow-hidden');
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.documentElement.classList.remove('overflow-hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.documentElement.classList.remove('overflow-hidden');
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [open]);
+
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isHomepage && !isScrolled ? '' : 'bg-luminous-green backdrop-blur-sm'
@@ -67,8 +82,9 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Right: Order Now Logo - 2x larger */}
+          {/* Right: Hamburger toggles to X in-place; Order Now only in top bar */}
           <div className="flex justify-end">
+            {/* Order Now stays in header only; not duplicated in overlay */}
             <Link
               href="/order"
               className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
@@ -93,47 +109,8 @@ export default function Header() {
         {/* Menu content overlay */}
         <div className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
-            {/* Header with X button in same position as hamburger */}
-            <div className="h-32 flex items-center">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-                <div className="grid grid-cols-3 items-center">
-                  {/* Left: X button in same position as hamburger */}
-                  <div className="flex">
-                    <button
-                      aria-label="Close menu"
-                      onClick={() => setOpen(false)}
-                      className="inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
-                    >
-                      <div className="relative w-6 h-6">
-                        <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
-                        <span className="absolute block h-0.5 w-6 bg-white transform -rotate-45 translate-y-2.5"></span>
-                      </div>
-                    </button>
-                  </div>
-
-                  {/* Center: Logo */}
-                  <div className="flex justify-center">
-                    <Link href="/" className="block" onClick={() => setOpen(false)}>
-                      <Image src={Logo} alt="Bibinii Farms" className="h-24 w-auto" priority />
-                    </Link>
-                  </div>
-
-                  {/* Right: Order Now */}
-                  <div className="flex justify-end">
-                    <Link
-                      href="/order"
-                      onClick={() => setOpen(false)}
-                      className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
-                    >
-                      <Image src={OrderNowLogo} alt="Order Now" className="h-20 w-auto" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Main content */}
-            <div className="flex-1 px-6 py-8">
+            <div className="flex-1 px-6 py-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div className="lg:col-span-2">
