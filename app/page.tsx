@@ -5,8 +5,8 @@ import ImageCarousel from "@/app/components/ImageCarousel";
 export default function Home() {
   return (
     <div className="relative">
-      {/* Hero Section - Pure Image Only */}
-      <section className="relative h-screen overflow-hidden">
+      {/* Hero Section - Pure Image Only - Starts from top */}
+      <section className="relative h-screen overflow-hidden -mt-32">
         <div className="absolute inset-0">
           <img
             src="https://ik.imagekit.io/humbling/reve_images_2025-08-04_14-48-38/reve_images_2025-08-05_03-59-11/4811dfb5-4d98-4ba5-9088-236d082bca94.png"
