@@ -5,7 +5,7 @@ import ImageCarousel from "@/app/components/ImageCarousel";
 export default function Home() {
   return (
     <div className="relative">
-      {/* Hero Section with Full Image */}
+      {/* Hero Section - Pure Image Only */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -13,20 +13,22 @@ export default function Home() {
             alt="Bibinii Farms Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/30"></div>
         </div>
-        
-        {/* Hero Content */}
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white px-4 sm:px-6 lg:px-8">
+      </section>
+
+      {/* Main Content Section - Hero Content Moved Here */}
+      <section className="relative py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Hero Content */}
+          <div className="text-center mb-16">
             <Reveal>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-ink">
                 Fresh eggs from{" "}
-                <span className="text-yellow-300">happy chickens</span>
+                <span className="text-green-600">happy chickens</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
+              <p className="mt-6 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Sourced directly from Ghanaian farmers. Traceable, farmer‑fair, delivered fresh to your door in 24–48 hours.
               </p>
             </Reveal>
@@ -34,25 +36,21 @@ export default function Home() {
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/order"
-                  className="inline-flex items-center justify-center rounded-full bg-white text-gray-900 px-8 py-4 font-semibold hover:bg-gray-100 transition-all text-lg"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-deep text-white px-8 py-4 font-semibold hover:bg-opacity-90 transition-all text-lg"
                 >
                   Order Fresh Eggs
                 </Link>
                 <Link
                   href="/track"
-                  className="inline-flex items-center justify-center rounded-full border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-gray-900 transition-all text-lg"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-brand-deep text-brand-deep px-8 py-4 font-semibold hover:bg-brand-deep hover:text-white transition-all text-lg"
                 >
                   Track Your Crate
                 </Link>
               </div>
             </Reveal>
           </div>
-        </div>
-      </section>
 
-      {/* Why Bibinii */}
-      <section className="relative py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Why Bibinii */}
           <div className="text-center">
             <Reveal>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">

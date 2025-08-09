@@ -27,6 +27,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isHomepage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,9 +40,11 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green backdrop-blur-sm' : ''}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${
+      isHomepage && !isScrolled && !open ? '' : 'bg-luminous-green backdrop-blur-sm'
+    }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-24 grid grid-cols-3 items-center">
+        <div className="h-32 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
           <div className="flex">
             <button
@@ -57,20 +60,20 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Centered logo - 3x size */}
+          {/* Centered logo - 6x size (doubled from 3x) */}
           <div className="flex justify-center">
             <Link href="/" className="block">
-              <Image src={Logo} alt="Bibinii Farms" className="h-16 w-auto" priority />
+              <Image src={Logo} alt="Bibinii Farms" className="h-24 w-auto" priority />
             </Link>
           </div>
 
-          {/* Right: Order Now Logo */}
+          {/* Right: Order Now Logo - 2x larger */}
           <div className="flex justify-end">
             <Link
               href="/order"
               className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
             >
-              <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
+              <Image src={OrderNowLogo} alt="Order Now" className="h-20 w-auto" />
             </Link>
           </div>
         </div>
@@ -81,7 +84,7 @@ export default function Header() {
         <div className={`absolute inset-0 bg-luminous-green transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
             {/* Header space */}
-            <div className="h-24"></div>
+            <div className="h-32"></div>
 
             {/* Main content */}
             <div className="flex-1 px-6 py-8 relative">
