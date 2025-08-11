@@ -27,7 +27,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
-                Sourced directly from Ghanaian farmers. Traceable, farmer‑fair, delivered fresh to your door in 24–48 hours.
+                Ghana-grown eggs directly from local poultry farmers. Fighting imports, feeding communities, protecting livelihoods.
               </p>
             </Reveal>
             <Reveal delay={0.4}>
@@ -61,7 +61,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
-                We're revolutionizing Ghana's egg supply chain by connecting farmers directly with consumers.
+                We unite poultry farmers across Ghana into one strong network, delivering fresh eggs straight from farm to table.
               </p>
             </Reveal>
           </div>
@@ -72,9 +72,9 @@ export default function Home() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
                   <span className="text-2xl">🚚</span>
                 </div>
-                <h3 className="text-xl font-bold text-ink mb-2">Direct Delivery</h3>
+                <h3 className="text-xl font-bold text-ink mb-2">Freshness Guaranteed</h3>
                 <p className="text-neutral-600">
-                  From farm to your door in 24-48 hours. No middlemen, no delays.
+                  Collected, graded, and delivered or ready for pickup within hours.
                 </p>
               </div>
             </Reveal>
@@ -84,9 +84,9 @@ export default function Home() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
                   <span className="text-2xl">🌾</span>
                 </div>
-                <h3 className="text-xl font-bold text-ink mb-2">Farmer Fair</h3>
+                <h3 className="text-xl font-bold text-ink mb-2">Fair to Farmers</h3>
                 <p className="text-neutral-600">
-                  We pay farmers 40-60% more than traditional buyers.
+                  Transparent pricing and reliable weekly payments to our partner farmers.
                 </p>
               </div>
             </Reveal>
@@ -115,8 +115,8 @@ export default function Home() {
           <div className="rounded-3xl bg-brand-deep text-white p-10 sm:p-12">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Ready for fresher eggs?</h2>
-                <p className="mt-2 text-white/80 max-w-xl">Order today and taste the difference in 24–48 hours. Traceable, farmer‑fair, delivered to your door.</p>
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Support Ghana's Farmers</h2>
+                <p className="mt-2 text-white/80 max-w-xl">Order fresh, Ghana-grown eggs and make a choice that strengthens food security and keeps our agricultural heritage alive.</p>
               </div>
               <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95">
                 Start an Order
