@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Logo from "../bibinii logo white text.svg";
 import OrderNowLogo from "../order now.svg";
+import HeaderBackground from "../header bar background.png";
 
 const mainNav = [
   { href: "/products", label: "Products" },
@@ -41,8 +42,19 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent-force'}`}>
-      <div className="h-24 grid grid-cols-3 items-center px-2 sm:px-3">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? '' : 'bg-transparent-force'}`}>
+      {isScrolled || open ? (
+        <div className="absolute inset-0">
+          <Image 
+            src={HeaderBackground} 
+            alt="" 
+            fill 
+            className="object-cover"
+            priority
+          />
+        </div>
+      ) : null}
+      <div className="relative h-24 grid grid-cols-3 items-center px-2 sm:px-3">
         {/* Left: hamburger - positioned very near left edge */}
         <div className="flex justify-start">
           <button
@@ -76,10 +88,19 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Full-screen mobile menu */}
-      <div className={`fixed inset-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className={`absolute inset-0 bg-luminous-green transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
-          <div className="h-full flex flex-col">
+             {/* Full-screen mobile menu */}
+       <div className={`fixed inset-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+         <div className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
+           <div className="absolute inset-0">
+             <Image 
+               src={HeaderBackground} 
+               alt="" 
+               fill 
+               className="object-cover"
+               priority
+             />
+           </div>
+           <div className="relative h-full flex flex-col">
             {/* Overlay top bar: X left, logo center, CTA right - same positioning as main header */}
             <div className="h-20 flex items-center">
               <div className="w-full px-2 sm:px-3">
