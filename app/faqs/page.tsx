@@ -185,7 +185,7 @@ export default function FAQsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:support@bibiiniifarms.com"
+              href="mailto:info@bibiniifarms.com"
               className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-8 py-3 font-semibold hover:brightness-110 transition-colors"
             >
               Email Support

@@ -170,8 +170,8 @@ export default function Header() {
                   <div className="space-y-4">
                     <h3 className="text-white text-lg font-semibold">Questions?</h3>
                     <p className="text-white/90 text-sm">We're happy to help!</p>
-                    <a href="mailto:contact@bibiiniifarms.com" className="text-white/90 text-sm hover:text-white transition-colors">
-                      contact@bibiiniifarms.com
+                    <a href="mailto:info@bibiniifarms.com" className="text-white/90 text-sm hover:text-white transition-colors">
+                      info@bibiniifarms.com
                     </a>
 
                     {/* Social Icons */}

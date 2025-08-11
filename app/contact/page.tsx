@@ -12,8 +12,8 @@ const contactMethods = [
     icon: "📧",
     title: "Email Us",
     description: "General inquiries and customer support",
-    contact: "hello@bibiiniifarms.com",
-    action: "mailto:hello@bibiiniifarms.com"
+    contact: "info@bibiniifarms.com",
+    action: "mailto:info@bibiniifarms.com"
   },
   {
     icon: "📞",
@@ -34,27 +34,27 @@ const contactMethods = [
 const departments = [
   {
     name: "Customer Service",
-    email: "support@bibiiniifarms.com",
+    email: "info@bibiniifarms.com",
     description: "Product questions, orders, and general support"
   },
   {
     name: "Sales & Partnerships",
-    email: "sales@bibiiniifarms.com",
+    email: "info@bibiniifarms.com",
     description: "Retail partnerships and bulk orders"
   },
   {
     name: "Farmer Partnerships",
-    email: "farmers@bibiiniifarms.com",
+    email: "info@bibiniifarms.com",
     description: "Becoming a partner farmer"
   },
   {
     name: "Press & Media",
-    email: "press@bibiiniifarms.com",
+    email: "info@bibiniifarms.com",
     description: "Media inquiries and press requests"
   },
   {
     name: "Careers",
-    email: "careers@bibiiniifarms.com",
+    email: "info@bibiniifarms.com",
     description: "Job opportunities and applications"
   }
 ];

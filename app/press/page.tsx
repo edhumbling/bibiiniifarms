@@ -134,7 +134,7 @@ export default function PressPage() {
                     <p className="text-gray-600">Director of Communications</p>
                   </div>
                   <div>
-                    <p className="text-gray-600">📧 press@bibiiniifarms.com</p>
+                    <p className="text-gray-600">📧 info@bibiniifarms.com</p>
                     <p className="text-gray-600">📞 (555) 123-4567</p>
                   </div>
                   <div>
@@ -333,7 +333,7 @@ export default function PressPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:press@bibiiniifarms.com"
+              href="mailto:info@bibiniifarms.com"
               className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-8 py-3 font-semibold hover:brightness-95 transition-all"
             >
               Contact Press Team
