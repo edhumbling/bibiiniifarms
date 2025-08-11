@@ -108,6 +108,42 @@ export default function Footer() {
           </div>
           <div className="opacity-90">Website Made by Bibinii Farms</div>
         </div>
+
+        {/* Giant marquee strip */}
+        <div className="mt-12 overflow-hidden select-none">
+          <div className="animate-scroll-horizontal flex items-center gap-16 whitespace-nowrap">
+            {/* Repeat chunk 1 */}
+            <div className="flex items-center gap-8">
+              <span
+                className="font-extrabold tracking-tighter text-black leading-none"
+                style={{ fontSize: '12vw', textShadow: '0 0 12px rgba(255,255,255,0.9), 0 0 28px rgba(255,255,255,0.5)' }}
+              >
+                Bibinii Farms
+              </span>
+              <Image src={Logo} alt="Bibinii Farms" className="h-[8vw] w-auto" />
+            </div>
+            {/* Repeat chunk 2 */}
+            <div className="flex items-center gap-8">
+              <span
+                className="font-extrabold tracking-tighter text-black leading-none"
+                style={{ fontSize: '12vw', textShadow: '0 0 12px rgba(255,255,255,0.9), 0 0 28px rgba(255,255,255,0.5)' }}
+              >
+                Bibinii Farms
+              </span>
+              <Image src={Logo} alt="Bibinii Farms" className="h-[8vw] w-auto" />
+            </div>
+            {/* Repeat chunk 3 for seamless loop */}
+            <div className="flex items-center gap-8">
+              <span
+                className="font-extrabold tracking-tighter text-black leading-none"
+                style={{ fontSize: '12vw', textShadow: '0 0 12px rgba(255,255,255,0.9), 0 0 28px rgba(255,255,255,0.5)' }}
+              >
+                Bibinii Farms
+              </span>
+              <Image src={Logo} alt="Bibinii Farms" className="h-[8vw] w-auto" />
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
