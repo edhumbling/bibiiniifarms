@@ -1,10 +1,20 @@
 import Image from "next/image";
 import Logo from "../bibinii logo white text.svg";
+import FooterBackground from "../footer background.svg";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 bg-deep-green-glow">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <footer className="mt-24 relative">
+      <div className="absolute inset-0">
+        <Image 
+          src={FooterBackground} 
+          alt="" 
+          fill 
+          className="object-cover"
+          priority
+        />
+      </div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col items-center gap-3 text-center">
           <Image src={Logo} alt="Bibinii Farms" className="h-16 w-auto" />
           <p className="mt-1 text-sm text-white/90 max-w-xl">
