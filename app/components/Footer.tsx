@@ -11,7 +11,7 @@ function SocialIcon({ label, href, children }: { label: string; href: string; ch
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-yellow-400/20 hover:bg-yellow-400/30 transition-colors"
+      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white hover:bg-gray-100 transition-colors"
     >
       {children}
     </a>
@@ -124,14 +124,13 @@ export default function Footer() {
         <div className="mt-12 relative overflow-hidden select-none">
           <div className="flex items-center justify-center">
             <span
-              className="font-extrabold tracking-tighter text-yellow-400 leading-none relative"
+              className="font-bebas-neue tracking-tighter text-yellow-400 leading-none relative"
               style={{ fontSize: '12vw', textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.6)' }}
             >
               Bibinii Farms
             </span>
           </div>
-          {/* White fade overlay from bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none"></div>
+
         </div>
       </div>
     </footer>

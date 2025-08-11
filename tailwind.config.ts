@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'bebas-neue': ['var(--font-bebas-neue)', 'sans-serif'],
+      },
       colors: {
         'happy-orange': '#ff6600',
         'deep-green': '#166534',
