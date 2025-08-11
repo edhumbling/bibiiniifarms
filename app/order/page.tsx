@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import OrderForm from "@/app/components/OrderForm";
+import FooterBackground from "../footer background.svg";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Order",
@@ -8,14 +10,34 @@ export const metadata: Metadata = {
 
 export default function OrderPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14">
-      <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">Order Eggs</h1>
-      <p className="mt-4 text-neutral-700 max-w-3xl">
-        Choose a one-time delivery or set up a weekly subscription. We’ll confirm availability and
-        delivery window by SMS/WhatsApp. Payment on delivery available.
-      </p>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative py-16">
+        <div className="absolute inset-0">
+          <Image
+            src={FooterBackground}
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Order Eggs</h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Choose a one-time delivery or set up a weekly subscription. We’ll confirm availability and delivery window by SMS/WhatsApp. Payment on delivery available.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <OrderForm />
+      {/* Order Form Section */}
+      <section className="py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <OrderForm />
+        </div>
+      </section>
     </div>
   );
 }
