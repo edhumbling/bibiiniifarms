@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import Logo from "../bibinii logo white text.svg";
+import Logo from "../bibinii logo text white.svg";
 import OrderNowLogo from "../order now.svg";
 import HeaderBackground from "../header bar background.png";
 
