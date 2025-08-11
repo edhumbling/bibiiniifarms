@@ -77,15 +77,15 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Right: Order Now Logo - positioned very near right edge */}
-        <div className="flex justify-end">
-          <Link
-            href="/order"
-            className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
-          >
-            <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
-          </Link>
-        </div>
+                 {/* Right: Order Now Logo - positioned very near right edge */}
+         <div className="flex justify-end">
+           <Link
+             href="/order"
+             className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
+           >
+             <Image src={OrderNowLogo} alt="Order Now" className="h-10 sm:h-12 w-auto" />
+           </Link>
+         </div>
       </div>
 
              {/* Full-screen mobile menu */}
@@ -116,11 +116,11 @@ export default function Header() {
                   <div className="flex justify-center">
                     <Image src={Logo} alt="Bibinii Farms" className="h-10 w-auto" priority />
                   </div>
-                  <div className="flex justify-end">
-                    <Link href="/order" onClick={() => setOpen(false)} className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200">
-                      <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
-                    </Link>
-                  </div>
+                                     <div className="flex justify-end">
+                     <Link href="/order" onClick={() => setOpen(false)} className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                       <Image src={OrderNowLogo} alt="Order Now" className="h-10 sm:h-12 w-auto" />
+                     </Link>
+                   </div>
                 </div>
               </div>
             </div>
