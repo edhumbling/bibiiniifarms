@@ -21,6 +21,10 @@ function SocialIcon({ label, href, children }: { label: string; href: string; ch
 export default function Footer() {
   return (
     <footer className="mt-24 relative text-white">
+      {/* Top separator */}
+      <div className="absolute top-0 left-0 right-0 z-10">
+        <Image src="/separator.png" alt="" width={1920} height={50} className="w-full h-auto" />
+      </div>
       {/* Background */}
       <div className="absolute inset-0">
         <Image src={FooterBackground} alt="" fill className="object-cover" priority />
