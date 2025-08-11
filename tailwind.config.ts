@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'bebas-neue': ['var(--font-bebas-neue)', 'sans-serif'],
+        'dm-serif-text': ['var(--font-dm-serif-text)', 'serif'],
       },
       colors: {
         'happy-orange': '#ff6600',

@@ -124,8 +124,8 @@ export default function Footer() {
         <div className="mt-12 relative overflow-hidden select-none">
           <div className="flex items-center justify-center">
             <span
-              className="font-bebas-neue tracking-tighter text-yellow-400 leading-none relative"
-              style={{ fontSize: '12vw', textShadow: '0 0 20px rgba(255,255,255,1), 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.6)' }}
+              className="font-dm-serif-text tracking-tighter text-yellow-400 leading-none relative"
+              style={{ fontSize: '12vw' }}
             >
               Bibinii Farms
             </span>

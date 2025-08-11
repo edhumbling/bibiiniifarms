@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Geist_Mono, Marcellus, Inter, Bebas_Neue } from "next/font/google";
+import { Geist_Mono, Marcellus, Inter, DM_Serif_Text } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -21,10 +21,10 @@ const display = Marcellus({
   variable: "--font-display",
 });
 
-const bebasNeue = Bebas_Neue({
+const dmSerifText = DM_Serif_Text({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-bebas-neue",
+  variable: "--font-dm-serif-text",
 });
 
 export const metadata: Metadata = {
@@ -65,7 +65,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${interSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased bg-white`}>
+      <body className={`${interSans.variable} ${geistMono.variable} ${dmSerifText.variable} antialiased bg-white`}>
         <div className="min-h-dvh flex flex-col">
           {/* Header */}
           <Header />
