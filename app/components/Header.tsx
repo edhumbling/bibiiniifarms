@@ -111,19 +111,31 @@ export default function Header() {
 
         {/* Menu content overlay */}
         <div className={`absolute inset-0 transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
-          {/* Single close control (X) like Happy Egg */}
-          <button
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-            className="absolute top-4 left-4 z-10 inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
-          >
-            <div className="relative w-6 h-6">
-              <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
-              <span className="absolute block h-0.5 w-6 bg-white transform -rotate-45 translate-y-2.5"></span>
+          <div className="h-full flex flex-col">
+            {/* Overlay top bar: X left, logo center, CTA right */}
+            <div className="h-20 flex items-center">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+                <div className="grid grid-cols-3 items-center">
+                  <div className="flex">
+                    <button aria-label="Close menu" onClick={() => setOpen(false)} className="inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300">
+                      <div className="relative w-6 h-6">
+                        <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
+                        <span className="absolute block h-0.5 w-6 bg-white transform -rotate-45 translate-y-2.5"></span>
+                      </div>
+                    </button>
+                  </div>
+                  <div className="flex justify-center">
+                    <Image src={Logo} alt="Bibinii Farms" className="h-10 w-auto" priority />
+                  </div>
+                  <div className="flex justify-end">
+                    <Link href="/order" onClick={() => setOpen(false)} className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                      <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </button>
 
-          <div className="h-full flex flex-col pt-16">
             {/* Main content */}
             <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
