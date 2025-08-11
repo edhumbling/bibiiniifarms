@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Logo from "../bibinii logo white text.svg";
-import OrderNowLogo from "../order now logo.svg";
+import OrderNowLogo from "../order now.svg";
 
 const mainNav = [
   { href: "/products", label: "Products" },
