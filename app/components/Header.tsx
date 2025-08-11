@@ -42,8 +42,8 @@ export default function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent-force'}`}>
-      <div className="h-24 grid grid-cols-3 items-center px-4 sm:px-6">
-        {/* Left: hamburger - positioned near left edge */}
+      <div className="h-24 grid grid-cols-3 items-center px-2 sm:px-3">
+        {/* Left: hamburger - positioned very near left edge */}
         <div className="flex justify-start">
           <button
             aria-label={open ? "Close menu" : "Open menu"}
@@ -65,7 +65,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Right: Order Now Logo - positioned near right edge */}
+        {/* Right: Order Now Logo - positioned very near right edge */}
         <div className="flex justify-end">
           <Link
             href="/order"
@@ -80,11 +80,11 @@ export default function Header() {
       <div className={`fixed inset-0 z-40 transition-all duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className={`absolute inset-0 bg-luminous-green transition-transform duration-500 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="h-full flex flex-col">
-            {/* Overlay top bar: X left, logo center, CTA right */}
+            {/* Overlay top bar: X left, logo center, CTA right - same positioning as main header */}
             <div className="h-20 flex items-center">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+              <div className="w-full px-2 sm:px-3">
                 <div className="grid grid-cols-3 items-center">
-                  <div className="flex">
+                  <div className="flex justify-start">
                     <button aria-label="Close menu" onClick={() => setOpen(false)} className="inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300">
                       <div className="relative w-6 h-6">
                         <span className="absolute block h-0.5 w-6 bg-white transform rotate-45 translate-y-2.5"></span>
