@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import FooterBackground from "../footer background.svg";
 import { ReactNode } from "react";
 
 type Props = {
@@ -14,7 +16,17 @@ type Props = {
 export default function ValueSection({ title, quote, description, ctaLabel, ctaHref, accent = "cream", visual }: Props) {
   const bg = accent === "egg" ? "bg-brand-egg/20" : accent === "deep" ? "bg-brand-deep/10" : "bg-cream";
   return (
-    <section className={`rounded-3xl ${bg} p-6 sm:p-8 ring-1 ring-neutral-200`}>
+    <section className={`rounded-3xl relative p-6 sm:p-8 ring-1 ring-neutral-200 overflow-hidden`}>
+      <div className="absolute inset-0">
+        <Image 
+          src={FooterBackground} 
+          alt="" 
+          fill 
+          className="object-cover"
+          priority
+        />
+      </div>
+      <div className="relative">
       <div className="grid lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-6">
           <h2 className="display text-2xl sm:text-3xl font-extrabold text-ink">{title}</h2>
@@ -29,6 +41,7 @@ export default function ValueSection({ title, quote, description, ctaLabel, ctaH
         <div className="lg:col-span-6">
           {visual}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FooterBackground from "../footer background.svg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -101,8 +102,17 @@ export default function CareersPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-luminous-green py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16">
+        <div className="absolute inset-0">
+          <Image 
+            src={FooterBackground} 
+            alt="" 
+            fill 
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Join Our Team

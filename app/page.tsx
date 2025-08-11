@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
 import ImageCarousel from "@/app/components/ImageCarousel";
+import FooterBackground from "./footer background.svg";
 
 export default function Home() {
   return (
@@ -123,15 +125,26 @@ export default function Home() {
       {/* CTA */}
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-luminous-green text-white p-10 sm:p-12">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Support Ghana's Farmers</h2>
-                <p className="mt-2 text-white/80 max-w-xl">Order fresh, Ghana-grown eggs and make a choice that strengthens food security and keeps our agricultural heritage alive.</p>
+          <div className="rounded-3xl relative text-white p-10 sm:p-12 overflow-hidden">
+            <div className="absolute inset-0">
+              <Image 
+                src={FooterBackground} 
+                alt="" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="relative">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Support Ghana's Farmers</h2>
+                  <p className="mt-2 text-white/80 max-w-xl">Order fresh, Ghana-grown eggs and make a choice that strengthens food security and keeps our agricultural heritage alive.</p>
+                </div>
+                <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95">
+                  Start an Order
+                </Link>
               </div>
-              <Link href="/order" className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95">
-                Start an Order
-              </Link>
             </div>
           </div>
         </div>
