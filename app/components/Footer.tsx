@@ -21,10 +21,6 @@ function SocialIcon({ label, href, children }: { label: string; href: string; ch
 export default function Footer() {
   return (
     <footer className="mt-24 relative text-white">
-      {/* Top separator */}
-      <div className="absolute top-0 left-0 right-0 z-10">
-        <Image src="/separator.png" alt="" width={1920} height={50} className="w-full h-auto" />
-      </div>
       {/* Background */}
       <div className="absolute inset-0">
         <Image src={FooterBackground} alt="" fill className="object-cover" priority />
@@ -127,12 +123,12 @@ export default function Footer() {
         {/* Static giant text strip */}
         <div className="mt-12 relative overflow-hidden select-none">
           <div className="flex items-center justify-center">
-            <span
-              className="font-dm-serif-text tracking-tighter text-yellow-400 leading-none relative"
-              style={{ fontSize: '12vw' }}
-            >
-              Bibinii Farms
-            </span>
+                       <span
+             className="font-dm-serif-text tracking-tighter text-yellow-400 leading-none relative font-black"
+             style={{ fontSize: '18vw' }}
+           >
+             Bibinii Farms
+           </span>
           </div>
 
         </div>

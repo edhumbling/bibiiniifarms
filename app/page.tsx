@@ -25,11 +25,6 @@ export default function Home() {
         {/* Hero content moved to next section */}
       </section>
 
-      {/* Separator */}
-      <div className="relative">
-        <Image src="/separator.png" alt="" width={1920} height={50} className="w-full h-auto" />
-      </div>
-
       {/* Why Bibinii */}
       <section className="relative py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -127,18 +122,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Separator */}
-      <div className="relative">
-        <Image src="/separator.png" alt="" width={1920} height={50} className="w-full h-auto" />
-      </div>
-
       {/* Image Carousel */}
       <ImageCarousel />
-
-      {/* Separator */}
-      <div className="relative">
-        <Image src="/separator.png" alt="" width={1920} height={50} className="w-full h-auto" />
-      </div>
 
       {/* CTA */}
       <section className="py-12 sm:py-16">

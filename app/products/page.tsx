@@ -34,11 +34,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Separator */}
-      <div className="relative">
-        <Image src="/separator.png" alt="" width={1920} height={50} className="w-full h-auto" />
-      </div>
-
       {/* Products Grid */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
