@@ -11,7 +11,7 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -40,7 +40,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/heritage"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                  className="inline-flex items-center text-emerald-glow hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -59,7 +59,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/pasture-raised"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                  className="inline-flex items-center text-emerald-glow hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -78,7 +78,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/organic"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                  className="inline-flex items-center text-emerald-glow hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -97,7 +97,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/free-range"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                  className="inline-flex items-center text-emerald-glow hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -119,7 +119,7 @@ export default function ProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🐔</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Happy Chickens</h3>
@@ -129,7 +129,7 @@ export default function ProductsPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Natural Feed</h3>
@@ -139,7 +139,7 @@ export default function ProductsPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">✨</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Fresh Daily</h3>

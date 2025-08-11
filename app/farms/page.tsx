@@ -11,7 +11,7 @@ export default function FarmsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -43,19 +43,19 @@ export default function FarmsPage() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-emerald-glow rounded-full mr-3"></span>
                   <span className="text-gray-700">Rotational grazing systems</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-emerald-glow rounded-full mr-3"></span>
                   <span className="text-gray-700">Chemical-free pastures</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-emerald-glow rounded-full mr-3"></span>
                   <span className="text-gray-700">Solar-powered facilities</span>
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-emerald-glow rounded-full mr-3"></span>
                   <span className="text-gray-700">Water conservation systems</span>
                 </li>
               </ul>
@@ -68,7 +68,7 @@ export default function FarmsPage() {
           {/* Farm Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌾</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Open Pastures</h3>
@@ -78,7 +78,7 @@ export default function FarmsPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🏡</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Comfortable Coops</h3>
@@ -88,7 +88,7 @@ export default function FarmsPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">💧</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Clean Water</h3>
@@ -151,7 +151,7 @@ export default function FarmsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-orange-600 text-white px-8 py-3 font-semibold hover:bg-orange-700 transition-colors"
+            className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-8 py-3 font-semibold hover:brightness-110 transition-colors"
           >
             Schedule a Tour
           </Link>

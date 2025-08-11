@@ -11,7 +11,7 @@ export default function BecomeFarmerPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -36,7 +36,7 @@ export default function BecomeFarmerPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">💰</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Guaranteed Income</h3>
@@ -46,7 +46,7 @@ export default function BecomeFarmerPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🎓</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Training & Support</h3>
@@ -56,7 +56,7 @@ export default function BecomeFarmerPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Sustainable Practices</h3>
@@ -76,7 +76,7 @@ export default function BecomeFarmerPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Partnership Requirements</h2>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="w-6 h-6 bg-emerald-glow rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <div>
@@ -86,7 +86,7 @@ export default function BecomeFarmerPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="w-6 h-6 bg-emerald-glow rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <div>
@@ -96,7 +96,7 @@ export default function BecomeFarmerPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="w-6 h-6 bg-emerald-glow rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <div>
@@ -106,7 +106,7 @@ export default function BecomeFarmerPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="w-6 h-6 bg-emerald-glow rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <div>
@@ -136,7 +136,7 @@ export default function BecomeFarmerPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold">1</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Apply</h3>
@@ -146,7 +146,7 @@ export default function BecomeFarmerPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold">2</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Evaluate</h3>
@@ -156,7 +156,7 @@ export default function BecomeFarmerPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold">3</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Train</h3>
@@ -166,7 +166,7 @@ export default function BecomeFarmerPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold">4</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Launch</h3>
@@ -179,7 +179,7 @@ export default function BecomeFarmerPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
@@ -187,7 +187,7 @@ export default function BecomeFarmerPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-white text-orange-600 px-8 py-3 font-semibold hover:bg-white/90 transition-colors"
+            className="inline-flex items-center justify-center rounded-full bg-white text-ink px-8 py-3 font-semibold hover:bg-white/90 transition-colors"
           >
             Apply Now
           </Link>

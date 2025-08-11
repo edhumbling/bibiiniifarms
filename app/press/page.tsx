@@ -98,7 +98,7 @@ export default function PressPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -167,7 +167,7 @@ export default function PressPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow">
                         {release.category}
                       </span>
                       <span className="text-sm text-gray-500">{release.date}</span>
@@ -176,7 +176,7 @@ export default function PressPage() {
                     <p className="text-gray-600 mb-4">{release.excerpt}</p>
                     <Link
                       href={`/press/${release.id}`}
-                      className="text-orange-600 hover:text-orange-700 font-medium"
+                      className="text-emerald-glow hover:brightness-110 font-medium"
                     >
                       Read Full Release →
                     </Link>
@@ -189,7 +189,7 @@ export default function PressPage() {
           <div className="text-center mt-8">
             <Link
               href="/press/archive"
-              className="inline-flex items-center justify-center rounded-full border border-orange-600 text-orange-600 px-8 py-3 font-semibold hover:bg-orange-50 transition-colors"
+              className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-8 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors"
             >
               View All Press Releases
             </Link>
@@ -214,7 +214,7 @@ export default function PressPage() {
                 <p className="text-gray-600 mb-4">{item.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">{item.fileType}</span>
-                  <button className="bg-orange-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-orange-700 transition-colors">
+                  <button className="bg-luminous-green text-white px-4 py-2 rounded text-sm font-medium hover:brightness-110 transition-colors">
                     Download
                   </button>
                 </div>
@@ -238,8 +238,8 @@ export default function PressPage() {
             {awards.map((award, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm border">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <span className="text-orange-600 font-bold">{award.year}</span>
+                  <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center">
+                    <span className="text-emerald-glow font-bold">{award.year}</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900">{award.award}</h3>
@@ -274,7 +274,7 @@ export default function PressPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Feature article highlighting Bibinii Farms' innovative approach to regenerative agriculture...
               </p>
-              <a href="#" className="text-orange-600 hover:text-orange-700 font-medium text-sm">
+              <a href="#" className="text-emerald-glow hover:brightness-110 font-medium text-sm">
                 Read Article →
               </a>
             </div>
@@ -290,7 +290,7 @@ export default function PressPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Profile of Bibinii Farms' commitment to ethical farming practices and community impact...
               </p>
-              <a href="#" className="text-orange-600 hover:text-orange-700 font-medium text-sm">
+              <a href="#" className="text-emerald-glow hover:brightness-110 font-medium text-sm">
                 Read Article →
               </a>
             </div>
@@ -306,7 +306,7 @@ export default function PressPage() {
               <p className="text-gray-600 text-sm mb-4">
                 How Bibinii Farms is revolutionizing the connection between farmers and consumers...
               </p>
-              <a href="#" className="text-orange-600 hover:text-orange-700 font-medium text-sm">
+              <a href="#" className="text-emerald-glow hover:brightness-110 font-medium text-sm">
                 Read Article →
               </a>
             </div>
@@ -324,11 +324,11 @@ export default function PressPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:press@bibiiniifarms.com"
-              className="inline-flex items-center justify-center rounded-full bg-orange-600 text-white px-8 py-3 font-semibold hover:bg-orange-700 transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-8 py-3 font-semibold hover:brightness-95 transition-all"
             >
               Contact Press Team
             </a>
-            <button className="inline-flex items-center justify-center rounded-full border border-orange-600 text-orange-600 px-8 py-3 font-semibold hover:bg-orange-50 transition-colors">
+            <button className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-8 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors">
               Schedule Interview
             </button>
           </div>

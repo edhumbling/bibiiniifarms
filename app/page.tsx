@@ -123,7 +123,7 @@ export default function Home() {
       {/* CTA */}
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-brand-deep text-white p-10 sm:p-12">
+          <div className="rounded-3xl bg-luminous-green text-white p-10 sm:p-12">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Support Ghana's Farmers</h2>

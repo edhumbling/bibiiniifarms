@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-brand-deep py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -244,7 +244,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-brand-deep py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Join Our Mission</h2>
           <p className="text-lg text-white/80 mb-8 max-w-3xl mx-auto">

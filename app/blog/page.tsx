@@ -64,7 +64,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -86,7 +86,7 @@ export default function BlogPage() {
                 key={category}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   category === "All"
-                    ? "bg-orange-600 text-white"
+                    ? "bg-emerald-glow text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -103,12 +103,12 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="bg-orange-100 h-48 flex items-center justify-center">
-                  <span className="text-orange-700 text-lg font-semibold">Blog Image</span>
+                <div className="bg-emerald-glow/10 h-48 flex items-center justify-center">
+                  <span className="text-emerald-glow text-lg font-semibold">Blog Image</span>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow">
                       {post.category}
                     </span>
                     <span className="text-sm text-gray-500">{post.readTime}</span>
@@ -123,7 +123,7 @@ export default function BlogPage() {
                     <span className="text-sm text-gray-500">{post.date}</span>
                     <Link
                       href={`/blog/${post.id}`}
-                      className="text-orange-600 hover:text-orange-700 font-medium text-sm"
+                      className="text-emerald-glow hover:brightness-110 font-medium text-sm"
                     >
                       Read More →
                     </Link>
@@ -150,7 +150,7 @@ export default function BlogPage() {
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
-                <button className="px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+                <button className="px-6 py-3 bg-luminous-green text-white rounded-lg font-semibold hover:brightness-110 transition-colors">
                   Subscribe
                 </button>
               </div>
@@ -174,7 +174,7 @@ export default function BlogPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🥚</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Nutrition</h3>
@@ -184,7 +184,7 @@ export default function BlogPage() {
             </div>
             
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Sustainability</h3>
@@ -194,7 +194,7 @@ export default function BlogPage() {
             </div>
             
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">👨‍🌾</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Farmer Stories</h3>
@@ -204,7 +204,7 @@ export default function BlogPage() {
             </div>
             
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🍳</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Recipes</h3>

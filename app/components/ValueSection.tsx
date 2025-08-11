@@ -21,7 +21,7 @@ export default function ValueSection({ title, quote, description, ctaLabel, ctaH
           {quote && <p className="mt-2 italic text-neutral-700">“{quote}”</p>}
           <p className="mt-4 text-neutral-700">{description}</p>
           {ctaLabel && ctaHref && (
-            <Link href={ctaHref} className="mt-6 inline-flex rounded-full bg-brand-deep text-white px-5 py-2 font-semibold">
+            <Link href={ctaHref} className="mt-6 inline-flex rounded-full bg-luminous-green text-white px-5 py-2 font-semibold hover:brightness-95 transition-all">
               {ctaLabel}
             </Link>
           )}

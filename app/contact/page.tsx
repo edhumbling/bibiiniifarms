@@ -62,7 +62,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -81,14 +81,14 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactMethods.map((method, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">{method.icon}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{method.title}</h3>
                 <p className="text-gray-600 mb-4">{method.description}</p>
                 <a
                   href={method.action}
-                  className="text-orange-600 hover:text-orange-700 font-medium"
+                  className="text-emerald-glow hover:brightness-110 font-medium"
                 >
                   {method.contact}
                 </a>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                       type="text"
                       id="firstName"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-glow focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                       type="text"
                       id="lastName"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-glow focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                     type="email"
                     id="email"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-glow focus:border-transparent"
                   />
                 </div>
 
@@ -150,7 +150,7 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-glow focus:border-transparent"
                   />
                 </div>
 
@@ -161,7 +161,7 @@ export default function ContactPage() {
                   <select
                     id="subject"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-glow focus:border-transparent"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -188,7 +188,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+                  className="w-full bg-luminous-green text-white py-3 rounded-lg font-semibold hover:brightness-95 transition-all"
                 >
                   Send Message
                 </button>

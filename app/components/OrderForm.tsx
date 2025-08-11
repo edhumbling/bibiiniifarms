@@ -51,7 +51,7 @@ export default function OrderForm() {
       </div>
 
       <div className="flex justify-end">
-        <button className="inline-flex items-center justify-center rounded-full bg-brand-deep text-white px-6 py-3 font-semibold hover:bg-brand-deep/90 transition-colors">Submit Order Request</button>
+        <button className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-6 py-3 font-semibold hover:brightness-95 transition-all">Submit Order Request</button>
       </div>
     </form>
   );

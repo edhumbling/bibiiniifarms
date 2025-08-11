@@ -84,7 +84,7 @@ export default function FAQsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-happy-orange py-16">
+      <section className="bg-luminous-green py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -106,7 +106,7 @@ export default function FAQsPage() {
               placeholder="Search FAQs..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-glow focus:border-transparent"
             />
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,7 +126,7 @@ export default function FAQsPage() {
                 key={category}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   category === "All"
-                    ? "bg-orange-600 text-white"
+                    ? "bg-emerald-glow text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -146,7 +146,7 @@ export default function FAQsPage() {
                 <button className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow">
                         {faq.category}
                       </span>
                     </div>
@@ -175,13 +175,13 @@ export default function FAQsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:support@bibiiniifarms.com"
-              className="inline-flex items-center justify-center rounded-full bg-orange-600 text-white px-8 py-3 font-semibold hover:bg-orange-700 transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-8 py-3 font-semibold hover:brightness-110 transition-colors"
             >
               Email Support
             </a>
             <a
               href="tel:+1-555-123-4567"
-              className="inline-flex items-center justify-center rounded-full border border-orange-600 text-orange-600 px-8 py-3 font-semibold hover:bg-orange-50 transition-colors"
+              className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-8 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors"
             >
               Call Us
             </a>
