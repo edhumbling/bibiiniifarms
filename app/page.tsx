@@ -11,12 +11,13 @@ export default function Home() {
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src="https://ik.imagekit.io/humbling/Bibinii%20promo%20Hero%20Video.mp4"
+            src="https://ik.imagekit.io/humbling/Bibinii%20Promo%20Video-8_11_2025,%203_03%E2%80%AFPM.mp4"
             className="w-full h-full object-cover"
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>

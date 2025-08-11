@@ -49,6 +49,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://ik.imagekit.io" />
+        <link
+          rel="preload"
+          as="video"
+          href="https://ik.imagekit.io/humbling/Bibinii%20Promo%20Video-8_11_2025,%203_03%E2%80%AFPM.mp4"
+          type="video/mp4"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${interSans.variable} ${geistMono.variable} antialiased bg-white`}>
         <div className="min-h-dvh flex flex-col">
           {/* Header */}
