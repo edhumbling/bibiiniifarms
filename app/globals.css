@@ -116,3 +116,9 @@ body {
   background: linear-gradient(90deg, #064e3b 0%, #0d4f3c 50%, #1a7a5e 100%);
   box-shadow: 0 0 20px rgba(26, 122, 94, 0.4), 0 0 40px rgba(16, 185, 129, 0.2);
 }
+
+/* Force transparent background utility (overrides any inherited bg) */
+.bg-transparent-force {
+  background: transparent !important;
+  background-color: transparent !important;
+}

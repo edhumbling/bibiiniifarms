@@ -30,16 +30,18 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-      setIsScrolled(window.scrollY > heroHeight * 0.8);
+      // Start the solid background late to keep header transparent over the hero
+      const threshold = Math.max(160, window.innerHeight * 0.6);
+      setIsScrolled(window.scrollY > threshold);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent'}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent-force'}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-24 grid grid-cols-3 items-center">
           {/* Left: hamburger */}
