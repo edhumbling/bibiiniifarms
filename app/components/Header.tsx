@@ -42,39 +42,37 @@ export default function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? 'bg-luminous-green' : 'bg-transparent-force'}`}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-24 grid grid-cols-3 items-center">
-          {/* Left: hamburger */}
-          <div className="flex">
-            <button
-              aria-label={open ? "Close menu" : "Open menu"}
-              onClick={() => setOpen(!open)}
-              className="inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
-            >
-              <div className="relative w-6 h-6">
-                <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out ${open ? 'rotate-45 translate-y-2.5' : 'translate-y-0'}`}></span>
-                <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out translate-y-2.5 ${open ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out translate-y-5 ${open ? '-rotate-45 -translate-y-2.5' : 'translate-y-0'}`}></span>
-              </div>
-            </button>
-          </div>
+      <div className="h-24 grid grid-cols-3 items-center px-4 sm:px-6">
+        {/* Left: hamburger - positioned near left edge */}
+        <div className="flex justify-start">
+          <button
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen(!open)}
+            className="inline-flex items-center justify-center h-12 w-12 hover:bg-white/10 rounded transition-all duration-300"
+          >
+            <div className="relative w-6 h-6">
+              <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out ${open ? 'rotate-45 translate-y-2.5' : 'translate-y-0'}`}></span>
+              <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out translate-y-2.5 ${open ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`absolute block h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out translate-y-5 ${open ? '-rotate-45 -translate-y-2.5' : 'translate-y-0'}`}></span>
+            </div>
+          </button>
+        </div>
 
-          {/* Centered logo - 3x size */}
-          <div className="flex justify-center">
-            <Link href="/" className="block">
-              <Image src={Logo} alt="Bibinii Farms" className="h-16 w-auto" priority />
-            </Link>
-          </div>
+        {/* Centered logo - 3x size */}
+        <div className="flex justify-center">
+          <Link href="/" className="block">
+            <Image src={Logo} alt="Bibinii Farms" className="h-16 w-auto" priority />
+          </Link>
+        </div>
 
-          {/* Right: Order Now Logo */}
-          <div className="flex justify-end">
-            <Link
-              href="/order"
-              className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
-            >
-              <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
-            </Link>
-          </div>
+        {/* Right: Order Now Logo - positioned near right edge */}
+        <div className="flex justify-end">
+          <Link
+            href="/order"
+            className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
+          >
+            <Image src={OrderNowLogo} alt="Order Now" className="h-14 w-auto" />
+          </Link>
         </div>
       </div>
 
