@@ -21,13 +21,12 @@ export default function Home() {
           <div className="text-center text-white px-4 sm:px-6 lg:px-8">
             <Reveal>
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
-                Fresh eggs from{" "}
-                <span className="text-yellow-300">happy chickens</span>
+                Fresh Eggs. Ghana Grown. Farmer Powered.
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
-                Ghana-grown eggs directly from local poultry farmers. Fighting imports, feeding communities, protecting livelihoods.
+                We deliver fresh, Ghana-grown eggs directly from local poultry farmers to your home or business — fighting imports, feeding communities, and protecting livelihoods.
               </p>
             </Reveal>
             <Reveal delay={0.4}>
@@ -56,7 +55,7 @@ export default function Home() {
           <div className="text-center">
             <Reveal>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
-                Why choose Bibinii?
+                Why Choose Bibinii Farms?
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
@@ -66,11 +65,11 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Reveal delay={0.2}>
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
-                  <span className="text-2xl">🚚</span>
+                  <span className="text-2xl">🥚</span>
                 </div>
                 <h3 className="text-xl font-bold text-ink mb-2">Freshness Guaranteed</h3>
                 <p className="text-neutral-600">
@@ -82,7 +81,7 @@ export default function Home() {
             <Reveal delay={0.3}>
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
-                  <span className="text-2xl">🌾</span>
+                  <span className="text-2xl">🤝</span>
                 </div>
                 <h3 className="text-xl font-bold text-ink mb-2">Fair to Farmers</h3>
                 <p className="text-neutral-600">
@@ -94,11 +93,23 @@ export default function Home() {
             <Reveal delay={0.4}>
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
-                  <span className="text-2xl">🔍</span>
+                  <span className="text-2xl">🚚</span>
                 </div>
-                <h3 className="text-xl font-bold text-ink mb-2">Fully Traceable</h3>
+                <h3 className="text-xl font-bold text-ink mb-2">Flexible Access</h3>
                 <p className="text-neutral-600">
-                  Know exactly which farm your eggs came from with our QR tracking.
+                  Doorstep delivery or convenient pickup hubs.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.5}>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-egg rounded-2xl mb-4">
+                  <span className="text-2xl">♻</span>
+                </div>
+                <h3 className="text-xl font-bold text-ink mb-2">Sustainably Minded</h3>
+                <p className="text-neutral-600">
+                  Eco-friendly crates, zero-waste practices, and community composting.
                 </p>
               </div>
             </Reveal>
