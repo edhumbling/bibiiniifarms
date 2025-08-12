@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import * as Sentry from '@sentry/nextjs';
+import { startTransaction } from '@sentry/browser';
 
 export default function SentryExamplePage() {
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -27,7 +28,7 @@ export default function SentryExamplePage() {
 
   const triggerPerformanceIssue = () => {
     // Simulate a performance issue
-    const transaction = Sentry.startTransaction({
+    const transaction = startTransaction({
       name: 'Test Performance Transaction',
       op: 'test.performance',
     });
