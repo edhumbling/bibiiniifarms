@@ -3,6 +3,7 @@ import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
 import ImageCarousel from "@/app/components/ImageCarousel";
 import FooterBackground from "./footer background.svg";
+import SentryTestButton from "@/app/components/SentryTestButton";
 
 export default function Home() {
   return (
@@ -152,6 +153,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Sentry Test Button - Only visible in development */}
+      <SentryTestButton />
     </div>
   );
 }
