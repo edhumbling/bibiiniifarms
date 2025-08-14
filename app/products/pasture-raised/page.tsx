@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,11 +19,21 @@ export default function PastureRaisedProductPage() {
           priority
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/10" />
+        <div className="absolute top-4 left-4">
+          <Link href="/products" className="inline-flex items-center gap-2 rounded-full bg-black/40 text-white px-4 py-2 backdrop-blur-md ring-1 ring-white/20 hover:bg-black/50 transition">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            Back to products
+          </Link>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-md">Pasture Raised</h1>
+        </div>
       </section>
 
       <section className="py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose prose-lg">
-          <h2>Why pasture matters</h2>
+          <h2>Why <strong>pasture</strong> matters</h2>
           <p>
             Pasture-raised hens spend most of their day outside, foraging and expressing natural behaviors.
             This active lifestyle contributes to firm whites, bright yolks, and nuanced flavor.
@@ -56,6 +67,15 @@ export default function PastureRaisedProductPage() {
             Movement and sunlight are part of the recipe. By designing for natural behaviors, we reduce stress
             and support resilience—qualities that translate into dependable egg quality week after week.
           </p>
+          <h3>Nutritional and culinary notes</h3>
+          <p>
+            Pasture access can influence yolk color and fatty acid profile. In the kitchen, expect standout
+            performance in frying, poaching, and baking where structure and flavor both matter.
+          </p>
+          <p>
+            Movement and sunlight are part of the recipe. By designing for natural behaviors, we reduce stress
+            and support resilience—qualities that translate into dependable egg quality week after week.
+          </p>
           <h3>Kitchen inspiration</h3>
           <ul>
             <li>Fried in a hot pan with shea or coconut oil for lacy edges.</li>
@@ -67,6 +87,26 @@ export default function PastureRaisedProductPage() {
             Look for intact shells and store chilled. For the best texture, let eggs sit at room temperature
             for 10–15 minutes before cooking.
           </p>
+          <hr />
+          <div className="not-prose mt-8">
+            <h3 className="text-xl font-semibold mb-3">Share this article</h3>
+            {(() => {
+              const url = encodeURIComponent("https://bibiniifarms.com/products/pasture-raised/");
+              const text = encodeURIComponent("Pasture Raised eggs from Bibinii Farms—sun, space, and natural behavior.");
+              const title = encodeURIComponent("Pasture Raised Eggs by Bibinii Farms");
+              return (
+                <div className="flex flex-wrap gap-3">
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="_blank" rel="noopener noreferrer">Facebook</a>
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`https://twitter.com/intent/tweet?url=${url}&text=${text}`} target="_blank" rel="noopener noreferrer">X / Twitter</a>
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`https://wa.me/?text=${text}%20${url}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`https://t.me/share/url?url=${url}&text=${text}`} target="_blank" rel="noopener noreferrer">Telegram</a>
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`https://www.reddit.com/submit?url=${url}&title=${title}`} target="_blank" rel="noopener noreferrer">Reddit</a>
+                  <a className="inline-flex items-center px-3 py-2 rounded-full ring-1 ring-neutral-300 hover:bg-neutral-100" href={`mailto:?subject=${title}&body=${text}%20${url}`} target="_blank" rel="noopener noreferrer">Email</a>
+                </div>
+              );
+            })()}
+          </div>
         </div>
       </section>
     </div>
