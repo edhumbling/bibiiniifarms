@@ -138,7 +138,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                          className={`block text-white hover:text-white/80 transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''}`}
+                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''}`}
                         >
                           {item.label}
                         </Link>
@@ -158,7 +158,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                          className={`block text-white hover:text-white/80 transition-colors text-lg font-medium ${active ? 'text-white/80' : ''}`}
+                           className={`block text-white hover:text-brand-egg transition-colors text-lg font-medium ${active ? 'text-white/80' : ''}`}
                         >
                           {item.label}
                         </Link>
