@@ -1,4 +1,4 @@
-npm run build'use client';
+'use client';
 
 import { useState } from 'react';
 import * as Sentry from '@sentry/nextjs';
