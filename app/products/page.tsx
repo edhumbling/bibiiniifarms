@@ -4,6 +4,7 @@ import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import HeritageEggsSlider from "@/app/components/HeritageEggsSlider";
 import PastureRaisedSlider from "@/app/components/PastureRaisedSlider";
 import OrganicSlider from "@/app/components/OrganicSlider";
+import FreeRangeSlider from "@/app/components/FreeRangeSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -98,9 +99,7 @@ export default function ProductsPage() {
 
             {/* Free Range */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-red-500 h-48 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Free Range</span>
-              </div>
+              <FreeRangeSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Free Range</h3>
                 <p className="text-gray-600 mb-4">
