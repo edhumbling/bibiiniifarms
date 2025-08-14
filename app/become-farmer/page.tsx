@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import FooterBackground from "../footer background.svg";
 import { Metadata } from "next";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Partner",
@@ -12,15 +11,20 @@ export default function BecomeFarmerPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16">
-        <div className="absolute inset-0">
-          <Image 
-            src={FooterBackground} 
-            alt="" 
-            fill 
-            className="object-cover"
-            priority
-          />
+      <section className="relative isolate min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        <div aria-hidden className="absolute inset-0 overflow-hidden">
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={DEFAULT_HERO_POSTER}
+          >
+            <source src="https://ik.imagekit.io/spj5u0tzx/Bibinii%20Hen%20House%20Video%202-8_14_2025,%207_59%E2%80%AFAM.mp4?updatedAt=1755161236661" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
