@@ -1,24 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Bibinii Farms website built with [Next.js](https://nextjs.org) App Router and Tailwind CSS. The app is configured for static export and Netlify deployment.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Key entry points:
+- `app/layout.tsx`: root layout, fonts, global providers.
+- `app/page.tsx`: home page.
+- `app/products/page.tsx`: products listing with sliders for Heritage, Pasture Raised, Organic, and Free Range.
+- `app/sitemap.ts`: static sitemap config.
+- `next.config.ts`: static export and remote image domains.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tech:
+- Next.js App Router (static export).
+- TypeScript.
+- Tailwind CSS.
+- Sentry instrumentation (see `sentry.*.config.ts`).
+- Embla carousel for image sliders.
+
+## Scripts
+
+- `npm run dev`: start local dev server
+- `npm run build`: production build (static export)
+- `npm run start`: serve static export (via Netlify/preview)
+
+Build output is written to `out/` due to `output: 'export'` in `next.config.ts`.
 
 ## Learn More
 
@@ -29,8 +42,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment (Netlify)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is set up for Netlify static hosting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Build command: `npm run build`
+- Publish directory: `out`
+- Environment: Node 18+ recommended
+
+Sitemap is generated via `app/sitemap.ts` and exported to `out/sitemap.xml` during build. Robots should point to `/sitemap.xml`.
+
+For Netlify-specific configuration and workflow customization, adjust your site settings or add a `netlify.toml` if needed.
