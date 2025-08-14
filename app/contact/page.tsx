@@ -65,7 +65,7 @@ export default function ContactPage() {
       <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src="https://ik.imagekit.io/spj5u0tzx/Bibinii%20Hen%20House%20Video%203-8_14_2025,%204_03%E2%80%AFPM.mp4"
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_14_2025,%204_03%E2%80%AFPM.mp4"
             className="w-full h-full object-cover"
             autoPlay
             muted

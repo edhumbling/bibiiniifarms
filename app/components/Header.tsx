@@ -214,20 +214,20 @@ export default function Header() {
                   <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
                     <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
                     <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
-                  </Link>
+                </Link>
 
                   {/* Pasture Raised */}
                   <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
                     <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
                     <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
-                  </Link>
+                </Link>
 
                   {/* Range (new 4th) */}
                   <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
                     <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
                     <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Range</span>
                   </Link>
-                </div>
+                  </div>
               </div>
             </div>
           </div>
