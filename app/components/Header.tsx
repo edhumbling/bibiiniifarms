@@ -200,55 +200,54 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Bottom product quick-links */}
-            <div className="px-6 pb-8">
-              <div className="grid grid-cols-3 gap-4 items-end">
-                {/* Heritage (left) */}
-                <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-2">
-                  <div className="relative w-24 h-24 rounded-lg overflow-hidden transition-all duration-300 ring-1 ring-white/20 group-hover:ring-brand-egg group-hover:shadow-[0_0_24px_#ffd75e80] group-hover:scale-105 group-hover:animate-bounce">
-                    <Image
+              {/* Product images block moved into scroll area and placed further down */}
+              <div className="mt-24">
+                <div className="grid grid-cols-2 gap-6">
+                  {/* Heritage */}
+                  <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img
                       src="https://ik.imagekit.io/spj5u0tzx/1.png"
                       alt="Heritage"
-                      fill
-                      className="object-cover"
-                      sizes="96px"
-                      priority
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
                     />
-                  </div>
-                  <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
-                </Link>
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
+                  </Link>
 
-                {/* Organic (center) */}
-                <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-2">
-                  <div className="relative w-24 h-24 rounded-lg overflow-hidden transition-all duration-300 ring-1 ring-white/20 group-hover:ring-brand-egg group-hover:shadow-[0_0_24px_#ffd75e80] group-hover:scale-105 group-hover:animate-bounce">
-                    <Image
+                  {/* Organic */}
+                  <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img
                       src="https://ik.imagekit.io/spj5u0tzx/3.png"
                       alt="Organic"
-                      fill
-                      className="object-cover"
-                      sizes="96px"
-                      priority
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
                     />
-                  </div>
-                  <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors">Organic</span>
-                </Link>
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
+                  </Link>
 
-                {/* Pasture (right) */}
-                <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-2">
-                  <div className="relative w-24 h-24 rounded-lg overflow-hidden transition-all duration-300 ring-1 ring-white/20 group-hover:ring-brand-egg group-hover:shadow-[0_0_24px_#ffd75e80] group-hover:scale-105 group-hover:animate-bounce">
-                    <Image
+                  {/* Pasture Raised */}
+                  <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img
                       src="https://ik.imagekit.io/spj5u0tzx/2.png"
                       alt="Pasture Raised"
-                      fill
-                      className="object-cover"
-                      sizes="96px"
-                      priority
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
                     />
-                  </div>
-                  <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
-                </Link>
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
+                  </Link>
+
+                  {/* Range (new 4th) */}
+                  <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img
+                      src="https://ik.imagekit.io/spj5u0tzx/4.png"
+                      alt="Range"
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Range</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
