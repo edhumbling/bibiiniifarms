@@ -1,5 +1,4 @@
 import Image from "next/image";
-import HeritageEggsSlider from "@/app/components/HeritageEggsSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,19 +9,15 @@ export const metadata: Metadata = {
 export default function HeritageProductPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative h-[45vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="w-full h-full">
-            <HeritageEggsSlider />
-          </div>
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="h-full w-full flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3">Heritage Eggs</h1>
-            <p className="text-white/90 max-w-2xl">Time-honored breeds. Deep golden yolks. Uncompromising flavor.</p>
-          </div>
-        </div>
+      <section className="relative h-[70vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/spj5u0tzx/e4c0ee8d-c0e0-4116-b9c2-ecd52c99fa74.png"
+          alt="Heritage eggs hero"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
       </section>
 
       <section className="py-12">
@@ -39,11 +34,20 @@ export default function HeritageProductPage() {
             and yolks that hold together when poached or soft-boiled. Chefs love them for classic techniques,
             home cooks for Sunday breakfasts that feel like a celebration.
           </p>
+          <p>
+            We steward this lineage by maintaining healthy genetics, prioritizing welfare, and honoring time-tested
+            methods. The result is an egg that tells a story—from the flock to your table—with character in every bite.
+          </p>
           <h3>Breeds, feed, and welfare</h3>
           <p>
             We focus on balanced, high-quality feed and generous access to outdoor space. The result is a
             nutrient-dense egg with standout color and flavor. Welfare drives every decision—from housing and
             shade to clean water access—because healthy hens lay better eggs.
+          </p>
+          <p>
+            Sustainability is built into our daily routines: rotational access to pasture, careful manure
+            management that feeds the soil, and water conservation that respects our environment. Better land
+            care yields better eggs.
           </p>
           <h3>How to enjoy</h3>
           <ul>
@@ -51,6 +55,11 @@ export default function HeritageProductPage() {
             <li>Soft-scrambled with chives—low and slow to preserve creaminess.</li>
             <li>For baking, expect richer custards and more aromatic cakes.</li>
           </ul>
+          <h3>Storage and freshness</h3>
+          <p>
+            Keep refrigerated in their carton and enjoy within three weeks for peak flavor and texture. Bring
+            to room temperature before cooking for more even results.
+          </p>
         </div>
       </section>
     </div>

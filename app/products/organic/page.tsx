@@ -1,4 +1,4 @@
-import OrganicSlider from "@/app/components/OrganicSlider";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,19 +9,15 @@ export const metadata: Metadata = {
 export default function OrganicProductPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative h-[45vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="w-full h-full">
-            <OrganicSlider />
-          </div>
-          <div className="absolute inset-0 bg-black/35" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="h-full w-full flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3">Organic Eggs</h1>
-            <p className="text-white/90 max-w-2xl">Certified organic feed. No GMOs. Just clean, delicious eggs.</p>
-          </div>
-        </div>
+      <section className="relative h-[70vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png"
+          alt="Organic eggs hero"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
       </section>
 
       <section className="py-12">
@@ -36,10 +32,19 @@ export default function OrganicProductPage() {
             Our hens enjoy organic grains supplemented by pasture time where possible. Clean water, ample shade,
             and attentive flock management keep stress low and quality high.
           </p>
+          <p>
+            Organic practices also support biodiversity—from the soil microbiome to the hedgerows that shelter
+            pollinators. Healthier ecosystems yield more resilient flocks.
+          </p>
           <h3>Taste and texture</h3>
           <p>
             Expect clear whites and balanced yolks that shine in simple preparations—omelets, boiled eggs, and
             salads—where clean flavor matters most.
+          </p>
+          <h3>Certifications and trust</h3>
+          <p>
+            We maintain meticulous records and transparent sourcing. If you have questions, we’re happy to share
+            details about our feed, flock care, and verification.
           </p>
         </div>
       </section>

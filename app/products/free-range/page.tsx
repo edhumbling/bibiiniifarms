@@ -1,4 +1,4 @@
-import FreeRangeSlider from "@/app/components/FreeRangeSlider";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,19 +9,15 @@ export const metadata: Metadata = {
 export default function FreeRangeProductPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative h-[45vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="w-full h-full">
-            <FreeRangeSlider />
-          </div>
-          <div className="absolute inset-0 bg-black/35" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="h-full w-full flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3">Free Range</h1>
-            <p className="text-white/90 max-w-2xl">Room to roam. Better welfare. Great eggs.</p>
-          </div>
-        </div>
+      <section className="relative h-[70vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/spj5u0tzx/c4cbec47-f40c-4200-b7f8-341b44337812.png"
+          alt="Free range eggs hero"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
       </section>
 
       <section className="py-12">
@@ -36,12 +32,21 @@ export default function FreeRangeProductPage() {
             We focus on safe housing, clean yards, and predictable routines. When birds are comfortable, egg
             quality follows.
           </p>
+          <p>
+            Seasonal weather and forage change the experience, so we adapt housing, shade, and nutrition to keep
+            birds thriving across the year while protecting pasture health.
+          </p>
           <h3>Serving ideas</h3>
           <ul>
             <li>Hearty breakfasts—eggs, plantains, and greens.</li>
             <li>Soups and porridges finished with a poached egg.</li>
             <li>Everyday omelets packed with market vegetables.</li>
           </ul>
+          <h3>Freshness cues</h3>
+          <p>
+            A compact white and slightly domed yolk indicate freshness. For boiling, start from room temperature
+            for fewer cracks and more consistent centers.
+          </p>
         </div>
       </section>
     </div>
