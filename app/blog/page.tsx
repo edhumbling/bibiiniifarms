@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import FooterBackground from "../footer background.svg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -67,15 +65,17 @@ export default function BlogPage() {
       {/* Hero Section */}
       <section className="relative py-16">
         <div className="absolute inset-0">
-          <Image 
-            src={FooterBackground} 
-            alt="" 
-            fill 
-            className="object-cover"
-            priority
+          <video 
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_14_2025,%205_23%E2%80%AFPM.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Our Blog
