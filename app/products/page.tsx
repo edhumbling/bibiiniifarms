@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
+import HeritageEggsSlider from "@/app/components/HeritageEggsSlider";
+import PastureRaisedSlider from "@/app/components/PastureRaisedSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -44,9 +46,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Heritage Eggs */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-blue-500 h-48 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Heritage</span>
-              </div>
+              <HeritageEggsSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Heritage Eggs</h3>
                 <p className="text-gray-600 mb-4">
@@ -63,9 +63,7 @@ export default function ProductsPage() {
 
             {/* Pasture Raised */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-yellow-500 h-48 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Pasture Raised</span>
-              </div>
+              <PastureRaisedSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Pasture Raised</h3>
                 <p className="text-gray-600 mb-4">
@@ -164,6 +162,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
