@@ -129,7 +129,7 @@ export default function Header() {
             <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
-                <div className="lg:col-span-2">
+                <div>
                   <nav className="space-y-4">
                     {mainNav.map((item, index) => {
                       const active = pathname === item.href;
@@ -145,6 +145,15 @@ export default function Header() {
                       );
                     })}
                   </nav>
+                  {/* Flying hen image (mobile) */}
+                  <div className="my-6 flex justify-center lg:hidden">
+                    <img src="https://ik.imagekit.io/edhumbling/q.png" alt="Flying hen" className="h-28 w-auto object-contain" loading="lazy" />
+                  </div>
+                </div>
+
+                {/* Center Image - Desktop only */}
+                <div className="hidden lg:flex items-center justify-center">
+                  <img src="https://ik.imagekit.io/edhumbling/q.png" alt="Flying hen" className="max-h-64 w-auto object-contain" loading="lazy" />
                 </div>
 
                 {/* Secondary Navigation & Contact - Right Column */}
