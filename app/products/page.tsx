@@ -56,7 +56,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/heritage"
-                  className="inline-flex items-center text-brand-egg hover:brightness-110 font-medium"
+                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -73,7 +73,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/pasture-raised"
-                  className="inline-flex items-center text-brand-egg hover:brightness-110 font-medium"
+                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -90,7 +90,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/organic"
-                  className="inline-flex items-center text-brand-egg hover:brightness-110 font-medium"
+                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
@@ -107,7 +107,7 @@ export default function ProductsPage() {
                 </p>
                 <Link 
                   href="/products/free-range"
-                  className="inline-flex items-center text-brand-egg hover:brightness-110 font-medium"
+                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
                 >
                   Learn More →
                 </Link>
