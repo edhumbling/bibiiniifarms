@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import HeritageEggsSlider from "@/app/components/HeritageEggsSlider";
 import PastureRaisedSlider from "@/app/components/PastureRaisedSlider";
+import OrganicSlider from "@/app/components/OrganicSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -80,9 +81,7 @@ export default function ProductsPage() {
 
             {/* Organic */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-green-500 h-48 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Organic</span>
-              </div>
+              <OrganicSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Organic Eggs</h3>
                 <p className="text-gray-600 mb-4">
