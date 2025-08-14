@@ -63,8 +63,17 @@ export default function ProductsPage() {
 
             {/* Pasture Raised */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-yellow-500 h-48 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Pasture Raised</span>
+              <div className="h-48 relative overflow-hidden">
+                <Image
+                  src="https://ik.imagekit.io/spj5u0tzx/ecec0f4c-6899-4e0d-be4d-704c992e444a.png"
+                  alt="Pasture Raised Eggs"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white text-lg font-semibold">Pasture Raised</span>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Pasture Raised</h3>
