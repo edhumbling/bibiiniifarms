@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BackToProductsButton from "@/app/components/BackToProductsButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,13 +11,7 @@ export const metadata: Metadata = {
 export default function OrganicProductPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Back button fixed below header */}
-      <div className="fixed z-30 top-24 left-4">
-        <Link href="/products" className="inline-flex items-center gap-2 rounded-md bg-white text-deep-green px-3 py-2 shadow ring-1 ring-black/10 hover:shadow-md">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          <span className="font-medium">Back</span>
-        </Link>
-      </div>
+      <BackToProductsButton />
       <section className="relative h-[70vh] overflow-hidden">
         <Image
           src="https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png"
