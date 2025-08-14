@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import ImageCarousel from "@/app/components/ImageCarousel";
 import FooterBackground from "./footer background.svg";
 import SentryTestButton from "@/app/components/SentryTestButton";
@@ -19,7 +20,7 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            poster="https://ik.imagekit.io/humbling/reve_images_2025-08-04_14-48-38/reve_images_2025-08-05_03-59-11/4811dfb5-4d98-4ba5-9088-236d082bca94.png"
+            poster={DEFAULT_HERO_POSTER}
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>

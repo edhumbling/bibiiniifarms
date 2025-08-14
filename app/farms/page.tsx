@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Farms",
@@ -19,6 +20,7 @@ export default function FarmsPage() {
             loop
             playsInline
             preload="metadata"
+            poster={DEFAULT_HERO_POSTER}
           >
             <source src="https://ik.imagekit.io/spj5u0tzx/Bibinii%20Hen%20House%20Video%203-8_14_2025,%208_42%E2%80%AFAM.mp4" type="video/mp4" />
           </video>
