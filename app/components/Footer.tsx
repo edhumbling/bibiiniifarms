@@ -36,7 +36,7 @@ export default function Footer() {
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Products</Link></li>
                 <li><Link href="/farms" className="hover:underline">Our Farms</Link></li>
-                <li><Link href="/become-farmer" className="hover:underline">Become a Farmer</Link></li>
+                <li><Link href="/become-farmer" className="hover:underline">Become a Bibinii Farmer</Link></li>
                 <li><Link href="/about" className="hover:underline">About</Link></li>
                 <li><Link href="/blog" className="hover:underline">Blog</Link></li>
                 <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>

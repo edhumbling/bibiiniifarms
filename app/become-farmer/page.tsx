@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 export const metadata: Metadata = {
-  title: "Bibinii Farms • Partner",
+  title: "Bibinii Farms • Become a Bibinii Farmer",
   description: "Join our network of passionate farmers committed to sustainable agriculture and ethical egg production.",
 };
 
@@ -29,7 +29,7 @@ export default function BecomeFarmerPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Become a Farmer
+              Become a Bibinii Farmer
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Join our network of passionate farmers committed to sustainable agriculture and ethical egg production.

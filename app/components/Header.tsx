@@ -11,7 +11,7 @@ import HeaderBackground from "../header bar background.png";
 const mainNav = [
   { href: "/products", label: "Products" },
   { href: "/farms", label: "Our Farms" },
-  { href: "/become-farmer", label: "Become a Farmer" },
+  { href: "/become-farmer", label: "Become a Bibinii Farmer" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/store-locator", label: "Store Locator" },
@@ -126,7 +126,7 @@ export default function Header() {
             </div>
 
             {/* Main content */}
-            <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
+            <div className="flex-1 px-6 pb-40 lg:pb-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div>
@@ -138,7 +138,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''}`}
+                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl' : ''}`}
                         >
                           {item.label}
                         </Link>
@@ -210,33 +210,34 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Product images block moved into scroll area and placed further down */}
-              <div className="mt-24 lg:-mx-6">
-                <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
-                  {/* Heritage */}
-                  <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                    <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
-                  </Link>
+            </div>
 
-                  {/* Organic */}
-                  <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                    <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
+            {/* Product images block pinned to bottom on mobile to avoid overlay */}
+            <div className="fixed bottom-0 left-0 right-0 px-6 pb-6 pt-4 bg-gradient-to-t from-black/30 to-transparent lg:static lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-0 lg:mt-24">
+              <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
+                {/* Heritage */}
+                <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                  <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
                 </Link>
 
-                  {/* Pasture Raised */}
-                  <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                    <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
+                {/* Organic */}
+                <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                  <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
                 </Link>
 
-                  {/* Range (new 4th) */}
-                  <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                    <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Range</span>
-                  </Link>
-                  </div>
+                {/* Pasture Raised */}
+                <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                  <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
+                </Link>
+
+                {/* Range (new 4th) */}
+                <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                  <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Range</span>
+                </Link>
               </div>
             </div>
           </div>
