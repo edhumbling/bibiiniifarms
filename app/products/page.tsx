@@ -64,15 +64,66 @@ export default function ProductsPage() {
             {/* Pasture Raised */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 relative overflow-hidden">
-                <Image
-                  src="https://ik.imagekit.io/spj5u0tzx/ecec0f4c-6899-4e0d-be4d-704c992e444a.png"
-                  alt="Pasture Raised Eggs"
-                  fill
-                  className="object-cover"
-                />
+                <div className="flex transition-transform duration-500 ease-in-out" id="pasture-slider">
+                  <div className="min-w-full h-48 relative">
+                    <Image
+                      src="https://ik.imagekit.io/spj5u0tzx/ecec0f4c-6899-4e0d-be4d-704c992e444a.png"
+                      alt="Pasture Raised Eggs"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="min-w-full h-48 relative">
+                    <Image
+                      src="https://ik.imagekit.io/spj5u0tzx/ffd9ba1f-da29-4d49-83c4-32f9c5e026b2.png"
+                      alt="Pasture Raised Eggs"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="min-w-full h-48 relative">
+                    <Image
+                      src="https://ik.imagekit.io/spj5u0tzx/01e09a5a-34c5-4f73-87db-e71b8e417b9a.png"
+                      alt="Pasture Raised Eggs"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="min-w-full h-48 relative">
+                    <Image
+                      src="https://ik.imagekit.io/spj5u0tzx/36e9f18e-af3f-4142-afae-c82367a4c9d2.png"
+                      alt="Pasture Raised Eggs"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-white text-lg font-semibold">Pasture Raised</span>
+                </div>
+                {/* Slider Navigation Dots */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  <button 
+                    className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors pasture-dot active" 
+                    data-slide="0"
+                    onClick={() => showSlide(0)}
+                  ></button>
+                  <button 
+                    className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors pasture-dot" 
+                    data-slide="1"
+                    onClick={() => showSlide(1)}
+                  ></button>
+                  <button 
+                    className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors pasture-dot" 
+                    data-slide="2"
+                    onClick={() => showSlide(2)}
+                  ></button>
+                  <button 
+                    className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors pasture-dot" 
+                    data-slide="3"
+                    onClick={() => showSlide(3)}
+                  ></button>
                 </div>
               </div>
               <div className="p-6">
@@ -173,6 +224,43 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      {/* Slider JavaScript */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            function showSlide(index) {
+              const slider = document.getElementById('pasture-slider');
+              const dots = document.querySelectorAll('.pasture-dot');
+              
+              if (slider && dots.length > 0) {
+                slider.style.transform = \`translateX(-\${index * 100}%)\`;
+                
+                // Update active dot
+                dots.forEach((dot, i) => {
+                  dot.classList.toggle('active', i === index);
+                  dot.classList.toggle('bg-white', i === index);
+                  dot.classList.toggle('bg-white/50', i !== index);
+                });
+              }
+            }
+
+            // Auto-advance slider every 3 seconds
+            let currentSlide = 0;
+            const totalSlides = 4;
+            
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % totalSlides;
+              showSlide(currentSlide);
+            }
+
+            // Start auto-advance when page loads
+            if (typeof window !== 'undefined') {
+              setInterval(nextSlide, 3000);
+            }
+          `
+        }}
+      />
     </div>
   );
 }
