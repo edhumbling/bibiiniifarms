@@ -31,15 +31,17 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Start the solid background late to keep header transparent over the hero
-      const threshold = Math.max(160, window.innerHeight * 0.6);
+      // Adjust threshold by route so header appears after hero on blog page
+      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
+      const blogThreshold = 120;
+      const threshold = pathname.startsWith('/blog') ? blogThreshold : baseThreshold;
       setIsScrolled(window.scrollY > threshold);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? '' : 'bg-transparent-force'}`}>
@@ -126,7 +128,7 @@ export default function Header() {
             </div>
 
             {/* Main content */}
-            <div className="flex-1 px-6 pb-40 lg:pb-8 overflow-y-auto overscroll-contain">
+            <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div>
@@ -209,36 +211,35 @@ export default function Header() {
                   </div>
                 </div>
               </div>
+              {/* Product images block inside scroll area, placed further down */}
+              <div className="mt-24 lg:-mx-6">
+                <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
+                  {/* Heritage */}
+                  <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
+                  </Link>
 
-            </div>
+                  {/* Organic */}
+                  <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
+                  </Link>
 
-            {/* Product images block pinned to bottom on mobile to avoid overlay */}
-            <div className="fixed bottom-0 left-0 right-0 px-6 pb-6 pt-4 bg-gradient-to-t from-black/30 to-transparent lg:static lg:bg-transparent lg:px-0 lg:pb-0 lg:pt-0 lg:mt-24">
-              <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
-                {/* Heritage */}
-                <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                  <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
-                </Link>
+                  {/* Pasture Raised */}
+                  <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
+                  </Link>
 
-                {/* Organic */}
-                <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                  <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
-                </Link>
-
-                {/* Pasture Raised */}
-                <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                  <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
-                </Link>
-
-                {/* Range (new 4th) */}
-                <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                  <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
-                  <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Range</span>
-                </Link>
+                  {/* Range (new 4th) */}
+                  <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
+                    <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
+                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Range</span>
+                  </Link>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
