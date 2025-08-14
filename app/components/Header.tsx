@@ -202,8 +202,8 @@ export default function Header() {
               </div>
 
               {/* Product images block moved into scroll area and placed further down */}
-              <div className="mt-24">
-                <div className="flex items-start gap-6 overflow-x-auto">
+              <div className="mt-24 lg:-mx-6">
+                <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
                   {/* Heritage */}
                   <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
                     <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-28 md:h-32 w-auto object-contain glow-shake" loading="lazy" />
