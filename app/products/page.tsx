@@ -47,72 +47,60 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Heritage Eggs */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Link href="/products/heritage" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
               <HeritageEggsSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Heritage Eggs</h3>
                 <p className="text-gray-600 mb-4">
                   From heritage breed chickens with rich, flavorful yolks and superior nutrition.
                 </p>
-                <Link 
-                  href="/products/heritage"
-                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
-                >
-                  Learn More →
-                </Link>
+                <span role="button" aria-label="Learn more about Heritage Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
+                  Learn More
+                </span>
               </div>
-            </div>
+            </Link>
 
             {/* Pasture Raised */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Link href="/products/pasture-raised" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
               <PastureRaisedSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Pasture Raised</h3>
                 <p className="text-gray-600 mb-4">
                   Chickens roam freely on open pastures, resulting in nutrient-dense eggs.
                 </p>
-                <Link 
-                  href="/products/pasture-raised"
-                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
-                >
-                  Learn More →
-                </Link>
+                <span role="button" aria-label="Learn more about Pasture Raised Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
+                  Learn More
+                </span>
               </div>
-            </div>
+            </Link>
 
             {/* Organic */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Link href="/products/organic" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
               <OrganicSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Organic Eggs</h3>
                 <p className="text-gray-600 mb-4">
                   Certified organic eggs from chickens fed only organic, non-GMO feed.
                 </p>
-                <Link 
-                  href="/products/organic"
-                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
-                >
-                  Learn More →
-                </Link>
+                <span role="button" aria-label="Learn more about Organic Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
+                  Learn More
+                </span>
               </div>
-            </div>
+            </Link>
 
             {/* Free Range */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Link href="/products/free-range" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
               <FreeRangeSlider />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Free Range</h3>
                 <p className="text-gray-600 mb-4">
                   Chickens with access to outdoor areas, producing high-quality eggs.
                 </p>
-                <Link 
-                  href="/products/free-range"
-                  className="inline-flex items-center text-deep-green hover:brightness-110 font-medium"
-                >
-                  Learn More →
-                </Link>
+                <span role="button" aria-label="Learn more about Free Range Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
+                  Learn More
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
