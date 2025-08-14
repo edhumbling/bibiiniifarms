@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import OrderForm from "@/app/components/OrderForm";
 import FooterBackground from "../footer background.svg";
 
@@ -12,15 +13,19 @@ export default function OrderPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16">
+      <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src={FooterBackground}
-            alt=""
-            fill
-            className="object-cover"
-            priority
+          <video
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_14_2025,%205_05%E2%80%AFPM.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={DEFAULT_HERO_POSTER}
           />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
