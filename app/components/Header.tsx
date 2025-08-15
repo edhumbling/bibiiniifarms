@@ -147,16 +147,10 @@ export default function Header() {
                       );
                     })}
                   </nav>
-                  {/* Flying hen image (mobile) */}
-                  <div className="my-6 flex justify-center lg:hidden">
-                    <img src="https://ik.imagekit.io/edhumbling/q.png" alt="Flying hen" className="h-28 w-auto object-contain" loading="lazy" />
-                  </div>
+
                 </div>
 
-                {/* Center Image - Desktop only */}
-                <div className="hidden lg:flex items-center justify-center">
-                  <img src="https://ik.imagekit.io/edhumbling/q.png" alt="Flying hen" className="max-h-64 w-auto object-contain" loading="lazy" />
-                </div>
+
 
                 {/* Secondary Navigation & Contact - Right Column */}
                 <div className="space-y-8">
