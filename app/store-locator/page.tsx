@@ -60,7 +60,7 @@ export default function StoreLocatorPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16">
+      <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image 
             src={FooterBackground} 
@@ -70,8 +70,8 @@ export default function StoreLocatorPage() {
             priority
           />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="h-full w-full flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Store Locator
             </h1>
