@@ -63,7 +63,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16">
+      <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
           <video 
             src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_14_2025,%205_23%E2%80%AFPM.mp4"
@@ -75,8 +75,8 @@ export default function BlogPage() {
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
-          <div className="text-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="h-full w-full flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Our Blog
             </h1>
