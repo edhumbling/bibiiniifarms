@@ -29,10 +29,6 @@ const nextConfig: NextConfig = {
   },
   // Generate static files for all dynamic routes
   generateStaticParams: true,
-  // Ensure all pages are pre-rendered
-  experimental: {
-    staticWorkerRequestDeduping: true,
-  },
 };
 
 export default withSentryConfig(nextConfig, {
