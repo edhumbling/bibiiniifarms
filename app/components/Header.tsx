@@ -11,7 +11,7 @@ import HeaderBackground from "../header bar background.png";
 const mainNav = [
   { href: "/products", label: "Products" },
   { href: "/farms", label: "Our Farms" },
-  { href: "/become-farmer", label: "Become a Bibinii Farmer" },
+  { href: "/become-farmer", label: "Become a\nBibinii Farmer" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/store-locator", label: "Store Locator" },
@@ -140,7 +140,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl' : ''}`}
+                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-pre-line' : ''}`}
                         >
                           {item.label}
                         </Link>
