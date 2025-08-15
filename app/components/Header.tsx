@@ -152,7 +152,9 @@ export default function Header() {
                             <>
                               <span className="lg:hidden whitespace-pre-line">{item.label}</span>
                               <span className="hidden lg:block">
-                                Become a Bibinii<br />Farmer
+                                <span className="whitespace-nowrap">Become a</span>
+                                <br />
+                                <span className="whitespace-nowrap">Bibinii Farmer</span>
                               </span>
                             </>
                           ) : (
