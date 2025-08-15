@@ -1,7 +1,6 @@
-import Image from "next/image";
-import FooterBackground from "../footer background.svg";
 import Link from "next/link";
 import { Metadata } from "next";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Press",
@@ -99,15 +98,19 @@ export default function PressPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16">
+      <section className="relative py-16 overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src={FooterBackground}
-            alt=""
-            fill
-            className="object-cover"
-            priority
+          <video
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_15_2025,%206_34%E2%80%AFPM.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={DEFAULT_HERO_POSTER}
           />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
