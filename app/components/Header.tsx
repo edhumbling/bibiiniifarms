@@ -127,6 +127,52 @@ export default function Header() {
               </div>
             </div>
 
+            {/* Product Images Carousel - Top Section on Mobile */}
+            <div className="lg:hidden px-6 py-8">
+              <div className="relative">
+                <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
+                  {/* Heritage */}
+                  <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
+                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                      <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-20 w-auto object-contain glow-shake" loading="lazy" />
+                    </div>
+                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Heritage</span>
+                  </Link>
+
+                  {/* Organic */}
+                  <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
+                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                      <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-20 w-auto object-contain glow-shake" loading="lazy" />
+                    </div>
+                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Organic</span>
+                  </Link>
+
+                  {/* Pasture Raised */}
+                  <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
+                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                      <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-20 w-auto object-contain glow-shake" loading="lazy" />
+                    </div>
+                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Pasture</span>
+                  </Link>
+
+                  {/* Range */}
+                  <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
+                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                      <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-20 w-auto object-contain glow-shake" loading="lazy" />
+                    </div>
+                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Range</span>
+                  </Link>
+                </div>
+                
+                {/* Scroll indicators */}
+                <div className="flex justify-center mt-4 space-x-1">
+                  <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-2 h-2 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
             {/* Main content */}
             <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
@@ -203,8 +249,8 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              {/* Product images block inside scroll area, placed further down */}
-              <div className="mt-24 lg:-mx-6">
+              {/* Product images block for desktop only */}
+              <div className="hidden lg:block mt-24 lg:-mx-6">
                 <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
                   {/* Heritage */}
                   <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">

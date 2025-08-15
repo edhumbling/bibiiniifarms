@@ -126,6 +126,16 @@ body {
   animation: gentle-shake 320ms ease-in-out; /* brief shake */
 }
 
+/* Hide scrollbar for mobile carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Beautiful Deep Green with Luminescent Light */
 .bg-luminous-green {
   background: linear-gradient(135deg, #166534 0%, #16a34a 25%, #22c55e 50%, #4ade80 75%, #a3e635 100%);
