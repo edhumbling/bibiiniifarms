@@ -19,7 +19,19 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/spj5u0tzx/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        port: '',
+        pathname: '/edhumbling/**',
+      },
     ],
+  },
+  // Generate static files for all dynamic routes
+  generateStaticParams: true,
+  // Ensure all pages are pre-rendered
+  experimental: {
+    staticWorkerRequestDeduping: true,
   },
 };
 

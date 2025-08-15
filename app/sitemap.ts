@@ -14,9 +14,14 @@ export default async function sitemap() {
     "/find",
     "/press",
     "/products",
+    "/products/heritage",
+    "/products/pasture-raised",
+    "/products/organic",
+    "/products/free-range",
     "/store-locator",
     "/order",
     "/track",
+    "/sentry-example-page",
   ];
 
   return staticRoutes.map((route) => ({
