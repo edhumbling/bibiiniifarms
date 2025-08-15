@@ -27,8 +27,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Generate static files for all dynamic routes
-  generateStaticParams: true,
 };
 
 export default withSentryConfig(nextConfig, {
