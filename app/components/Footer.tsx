@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../bibinii logo text white.svg";
-import OrderNowLogo from "../order now.svg";
+import OrderNowLogo from "../order now yell.svg";
 import FooterBackground from "../footer background.svg";
 
 function SocialIcon({ label, href, children }: { label: string; href: string; children: React.ReactNode }) {
