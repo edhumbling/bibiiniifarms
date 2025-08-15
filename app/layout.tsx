@@ -4,6 +4,7 @@ import { Geist_Mono, Marcellus, Inter, DM_Serif_Text } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FloatingFindButton from "./components/FloatingFindButton";
 
 const interSans = Inter({
   variable: "--font-geist-sans",
@@ -69,6 +70,8 @@ export default function RootLayout({
           </main>
           {/* Footer */}
           <Footer />
+          {/* Floating Find Bibinii Button */}
+          <FloatingFindButton />
         </div>
       </body>
     </html>
