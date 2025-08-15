@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Logo from "../bibinii logo text white.svg";
 import OrderNowLogo from "../order now.svg";
 import HeaderBackground from "../header bar background.png";
+import MobileProductCarousel from "./MobileProductCarousel";
 
 const mainNav = [
   { href: "/products", label: "Products" },
@@ -127,54 +128,13 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Product Images Carousel - Top Section on Mobile */}
-            <div className="lg:hidden px-6 py-8">
-              <div className="relative">
-                <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
-                  {/* Heritage */}
-                  <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
-                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                      <img src="https://ik.imagekit.io/spj5u0tzx/1.png" alt="Heritage" className="h-20 w-auto object-contain" loading="lazy" />
-                    </div>
-                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Heritage</span>
-                  </Link>
-
-                  {/* Organic */}
-                  <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
-                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                      <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-20 w-auto object-contain" loading="lazy" />
-                    </div>
-                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Organic</span>
-                  </Link>
-
-                  {/* Pasture Raised */}
-                  <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
-                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                      <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-20 w-auto object-contain" loading="lazy" />
-                    </div>
-                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Pasture</span>
-                  </Link>
-
-                  {/* Range */}
-                  <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3 min-w-[120px]">
-                    <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                      <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-20 w-auto object-contain" loading="lazy" />
-                    </div>
-                    <span className="text-white text-sm font-medium group-hover:text-brand-egg transition-colors text-center">Range</span>
-                  </Link>
-                </div>
-                
-                {/* Scroll indicators */}
-                <div className="flex justify-center mt-4 space-x-1">
-                  <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <div className="w-2 h-2 bg-white/40 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-
             {/* Main content */}
             <div className="flex-1 px-6 pb-8 overflow-y-auto overscroll-contain">
+              {/* Mobile Product Carousel - at top of scrollable content */}
+              <div className="lg:hidden mb-8 pt-4">
+                <MobileProductCarousel onProductClick={() => setOpen(false)} />
+              </div>
+              
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div>
@@ -186,9 +146,18 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-pre-line' : ''}`}
+                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl' : ''}`}
                         >
-                          {item.label}
+                          {item.href === '/become-farmer' ? (
+                            <>
+                              <span className="lg:hidden whitespace-pre-line">{item.label}</span>
+                              <span className="hidden lg:block">
+                                Become a Bibinii<br />Farmer
+                              </span>
+                            </>
+                          ) : (
+                            item.label
+                          )}
                         </Link>
                       );
                     })}
@@ -250,7 +219,7 @@ export default function Header() {
                 </div>
               </div>
               {/* Product images block for desktop only */}
-              <div className="hidden lg:block mt-32 lg:-mx-6">
+              <div className="hidden lg:block mt-40 lg:-mx-6">
                 <div className="flex items-end gap-6 overflow-x-auto lg:overflow-visible lg:justify-between lg:gap-0 w-full">
                   {/* Heritage */}
                   <Link href="/products/heritage" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
