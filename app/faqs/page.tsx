@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import FooterBackground from "../footer background.svg";
-import { Metadata } from "next";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 // Note: metadata export not available in client components, handled in layout
 // Title: "Bibinii Farms • FAQs"
@@ -86,18 +84,22 @@ export default function FAQsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16">
+      <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src={FooterBackground}
-            alt=""
-            fill
-            className="object-cover"
-            priority
+          <video
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_15_2025,%207_24%E2%80%AFPM.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={DEFAULT_HERO_POSTER}
           />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="h-full w-full flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Frequently Asked Questions
             </h1>
