@@ -111,7 +111,7 @@ export default function Header() {
                priority
              />
            </div>
-           <div className="relative h-full flex flex-col">
+           <div className="relative h-full flex flex-col font-redhawk">
             {/* Overlay top bar: X left, logo center, CTA right - same positioning as main header */}
             <div className="h-20 flex items-center">
               <div className="w-full px-2 sm:px-3">

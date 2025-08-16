@@ -20,7 +20,7 @@ function SocialIcon({ label, href, children }: { label: string; href: string; ch
 
 export default function Footer() {
   return (
-    <footer className="mt-24 relative text-white font-millaris">
+    <footer className="mt-24 relative text-white font-redhawk">
       {/* Background */}
       <div className="absolute inset-0">
         <Image src={FooterBackground} alt="" fill className="object-cover" priority />
@@ -124,7 +124,7 @@ export default function Footer() {
         <div className="mt-12 relative overflow-hidden select-none">
           <div className="flex items-center justify-center">
                        <span
-             className="font-dm-serif-text tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap"
+             className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap"
              style={{ fontSize: '18vw' }}
            >
              Bibinii Farms

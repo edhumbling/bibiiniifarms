@@ -133,6 +133,15 @@
   font-display: swap;
 }
 
+/* Local Rogbold font */
+@font-face {
+  font-family: 'Rogbold';
+  src: url('/Rogbold-3llGM.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Utility class to apply Redhawk font */
 .font-redhawk { font-family: 'Redhawk', var(--font-geist-sans), ui-sans-serif, system-ui; }
 
@@ -145,9 +154,11 @@
 .font-amazon-ember-display { font-family: 'Amazon Ember Display', 'Amazon Ember', var(--font-geist-sans), ui-sans-serif, system-ui; }
 .font-bookerly-display { font-family: 'Bookerly Display', ui-serif, Georgia, serif; }
 
+/* Rogbold utility */
+.font-rogbold { font-family: 'Rogbold', ui-serif, Georgia, serif; }
+
 /* Scoped usage: footer gets Amazon Ember; its hero wordmark uses Display */
-footer { font-family: 'Amazon Ember', var(--font-geist-sans), ui-sans-serif, system-ui; }
-footer .font-dm-serif-text { font-family: 'Amazon Ember Display', 'Amazon Ember', var(--font-geist-sans), ui-sans-serif, system-ui; }
+/* Footer font will be set via class in component to Redhawk; marquee uses Rogbold */
 
 @theme inline {
   --color-background: var(--background);
