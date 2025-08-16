@@ -44,10 +44,10 @@ export default function Footer() {
             </div>
             <div>
               <ul className="space-y-3 text-lg font-semibold">
-                <li><Link href="/products#heritage" className="hover:underline">Heritage</Link></li>
-                <li><Link href="/products#pasture" className="hover:underline">Pasture Raised</Link></li>
-                <li><Link href="/products#organic" className="hover:underline">Organic Free Range</Link></li>
-                <li><Link href="/products#free-range" className="hover:underline">Free Range</Link></li>
+                <li><Link href="/products/heritage" className="hover:underline">Heritage</Link></li>
+                <li><Link href="/products/pasture-raised" className="hover:underline">Pasture Raised</Link></li>
+                <li><Link href="/products/organic" className="hover:underline">Organic Free Range</Link></li>
+                <li><Link href="/products/free-range" className="hover:underline">Free Range</Link></li>
               </ul>
             </div>
             <div>

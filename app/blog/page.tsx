@@ -1,61 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
+import { blogPosts } from "./data";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Blog",
   description: "Stories, insights, and updates from the world of sustainable farming and ethical egg production.",
 };
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Benefits of Pasture-Raised Eggs",
-    excerpt: "Discover why pasture-raised eggs are not only better for chickens but also more nutritious for you.",
-    date: "March 15, 2024",
-    category: "Nutrition",
-    readTime: "5 min read"
-  },
-  {
-    id: 2,
-    title: "Sustainable Farming: Our Regenerative Practices",
-    excerpt: "Learn about the regenerative agriculture techniques we use to improve soil health and biodiversity.",
-    date: "March 10, 2024",
-    category: "Sustainability",
-    readTime: "7 min read"
-  },
-  {
-    id: 3,
-    title: "Meet Our Farmers: The Johnson Family Farm",
-    excerpt: "Get to know the passionate farmers who are part of our network and their commitment to ethical farming.",
-    date: "March 5, 2024",
-    category: "Farmers",
-    readTime: "4 min read"
-  },
-  {
-    id: 4,
-    title: "Chicken Welfare: What Free-Range Really Means",
-    excerpt: "Understanding the difference between free-range, cage-free, and pasture-raised chicken farming.",
-    date: "February 28, 2024",
-    category: "Animal Welfare",
-    readTime: "6 min read"
-  },
-  {
-    id: 5,
-    title: "Seasonal Egg Production: What to Expect",
-    excerpt: "How seasonal changes affect egg production and what it means for availability and quality.",
-    date: "February 20, 2024",
-    category: "Education",
-    readTime: "3 min read"
-  },
-  {
-    id: 6,
-    title: "Recipe: Perfect Scrambled Eggs with Fresh Herbs",
-    excerpt: "A simple recipe that showcases the superior taste and texture of our farm-fresh eggs.",
-    date: "February 15, 2024",
-    category: "Recipes",
-    readTime: "2 min read"
-  }
-];
+// blogPosts imported from data.ts
 
 const categories = ["All", "Nutrition", "Sustainability", "Farmers", "Animal Welfare", "Education", "Recipes"];
 
@@ -113,8 +66,8 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="bg-emerald-glow/10 h-48 flex items-center justify-center">
-                  <span className="text-emerald-glow text-lg font-semibold">Blog Image</span>
+                <div className="relative h-48 w-full">
+                  <Image src={post.imageUrl} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
