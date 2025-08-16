@@ -103,8 +103,8 @@ export default function Footer() {
             <span>© {new Date().getFullYear()} Bibinii Farms. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:underline">Privacy Policy</Link>
-            <Link href="#" className="hover:underline">Terms of Use</Link>
+            <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+            <Link href="/terms" className="hover:underline">Terms of Service</Link>
           </div>
           <div className="opacity-90">
             Made by{" "}

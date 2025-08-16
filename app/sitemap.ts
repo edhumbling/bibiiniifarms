@@ -22,6 +22,8 @@ export default async function sitemap() {
     "/order",
     "/track",
     "/sentry-example-page",
+    "/privacy",
+    "/terms",
   ];
 
   return staticRoutes.map((route) => ({
