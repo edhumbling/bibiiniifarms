@@ -31,6 +31,14 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    // Force header to show immediately on specific routes
+    const shouldForceHeader = pathname.startsWith('/privacy') || pathname.startsWith('/terms');
+
+    if (shouldForceHeader) {
+      setIsScrolled(true);
+      return;
+    }
+
     const handleScroll = () => {
       // Adjust threshold by route so header appears after hero on blog page
       const baseThreshold = Math.max(160, window.innerHeight * 0.6);
