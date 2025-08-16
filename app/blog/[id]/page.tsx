@@ -3,18 +3,20 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "../data";
 
-type Params = { params: { id: string } };
+type RouteParams = Promise<{ id: string }>;
 
-export function generateMetadata({ params }: Params): Metadata {
-  const post = blogPosts.find((p) => String(p.id) === params.id);
+export async function generateMetadata({ params }: { params: RouteParams }): Promise<Metadata> {
+  const { id } = await params;
+  const post = blogPosts.find((p) => String(p.id) === id);
   return {
     title: post ? `Bibinii Farms • ${post.title}` : "Bibinii Farms • Blog",
     description: post?.excerpt,
   };
 }
 
-export default function BlogPostPage({ params }: Params) {
-  const post = blogPosts.find((p) => String(p.id) === params.id);
+export default async function BlogPostPage({ params }: { params: RouteParams }) {
+  const { id } = await params;
+  const post = blogPosts.find((p) => String(p.id) === id);
   if (!post) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
@@ -43,6 +45,37 @@ export default function BlogPostPage({ params }: Params) {
       {/* Content */}
       <article className="py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose prose-lg">
+          {/* Top logo */}
+          <div className="not-prose mb-6 flex justify-center">
+            <Image
+              src="/bibinii logo text white.svg"
+              alt="Bibinii Farms"
+              width={140}
+              height={40}
+              className="invert"
+              priority
+            />
+          </div>
+          
+          {/* Author */}
+          <div className="not-prose mb-8">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 rounded-full overflow-hidden bg-white ring-1 ring-black/10 flex items-center justify-center">
+                <Image
+                  src="/bibinii logo text white.svg"
+                  alt="Bibinii Farms logo"
+                  width={28}
+                  height={28}
+                  className="invert"
+                  priority
+                />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-neutral-900">Written by Bibinii Farms Team</p>
+              </div>
+            </div>
+          </div>
+
           {post.sections.map((s, idx) => (
             <section key={idx}>
               <h2>{s.heading}</h2>
