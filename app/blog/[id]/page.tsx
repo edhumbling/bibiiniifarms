@@ -3,6 +3,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "../data";
 
+export function generateStaticParams() {
+  return blogPosts.map((p) => ({ id: String(p.id) }));
+}
+
 type RouteParams = Promise<{ id: string }>;
 
 export async function generateMetadata({ params }: { params: RouteParams }): Promise<Metadata> {
