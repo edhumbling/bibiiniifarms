@@ -5,6 +5,10 @@ import { blogPosts } from "../data";
 
 type RouteParams = Promise<{ id: string }>;
 
+export async function generateStaticParams() {
+  return blogPosts.map((p) => ({ id: String(p.id) }));
+}
+
 export async function generateMetadata({ params }: { params: RouteParams }): Promise<Metadata> {
   const { id } = await params;
   const post = blogPosts.find((p) => String(p.id) === id);
