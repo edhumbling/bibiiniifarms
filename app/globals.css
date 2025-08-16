@@ -199,6 +199,14 @@ body {
   background: linear-gradient(90deg, #ff4500 0%, #ff6600 50%, #ff7700 100%);
 }
 
+/* Footer link hover color */
+footer a:hover { color: #fdc700; }
+
+/* Soft white glow for text on hover */
+.hover-glow-soft-white:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 255, 255, 0.45), 0 0 24px rgba(255, 255, 255, 0.35);
+}
+
 /* Beautiful hamburger animation */
 .hamburger-line {
   transform-origin: center;

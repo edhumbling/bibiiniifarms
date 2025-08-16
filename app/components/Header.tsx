@@ -154,7 +154,7 @@ export default function Header() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl' : ''}`}
+                           className={`block text-white hover:text-brand-egg transition-colors text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ${active ? 'text-white/80' : ''} ${item.href === '/become-farmer' ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#fdc700] hover:text-[#fdc700] hover-glow-soft-white' : ''}`}
                         >
                           {item.href === '/become-farmer' ? (
                             <>
