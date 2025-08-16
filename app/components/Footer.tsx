@@ -20,7 +20,7 @@ function SocialIcon({ label, href, children }: { label: string; href: string; ch
 
 export default function Footer() {
   return (
-    <footer className="mt-24 relative text-white">
+    <footer className="mt-24 relative text-white font-millaris">
       {/* Background */}
       <div className="absolute inset-0">
         <Image src={FooterBackground} alt="" fill className="object-cover" priority />

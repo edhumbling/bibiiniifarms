@@ -21,8 +21,30 @@
   font-display: swap;
 }
 
+/* Local Alkia font */
+@font-face {
+  font-family: 'Alkia';
+  src: url('/Alkia.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Local Millaris font */
+@font-face {
+  font-family: 'Millaris';
+  src: url('/MillarisPersonalUseOnly-ZpK7J.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Utility class to apply Redhawk font */
 .font-redhawk { font-family: 'Redhawk', var(--font-geist-sans), ui-sans-serif, system-ui; }
+
+/* Utility classes for Alkia and Millaris */
+.font-alkia { font-family: 'Alkia', var(--font-geist-sans), ui-sans-serif, system-ui; }
+.font-millaris { font-family: 'Millaris', var(--font-geist-sans), ui-sans-serif, system-ui; }
 
 @theme inline {
   --color-background: var(--background);
@@ -44,7 +66,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
+  font-family: 'Alkia', var(--font-geist-sans), ui-sans-serif, system-ui;
 }
 
 /***** Decorative helpers *****/
