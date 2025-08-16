@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         'dm-serif-text': ['var(--font-dm-serif-text)', 'serif'],
+        'redhawk': ['Redhawk', 'var(--font-geist-sans)', 'ui-sans-serif', 'system-ui'],
       },
       colors: {
         'happy-orange': '#ff6600',

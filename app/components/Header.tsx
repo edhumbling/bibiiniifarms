@@ -146,7 +146,7 @@ export default function Header() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 h-full">
                 {/* Main Navigation - Left Column */}
                 <div>
-                  <nav className="space-y-4">
+                  <nav className="space-y-4 font-redhawk">
                     {mainNav.map((item, index) => {
                       const active = pathname === item.href;
                       return (
@@ -176,7 +176,7 @@ export default function Header() {
 
                 {/* Secondary Navigation - Middle Column */}
                 <div>
-                  <nav className="space-y-4">
+                  <nav className="space-y-4 font-redhawk">
                     {secondaryNav.map((item) => {
                       const active = pathname === item.href;
                       return (
