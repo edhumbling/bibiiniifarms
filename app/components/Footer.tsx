@@ -29,9 +29,9 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         {/* Top area: nav columns + socials */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 items-start">
           {/* Link columns */}
-          <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="col-span-1 lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Products</Link></li>
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           {/* Right sidebar: socials + Buy Now */}
-          <aside className="flex flex-col items-start lg:items-end gap-6">
+          <aside className="col-span-1 flex flex-col items-end lg:items-end gap-6">
             {/* Logo for visual identity on small screens */}
             <Image src={Logo} alt="Bibinii Farms" className="h-12 w-auto lg:hidden" />
 

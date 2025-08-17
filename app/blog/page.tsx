@@ -107,13 +107,13 @@ export default function BlogPage() {
               Subscribe to our newsletter to get the latest stories, farming tips, and updates delivered to your inbox.
             </p>
             <div className="max-w-md mx-auto">
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="min-w-0 w-full sm:flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
-                <button className="px-6 py-3 bg-luminous-green text-white rounded-lg font-semibold hover:brightness-110 transition-colors">
+                <button className="w-full sm:w-auto px-6 py-3 bg-luminous-green text-white rounded-lg font-semibold hover:brightness-110 transition-colors">
                   Subscribe
                 </button>
               </div>
