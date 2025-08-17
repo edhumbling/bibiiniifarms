@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingFindButton from "./components/FloatingFindButton";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const interSans = Inter({
   variable: "--font-geist-sans",
@@ -121,6 +122,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <Footer />
           {/* Floating Find Bibinii Button */}
           <FloatingFindButton />
+          {/* Scroll To Top Button */}
+          <ScrollToTopButton />
         </div>
       </body>
     </html>
