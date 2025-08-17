@@ -3,7 +3,6 @@ import Link from "next/link";
 import Logo from "../bibinii logo text white.svg";
 import OrderNowLogo from "../order now yell.svg";
 import FooterBackground from "../footer background.svg";
-import BottomArt from "../Bibinii bottom art.svg";
 
 function SocialIcon({ label, href, children }: { label: string; href: string; children: React.ReactNode }) {
   return (
@@ -28,7 +27,7 @@ export default function Footer() {
         <div className="absolute inset-0 bg-black/10" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12">
         {/* Top area: nav columns + socials */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 items-start">
           {/* Link columns */}
@@ -106,16 +105,17 @@ export default function Footer() {
             <Link href="/terms" className="hover:underline">Terms of Service</Link>
           </div>
           <div className="opacity-90">
-            Made by{" "}
+            Made with Love ❤️ by{" "}
             <a 
               href="https://www.linkedin.com/in/edhumbling" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-yellow-400 font-semibold hover:text-yellow-300 transition-colors"
-              style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.4)' }}
+              className="font-semibold transition-colors"
+              style={{ color: '#fdc700', textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.4)' }}
             >
               AIDEL
             </a>
+            {" "}- Truly Ghanaian!
           </div>
         </div>
 
@@ -153,18 +153,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom art below marquee */}
-        <div className="mt-8">
-          <div className="relative w-full h-20 sm:h-24 md:h-28 lg:h-40">
-            <Image
-              src={BottomArt}
-              alt="Bibinii Farms bottom art"
-              fill
-              className="object-contain"
-              sizes="100vw"
-            />
-          </div>
-        </div>
       </div>
     </footer>
   );
