@@ -95,16 +95,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 flex flex-col md:flex-row md:flex-nowrap items-center justify-between gap-4 text-sm text-white/90">
+        <div className="mt-10 flex flex-col md:flex-row md:flex-nowrap items-center md:justify-start gap-4 md:gap-10 text-sm text-white/90">
           <div className="flex items-center gap-3 whitespace-nowrap">
             <Image src={Logo} alt="Bibinii Farms" className="h-8 w-auto hidden md:block" />
             <span>© {new Date().getFullYear()} Bibinii Farms. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-6 whitespace-nowrap">
+          <div className="flex items-center gap-6 whitespace-nowrap md:ml-8">
             <Link href="/privacy" className="hover:underline whitespace-nowrap">Privacy Policy</Link>
             <Link href="/terms" className="hover:underline whitespace-nowrap">Terms of Service</Link>
           </div>
-          <div className="opacity-90 text-center md:text-right w-full">
+          <div className="opacity-90 text-center md:text-right w-full md:w-auto md:ml-auto">
             Made with Love ❤️ by{" "}
             <a 
               href="https://www.linkedin.com/in/edhumbling" 
