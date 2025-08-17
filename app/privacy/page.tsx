@@ -11,78 +11,76 @@ export default function PrivacyPolicyPage() {
 	return (
 		<div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14">
 			<BackButton href="/" />
-			<h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">Privacy Policy</h1>
-			<p className="mt-4 text-neutral-700">Last updated: {new Date().toLocaleDateString()}</p>
+			<h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">Privacy Policy – Bibinii Farms</h1>
+			<p className="mt-4 text-neutral-700">Effective Date: August 16, 2025</p>
 
 			<section className="mt-8 space-y-6 text-neutral-700 leading-relaxed">
+				<h2 className="text-xl font-bold text-ink">1. Introduction</h2>
 				<p>
-					This Privacy Policy explains how Bibinii Farms ("we", "our", or "us") collects, uses, discloses, and
-					protects information about you when you use our websites, services, and products (collectively, the
-					"Services").
+					Bibinii Farms Company Ltd ("Bibinii Farms," "we," "our," or "us") respects your privacy. This Privacy
+					Policy explains how we collect, use, and protect personal information when you use our website, app, or
+					services.
 				</p>
 
-				<h2 className="text-xl font-bold text-ink">1. Information We Collect</h2>
+				<h2 className="text-xl font-bold text-ink">2. Information We Collect</h2>
+				<ul className="list-disc pl-6 space-y-2">
+					<li>Contact details (name, phone, email, address)</li>
+					<li>Payment details (mobile money, bank transfer info)</li>
+					<li>Order and delivery history</li>
+					<li>Farmer supply records (crate counts, quality grading)</li>
+					<li>Device &amp; usage data (cookies, IP address, location for delivery)</li>
+				</ul>
+
+				<h2 className="text-xl font-bold text-ink">3. How We Use Information</h2>
+				<p>We process data under the Data Protection Act, 2012 (Act 843) on the basis of:</p>
+				<ul className="list-disc pl-6 space-y-2">
+					<li>Consent (when you sign up or opt-in)</li>
+					<li>Contractual necessity (to fulfill your orders)</li>
+					<li>Legal obligation (compliance with regulators)</li>
+					<li>Legitimate interest (improving our logistics, fraud prevention)</li>
+				</ul>
+
+				<h2 className="text-xl font-bold text-ink">4. Data Sharing</h2>
+				<p>We do not sell your data. We may share with:</p>
+				<ul className="list-disc pl-6 space-y-2">
+					<li>Delivery/logistics partners for order fulfillment</li>
+					<li>Payment providers for transactions</li>
+					<li>Regulators or law enforcement, when legally required</li>
+				</ul>
+
+				<h2 className="text-xl font-bold text-ink">5. Children’s Privacy</h2>
 				<p>
-					We may collect information you provide directly to us, such as your name, email, phone number,
-					address, and order details. We also collect certain information automatically, including IP address,
-					device information, pages visited, and interactions with our site.
+					Our services are not intended for children under 18. We do not knowingly collect personal data from minors.
+					Parents/guardians should contact us if a minor’s data has been collected.
 				</p>
 
-				<h2 className="text-xl font-bold text-ink">2. How We Use Information</h2>
+				<h2 className="text-xl font-bold text-ink">6. International Users</h2>
 				<p>
-					We use your information to provide and improve our Services, process and fulfill orders, respond to
-					inquiries, personalize content, analyze website performance, and comply with legal obligations.
-				</p>
-
-				<h2 className="text-xl font-bold text-ink">3. Sharing of Information</h2>
-				<p>
-					We may share information with trusted service providers who perform services on our behalf (e.g.
-					payment processing, analytics, hosting), with your consent, or as required by law. We do not sell your
-					personal information.
-				</p>
-
-				<h2 className="text-xl font-bold text-ink">4. Cookies and Tracking</h2>
-				<p>
-					We use cookies and similar technologies to operate and improve the site, measure performance, and
-					personalize your experience. You can control cookies through your browser settings.
-				</p>
-
-				<h2 className="text-xl font-bold text-ink">5. Data Retention</h2>
-				<p>
-					We retain your information only for as long as necessary to fulfill the purposes outlined in this policy
-					unless a longer retention period is required or permitted by law.
-				</p>
-
-				<h2 className="text-xl font-bold text-ink">6. Your Rights</h2>
-				<p>
-					Depending on your location, you may have rights to access, correct, or delete your personal
-					information, and to object to or restrict certain processing. To exercise these rights, contact us at
-					info@bibiniifarms.com.
+					Currently, data is stored and processed in Ghana. If we expand, international data transfers will comply
+					with applicable laws.
 				</p>
 
 				<h2 className="text-xl font-bold text-ink">7. Data Security</h2>
+				<p>We use encryption, access controls, and secure servers to protect your information.</p>
+
+				<h2 className="text-xl font-bold text-ink">8. Data Retention</h2>
+				<p>We retain data only as long as necessary for business or legal purposes.</p>
+
+				<h2 className="text-xl font-bold text-ink">9. Your Rights</h2>
+				<ul className="list-disc pl-6 space-y-2">
+					<li>Access, correct, or delete your data</li>
+					<li>Withdraw consent at any time</li>
+					<li>File a complaint with the Data Protection Commission of Ghana</li>
+				</ul>
+
+				<h2 className="text-xl font-bold text-ink">10. Dispute Resolution</h2>
 				<p>
-					We implement reasonable administrative, technical, and physical safeguards to protect your
-					information. However, no method of transmission or storage is completely secure.
+					Privacy disputes may be raised with Bibinii Farms first. If unresolved, you may escalate to the Data
+					Protection Commission of Ghana.
 				</p>
 
-				<h2 className="text-xl font-bold text-ink">8. International Transfers</h2>
-				<p>
-					Your information may be transferred to and processed in countries other than your own, which may
-					have different data protection laws. We take steps to ensure appropriate safeguards are in place.
-				</p>
-
-				<h2 className="text-xl font-bold text-ink">9. Changes to This Policy</h2>
-				<p>
-					We may update this Privacy Policy from time to time. We will post the updated version on this page
-					with a new effective date.
-				</p>
-
-				<h2 className="text-xl font-bold text-ink">10. Contact Us</h2>
-				<p>
-					If you have questions about this Privacy Policy or our data practices, please contact us at
-					info@bibiniifarms.com.
-				</p>
+				<h2 className="text-xl font-bold text-ink">11. Contact</h2>
+				<p>For privacy inquiries, contact: info@bibiniifarms.com</p>
 			</section>
 		</div>
 	);
