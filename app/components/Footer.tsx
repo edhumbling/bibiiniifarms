@@ -3,6 +3,7 @@ import Link from "next/link";
 import Logo from "../bibinii logo text white.svg";
 import OrderNowLogo from "../order now yell.svg";
 import FooterBackground from "../footer background.svg";
+import BottomArt from "../Bibinii bottom art.svg";
 
 function SocialIcon({ label, href, children }: { label: string; href: string; children: React.ReactNode }) {
   return (
@@ -149,6 +150,19 @@ export default function Footer() {
                 Bibinii Farms
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom art below marquee */}
+        <div className="mt-8">
+          <div className="relative w-full h-20 sm:h-24 md:h-28 lg:h-40">
+            <Image
+              src={BottomArt}
+              alt="Bibinii Farms bottom art"
+              fill
+              className="object-contain"
+              sizes="100vw"
+            />
           </div>
         </div>
       </div>
