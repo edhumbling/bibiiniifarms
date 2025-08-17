@@ -128,7 +128,7 @@ export default function TermsOfServicePage() {
 					<p>Bibinii Farms Company Ltd</p>
 					<p>Accra, Ghana</p>
 					<p>Email: info@Bibiniifarms.com</p>
-					<p>Phone: +233543474770</p>
+					<p>Phone: +233 54 347 4770</p>
 				</div>
 			</section>
 		</div>

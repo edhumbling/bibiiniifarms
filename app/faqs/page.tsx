@@ -193,7 +193,7 @@ export default function FAQsPage() {
               Email Support
             </a>
             <a
-              href="tel:+1-555-123-4567"
+              href="tel:+233543474770"
               className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-8 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors"
             >
               Call Us

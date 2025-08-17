@@ -12,7 +12,7 @@ const stores = [
     id: 1,
     name: "Fresh Market Downtown",
     address: "123 Main Street, Downtown",
-    phone: "(555) 123-4567",
+    phone: "+233 54 347 4770",
     hours: "Mon-Sat: 7AM-9PM, Sun: 8AM-8PM",
     distance: "0.5 miles",
     products: ["Heritage", "Pasture Raised", "Organic"]
@@ -21,7 +21,7 @@ const stores = [
     id: 2,
     name: "Green Grocer West",
     address: "456 Oak Avenue, West Side",
-    phone: "(555) 234-5678",
+    phone: "+233 54 347 4770",
     hours: "Daily: 6AM-10PM",
     distance: "1.2 miles",
     products: ["Pasture Raised", "Organic", "Free Range"]
@@ -30,7 +30,7 @@ const stores = [
     id: 3,
     name: "Neighborhood Market",
     address: "789 Pine Street, Midtown",
-    phone: "(555) 345-6789",
+    phone: "+233 54 347 4770",
     hours: "Mon-Fri: 7AM-9PM, Weekends: 8AM-8PM",
     distance: "2.1 miles",
     products: ["Heritage", "Free Range"]
@@ -39,7 +39,7 @@ const stores = [
     id: 4,
     name: "Organic Foods Co-op",
     address: "321 Elm Drive, North End",
-    phone: "(555) 456-7890",
+    phone: "+233 54 347 4770",
     hours: "Daily: 8AM-9PM",
     distance: "2.8 miles",
     products: ["Organic", "Pasture Raised"]
@@ -48,7 +48,7 @@ const stores = [
     id: 5,
     name: "Farm Fresh Market",
     address: "654 Maple Lane, South Hills",
-    phone: "(555) 567-8901",
+    phone: "+233 54 347 4770",
     hours: "Mon-Sat: 6AM-10PM, Sun: 7AM-9PM",
     distance: "3.5 miles",
     products: ["Heritage", "Pasture Raised", "Organic", "Free Range"]

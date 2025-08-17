@@ -18,8 +18,8 @@ const contactMethods = [
     icon: "📞",
     title: "Call Us",
     description: "Speak directly with our team",
-    contact: "(555) 123-4567",
-    action: "tel:+15551234567"
+    contact: "+233 54 347 4770",
+    action: "tel:+233543474770"
   },
   {
     icon: "💬",
