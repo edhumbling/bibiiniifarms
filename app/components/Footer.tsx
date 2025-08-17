@@ -95,14 +95,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/90">
-          <div className="flex items-center gap-3">
+        <div className="mt-10 flex flex-col md:flex-row md:flex-nowrap items-center justify-between gap-4 text-sm text-white/90">
+          <div className="flex items-center gap-3 whitespace-nowrap">
             <Image src={Logo} alt="Bibinii Farms" className="h-8 w-auto hidden md:block" />
             <span>© {new Date().getFullYear()} Bibinii Farms. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-            <Link href="/terms" className="hover:underline">Terms of Service</Link>
+          <div className="flex items-center gap-6 whitespace-nowrap">
+            <Link href="/privacy" className="hover:underline whitespace-nowrap">Privacy Policy</Link>
+            <Link href="/terms" className="hover:underline whitespace-nowrap">Terms of Service</Link>
           </div>
           <div className="opacity-90 text-center md:text-right w-full">
             Made with Love ❤️ by{" "}
@@ -123,28 +123,24 @@ export default function Footer() {
           <div className="marquee__track">
             <div className="marquee__group">
               <span
-                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
-                style={{ fontSize: '54vw' }}
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12 footer-marquee-text"
               >
                 Bibinii Farms
               </span>
               <span
-                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
-                style={{ fontSize: '54vw' }}
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12 footer-marquee-text"
               >
                 Bibinii Farms
               </span>
             </div>
             <div className="marquee__group">
               <span
-                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
-                style={{ fontSize: '54vw' }}
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12 footer-marquee-text"
               >
                 Bibinii Farms
               </span>
               <span
-                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
-                style={{ fontSize: '54vw' }}
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12 footer-marquee-text"
               >
                 Bibinii Farms
               </span>

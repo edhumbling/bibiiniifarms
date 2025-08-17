@@ -326,3 +326,9 @@ footer a:hover { color: #fdc700; }
   flex-shrink: 0;
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
+
+/* Footer marquee responsive size: 3x on mobile, 2x on desktop */
+.footer-marquee-text { font-size: 54vw; line-height: 1; }
+@media (min-width: 1024px) {
+  .footer-marquee-text { font-size: 36vw; }
+}
