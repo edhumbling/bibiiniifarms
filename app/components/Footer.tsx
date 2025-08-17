@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Top area: nav columns + socials */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 items-start">
           {/* Link columns */}
-          <div className="order-3 col-span-2 lg:order-none lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="order-1 col-span-2 lg:order-none lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Products</Link></li>
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           {/* Mobile-first FAQs column to mirror socials/order on the opposite side */}
-          <div className="order-1 lg:hidden">
+          <div className="order-2 lg:hidden">
             <ul className="space-y-3 text-lg font-semibold">
               <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
               <li><Link href="/careers" className="hover:underline">Careers</Link></li>
