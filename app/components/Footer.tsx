@@ -104,7 +104,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
             <Link href="/terms" className="hover:underline">Terms of Service</Link>
           </div>
-          <div className="opacity-90">
+          <div className="opacity-90 text-center md:text-right w-full">
             Made with Love ❤️ by{" "}
             <a 
               href="https://www.linkedin.com/in/edhumbling" 
@@ -115,7 +115,6 @@ export default function Footer() {
             >
               AIDEL
             </a>
-            {" "}- Truly Ghanaian!
           </div>
         </div>
 
