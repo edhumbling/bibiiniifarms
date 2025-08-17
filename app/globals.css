@@ -308,3 +308,21 @@ footer a:hover { color: #fdc700; }
   background: transparent !important;
   background-color: transparent !important;
 }
+
+/* Footer marquee animation */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee { overflow: hidden; }
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+.marquee__group {
+  display: flex;
+  flex-shrink: 0;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }

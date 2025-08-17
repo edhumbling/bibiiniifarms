@@ -118,17 +118,38 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Static giant text strip */}
-        <div className="mt-12 relative overflow-hidden select-none">
-          <div className="flex items-center justify-center">
-                       <span
-             className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap"
-             style={{ fontSize: '36vw' }}
-           >
-             Bibinii Farms
-           </span>
+        {/* Scrolling marquee wordmark */}
+        <div className="mt-12 relative select-none marquee">
+          <div className="marquee__track">
+            <div className="marquee__group">
+              <span
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
+                style={{ fontSize: '54vw' }}
+              >
+                Bibinii Farms
+              </span>
+              <span
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
+                style={{ fontSize: '54vw' }}
+              >
+                Bibinii Farms
+              </span>
+            </div>
+            <div className="marquee__group">
+              <span
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
+                style={{ fontSize: '54vw' }}
+              >
+                Bibinii Farms
+              </span>
+              <span
+                className="font-rogbold tracking-tighter text-yellow-400 leading-none relative font-black whitespace-nowrap pr-12"
+                style={{ fontSize: '54vw' }}
+              >
+                Bibinii Farms
+              </span>
+            </div>
           </div>
-
         </div>
       </div>
     </footer>
