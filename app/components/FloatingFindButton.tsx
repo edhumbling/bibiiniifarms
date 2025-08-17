@@ -29,7 +29,7 @@ export default function FloatingFindButton() {
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[60] lg:hidden">
       <Link
         href="/store-locator"
-        className="inline-flex items-center justify-center px-6 py-3 bg-luminous-green text-white rounded-full font-semibold text-sm shadow-lg hover:brightness-110 transition-all duration-300 hover:scale-105 active:scale-95"
+        className="inline-flex items-center justify-center px-10 py-3 bg-luminous-green text-white rounded-full font-semibold text-base shadow-lg hover:brightness-110 transition-all duration-300 hover:scale-105 active:scale-95"
       >
         Find Bibinii
       </Link>
