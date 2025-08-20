@@ -106,6 +106,7 @@ export default function Footer() {
           <div className="flex items-center gap-6 whitespace-nowrap md:ml-8">
             <Link href="/privacy" className="hover:underline whitespace-nowrap">Privacy Policy</Link>
             <Link href="/terms" className="hover:underline whitespace-nowrap">Terms of Service</Link>
+            <Link href="/sitemap" className="hover:underline whitespace-nowrap">Sitemap</Link>
           </div>
           <div className="opacity-90 text-center md:text-right w-full md:w-auto md:ml-auto">
             Made with Love ❤️ by{" "}

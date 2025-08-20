@@ -1,3 +1,5 @@
+import { blogPosts } from "./blog/data";
+
 export const dynamic = 'force-static';
 
 export default async function sitemap() {
@@ -24,9 +26,14 @@ export default async function sitemap() {
     "/sentry-example-page",
     "/privacy",
     "/terms",
+    "/sitemap",
   ];
 
-  return staticRoutes.map((route) => ({
+  const blogRoutes = blogPosts.map((post) => `/blog/${post.id}`);
+
+  const allRoutes = [...staticRoutes, ...blogRoutes];
+
+  return allRoutes.map((route) => ({
     url: `https://bibiniifarms.com${route}`,
     lastModified: new Date(),
   }));
