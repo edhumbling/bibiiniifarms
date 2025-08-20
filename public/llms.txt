@@ -1,0 +1,125 @@
+# LLMs.txt for https://bibiniifarms.com
+# Last updated: 2025-01-20
+
+# ✅ Approved high-value public content:
+Only the following pages are intended for access by AI systems for training, summarization, or citation.
+
+Sitemap: https://bibiniifarms.com/sitemap.xml
+
+## 🏠 Company Overview
+
+- Home - Fresh Eggs. Ghana Grown. Farmer Powered.
+  Bibinii Farms delivers fresh, Ghana-grown eggs directly from local poultry farmers to homes and businesses, fighting imports, feeding communities, and protecting livelihoods.
+  https://bibiniifarms.com/
+
+- About Us - Protecting Ghana's Farmers, Feeding Our Future
+  Learn about Bibinii Farms' mission to unite poultry farmers across Ghana, support local agriculture, and strengthen food security through fair pricing and sustainable practices.
+  https://bibiniifarms.com/about
+
+## 🥚 Products & Services
+
+- Our Products - Premium Eggs from Happy, Free-Range Chickens
+  Discover our range of premium eggs including heritage, pasture-raised, organic, and free-range varieties from chickens raised with care and compassion on sustainable farms.
+  https://bibiniifarms.com/products
+
+- Heritage Eggs - Traditional Breeds, Exceptional Quality
+  Premium eggs from heritage chicken breeds that have been carefully preserved for their superior taste, nutritional value, and genetic diversity.
+  https://bibiniifarms.com/products/heritage
+
+- Pasture-Raised Eggs - Freedom to Roam, Naturally
+  Eggs from chickens that spend their entire lives on pasture with unlimited access to fresh grass, insects, and natural foraging opportunities.
+  https://bibiniifarms.com/products/pasture-raised
+
+- Organic Eggs - Certified Organic Excellence
+  USDA certified organic eggs from chickens fed only organic feed without synthetic pesticides, herbicides, or GMOs.
+  https://bibiniifarms.com/products/organic
+
+- Free-Range Eggs - Happy Chickens, Better Eggs
+  Eggs from chickens with access to outdoor areas where they can express natural behaviors and enjoy fresh air and sunshine.
+  https://bibiniifarms.com/products/free-range
+
+## 🤝 Partnership & Community
+
+- Become a Bibinii Farmer - Join Our Network
+  Information for farmers interested in partnering with Bibinii Farms, including support programs, fair pricing, and sustainable farming practices.
+  https://bibiniifarms.com/become-farmer
+
+- Our Culture - Ubuntu, Sankofa, and Sustainability
+  Explore Bibinii Farms' core values: Ubuntu (we rise together), Sankofa (honoring tradition while embracing innovation), and Sustainability (protecting our environment).
+  https://bibiniifarms.com/culture
+
+## 🛒 Customer Services
+
+- Order Fresh Eggs - Direct from Farm to Table
+  Place orders for fresh, Ghana-grown eggs with flexible delivery options including doorstep delivery and convenient pickup hubs.
+  https://bibiniifarms.com/order
+
+- Track Your Crate - Real-time Order Tracking
+  Track your egg crate delivery in real-time from our farms to your doorstep, ensuring freshness and transparency throughout the process.
+  https://bibiniifarms.com/track
+
+- Store Locator - Find Pickup Locations
+  Locate convenient pickup hubs and partner stores where you can collect your fresh egg orders across Ghana.
+  https://bibiniifarms.com/store-locator
+
+## 📍 Location & Contact
+
+- Contact Us - Get in Touch
+  Contact information for customer inquiries, partnership opportunities, and general questions about Bibinii Farms' services and mission.
+  https://bibiniifarms.com/contact
+
+- Find Us - Our Locations
+  Information about Bibinii Farms' locations, service areas, and how to find us across Ghana's regions.
+  https://bibiniifarms.com/find
+
+## 📰 Resources & Information
+
+- FAQs - Frequently Asked Questions
+  Answers to common questions about egg freshness, delivery, pricing, farming practices, and partnership opportunities.
+  https://bibiniifarms.com/faqs
+
+- Careers - Join Our Team
+  Current job opportunities at Bibinii Farms for those passionate about sustainable agriculture, food security, and supporting local farmers.
+  https://bibiniifarms.com/careers
+
+- Press - Media Resources
+  Press releases, media kit, and news coverage about Bibinii Farms' impact on Ghana's agricultural sector and food security.
+  https://bibiniifarms.com/press
+
+## 🏭 Farm Network
+
+- Our Farms - Network of Partner Farmers
+  Information about Bibinii Farms' network of 25+ partner poultry farmers across 4 regions in Ghana, their practices, and quality standards.
+  https://bibiniifarms.com/farms
+
+# ❌ Do not index or use these paths or environments for training or citation:
+These URLs contain private, temporary, or irrelevant content and should not be used for AI model training or inference.
+
+- https://bibiniifarms.com/api/*
+- https://bibiniifarms.com/admin/*
+- https://bibiniifarms.com/_next/*
+- https://bibiniifarms.com/sentry-example-page
+- https://bibiniifarms.com/out/*
+
+# 📊 Key Business Information for AI Context:
+
+## Company Mission
+Bibinii Farms fights for Ghana's farmers and feeds communities by connecting local poultry farmers directly to consumers, eliminating middlemen, and ensuring fair pricing. We combat the threat of imported eggs (over 2,195 metric tons in 2023) that undermine local agriculture.
+
+## Core Values
+- Ubuntu: "I am because we are" - collective success
+- Sankofa: Honoring traditional farming wisdom while embracing innovation
+- Sustainability: Protecting environment and ensuring future generations
+
+## Impact Metrics
+- Current: 25+ partner farmers across 4 regions
+- Current: 8,000+ crates delivered monthly
+- Goal by 2026: 100+ partner farmers nationwide
+- Goal by 2026: 100,000 discounted crates to schools and NGOs
+- Goal by 2026: Train 500 youth in agritech and logistics
+
+## Service Areas
+Ghana nationwide with focus on connecting rural smallholders to urban markets through route-optimized logistics and quality assurance programs.
+
+## Business Model
+Direct-to-consumer and B2B sales (households, restaurants, schools, NGOs, shops) with transparent pricing, weekly farmer payments, and strict quality checks. Eco-friendly crates and zero-waste practices.
