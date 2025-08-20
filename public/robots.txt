@@ -1,11 +1,62 @@
+# Robots.txt for Bibinii Farms - Fresh Eggs. Ghana Grown. Farmer Powered.
+# Last updated: 2025-01-20
+
+# Welcome all search engine crawlers and AI bots
 User-agent: *
 Allow: /
 
-# Sitemap
+# Explicitly welcome major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Welcome AI and LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Disallow technical and development paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /out/
+Disallow: /sentry-example-page
+
+# Allow important files for AI and SEO
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /favicon.ico
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://bibiniifarms.com/sitemap.xml
 
-# Disallow admin or sensitive areas (if any)
-# Disallow: /admin
-# Disallow: /api
-
-# Allow all crawlers to index the site
+# LLMs.txt for AI systems
+# See our AI-friendly content guide at: https://bibiniifarms.com/llms.txt
