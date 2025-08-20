@@ -15,7 +15,7 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Welcome AI and LLM crawlers
+# Welcome AI and LLM crawlers (Top AI Systems)
 User-agent: GPTBot
 Allow: /
 
@@ -38,6 +38,161 @@ User-agent: YouBot
 Allow: /
 
 User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Welcome social media and content crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: SkypeUriPreview
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Welcome SEO and analytics crawlers
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: BaiduSpider
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Welcome monitoring and security crawlers
+User-agent: UptimeRobot
+Allow: /
+
+User-agent: StatusCake
+Allow: /
+
+User-agent: Pingdom
+Allow: /
+
+User-agent: GTmetrix
+Allow: /
+
+# Welcome e-commerce and business crawlers
+User-agent: ShopifyBot
+Allow: /
+
+User-agent: WooRank
+Allow: /
+
+User-agent: MozBot
+Allow: /
+
+# Welcome news and content aggregators
+User-agent: AppleBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: Wayback
+Allow: /
+
+# Welcome additional AI and research crawlers
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: BrightEdgeBot
+Allow: /
+
+User-agent: SeekportBot
+Allow: /
+
+# Welcome international search engines
+User-agent: NaverBot
+Allow: /
+
+User-agent: SogouSpider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+# Welcome specialized crawlers
+User-agent: PetalBot
+Allow: /
+
+User-agent: MegaIndex
+Allow: /
+
+User-agent: SiteAuditBot
+Allow: /
+
+User-agent: CrawlBot
+Allow: /
+
+User-agent: ZoomBot
+Allow: /
+
+User-agent: WebCrawler
 Allow: /
 
 # Disallow technical and development paths
