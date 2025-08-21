@@ -32,21 +32,21 @@ const dmSerifText = DM_Serif_Text({
 export const metadata: Metadata = {
   title: "Bibinii Farms • Home",
   description:
-    "Sourcing fresh eggs directly from Ghanaian farmers. Home delivery, subscriptions, and crate tracking.",
+    "Digital-first platform connecting Ghanaian farmers to families, schools, restaurants, and businesses—fresh, traceable food with smart logistics.",
   metadataBase: new URL("https://bibiniifarms.com"),
   icons: { icon: "/bibinii logo text white.svg", shortcut: "/bibinii logo text white.svg", apple: "/bibinii logo text white.svg" },
   openGraph: {
-    title: "Bibinii Farms — Building Wealth with Integrity",
+    title: "Bibinii Farms — Feed Yourself. Feed Ghana.",
     description:
-      "Sourcing fresh eggs directly from Ghanaian farmers. Home delivery, subscriptions, and crate tracking.",
+      "Digital-first platform connecting Ghanaian farmers to families, schools, restaurants, and businesses—fresh, traceable food with smart logistics.",
     type: "website",
     url: "https://bibiniifarms.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bibinii Farms",
+    title: "Bibinii Farms — Feed Yourself. Feed Ghana.",
     description:
-      "Fresh, traceable eggs delivered. Empowering farmers, serving Ghana.",
+      "Connecting farmers directly to customers with traceable food, fair pricing, and smart logistics.",
   },
 };
 

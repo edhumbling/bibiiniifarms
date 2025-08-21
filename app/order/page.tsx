@@ -6,7 +6,7 @@ import FooterBackground from "../footer background.svg";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Order",
-  description: "Fresh, traceable eggs delivered to your door across Accra and beyond.",
+  description: "Order — Fresh, traceable eggs directly from Ghanaian farmers. One-time delivery or weekly subscription.",
 };
 
 export default function OrderPage() {

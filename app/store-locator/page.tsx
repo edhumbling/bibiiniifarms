@@ -4,7 +4,7 @@ import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Stores",
-  description: "Find Bibinii Farms eggs at stores near you. Fresh, sustainable, and ethically produced.",
+  description: "Stores — Find pickup hubs and partner retailers for fresh, traceable food across Ghana.",
 };
 
 const stores = [

@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Products",
-  description: "Premium eggs from happy, free-range chickens raised with care and compassion on our sustainable farms.",
+  description: "Products — Fresh, traceable eggs from Ghanaian farmers, delivered or ready for pickup. Heritage, pasture-raised, organic, and free-range.",
 };
 
 export default function ProductsPage() {

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Careers",
-  description: "Build a meaningful career while helping create a more sustainable and ethical food system.",
+  description: "Careers — Build Ghana’s food independence with digital innovation, smart logistics, and farmer-first impact.",
 };
 
 const openPositions = [

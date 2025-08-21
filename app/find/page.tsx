@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Find",
-  description: "Where to find Bibinii Farms products and pickup points.",
+  description: "Find — Discover pickup hubs and delivery coverage for Bibinii Farms.",
 };
 
 export default function FindPage() {

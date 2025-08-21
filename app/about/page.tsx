@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • About",
-  description: "Fresh Eggs. Ghana Grown. Farmer Powered. We deliver fresh, Ghana-grown eggs directly from local poultry farmers to your home or business — fighting imports, feeding communities, and protecting livelihoods.",
+  description: "Our Story — Digital-first platform connecting Ghanaian farmers to families, schools, restaurants, and businesses. Dignity for farmers, fresher food for Ghana.",
 };
 
 export default function AboutPage() {
