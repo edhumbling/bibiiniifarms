@@ -44,10 +44,9 @@ export default function Footer() {
             </div>
             <div>
               <ul className="space-y-3 text-lg font-semibold">
-                <li><Link href="/products/heritage" className="hover:underline">Heritage</Link></li>
-                <li><Link href="/products/pasture-raised" className="hover:underline">Pasture Raised</Link></li>
-                <li><Link href="/products/organic" className="hover:underline">Organic Free Range</Link></li>
-                <li><Link href="/products/free-range" className="hover:underline">Free Range</Link></li>
+                <li><Link href="/products/fresh-bibinii-eggs" className="hover:underline">Fresh Bibinii Eggs</Link></li>
+                <li><Link href="/order" className="hover:underline">Order Now</Link></li>
+                <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
               </ul>
             </div>
             <div className="hidden lg:block">

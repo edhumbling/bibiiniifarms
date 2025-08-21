@@ -16,10 +16,11 @@ export default function HumanSitemapPage() {
   ];
 
   const productPages = [
-    { href: "/products/heritage", label: "Heritage" },
-    { href: "/products/pasture-raised", label: "Pasture Raised" },
-    { href: "/products/organic", label: "Organic Free Range" },
-    { href: "/products/free-range", label: "Free Range" },
+    { href: "/products/fresh-bibinii-eggs", label: "Fresh Bibinii Eggs" },
+    { href: "/products/heritage", label: "Heritage (Educational)" },
+    { href: "/products/pasture-raised", label: "Pasture Raised (Educational)" },
+    { href: "/products/organic", label: "Organic (Educational)" },
+    { href: "/products/free-range", label: "Free Range (Educational)" },
   ];
 
   const company = [

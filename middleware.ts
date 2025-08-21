@@ -26,10 +26,10 @@ export function middleware(request: NextRequest) {
     '/faq': '/faqs',
     '/support': '/contact',
     '/reach': '/contact',
-    '/heritage-eggs': '/products/heritage',
-    '/pasture-eggs': '/products/pasture-raised',
-    '/organic-eggs': '/products/organic',
-    '/free-range-eggs': '/products/free-range',
+    '/heritage-eggs': '/products/fresh-bibinii-eggs',
+    '/pasture-eggs': '/products/fresh-bibinii-eggs',
+    '/organic-eggs': '/products/fresh-bibinii-eggs',
+    '/free-range-eggs': '/products/fresh-bibinii-eggs',
   };
 
   // Check for redirects

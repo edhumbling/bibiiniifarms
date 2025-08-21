@@ -4,23 +4,27 @@ import { useState, useEffect } from "react";
 
 const products = [
   {
-    href: "/products/heritage",
-    name: "Heritage",
+    href: "/products/fresh-bibinii-eggs",
+    name: "Fresh Bibinii Eggs",
+    subtitle: "Heritage Variety",
     image: "https://ik.imagekit.io/spj5u0tzx/1.png"
   },
   {
-    href: "/products/organic", 
-    name: "Organic",
+    href: "/products/fresh-bibinii-eggs",
+    name: "Fresh Bibinii Eggs",
+    subtitle: "Organic Variety",
     image: "https://ik.imagekit.io/spj5u0tzx/3.png"
   },
   {
-    href: "/products/pasture-raised",
-    name: "Pasture Raised", 
+    href: "/products/fresh-bibinii-eggs",
+    name: "Fresh Bibinii Eggs",
+    subtitle: "Pasture Raised Variety",
     image: "https://ik.imagekit.io/spj5u0tzx/2.png"
   },
   {
-    href: "/products/free-range",
-    name: "Free Range",
+    href: "/products/fresh-bibinii-eggs",
+    name: "Fresh Bibinii Eggs",
+    subtitle: "Free Range Variety",
     image: "https://ik.imagekit.io/spj5u0tzx/4.png"
   }
 ];
@@ -58,9 +62,14 @@ export default function MobileProductCarousel({ onProductClick }: MobileProductC
                 loading="lazy" 
               />
             </div>
-            <span className="text-white text-lg font-medium group-hover:text-brand-egg transition-colors text-center">
-              {currentProduct.name}
-            </span>
+            <div className="text-center">
+              <span className="text-white text-lg font-medium group-hover:text-brand-egg transition-colors block">
+                {currentProduct.name}
+              </span>
+              <span className="text-white/80 text-sm font-normal">
+                {currentProduct.subtitle}
+              </span>
+            </div>
           </Link>
         </div>
         

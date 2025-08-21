@@ -35,7 +35,7 @@ const freeRangeImages = [
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Products",
-  description: "Products — Fresh, traceable eggs from Ghanaian farmers, delivered or ready for pickup. Heritage, pasture-raised, organic, and free-range.",
+  description: "Fresh Bibinii Eggs — Premium eggs from Ghanaian farmers, delivered or ready for pickup. Choose from Heritage, Pasture Raised, Organic, and Free Range varieties.",
 };
 
 export default function ProductsPage() {
@@ -59,109 +59,69 @@ export default function ProductsPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
           <div className="h-full w-full flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Our Products
+              Fresh Bibinii Eggs
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Premium eggs from happy, free-range chickens raised with care and compassion on our sustainable farms.
+              Premium eggs from Ghanaian farmers, available in four distinct varieties to suit your preferences.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Main Product Card */}
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Heritage Eggs */}
-            <Link href="/products/heritage" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <SimpleImageSlider
-                images={heritageImages}
-                label="Heritage"
-                gradientFrom="from-amber-50"
-                gradientTo="to-orange-100"
-                autoplayDelay={3000}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Heritage Eggs</h3>
-                <p className="text-gray-600 mb-4">
-                  From heritage breed chickens with rich, flavorful yolks and superior nutrition.
-                </p>
-                <span role="button" aria-label="Learn more about Heritage Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
-                  Learn More
-                </span>
-              </div>
-            </Link>
-
-            {/* Pasture Raised */}
-            <Link href="/products/pasture-raised" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <SimpleImageSlider
-                images={pastureImages}
-                label="Pasture Raised"
-                gradientFrom="from-emerald-50"
-                gradientTo="to-green-100"
-                autoplayDelay={3500}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Pasture Raised</h3>
-                <p className="text-gray-600 mb-4">
-                  Chickens roam freely on open pastures, resulting in nutrient-dense eggs.
-                </p>
-                <span role="button" aria-label="Learn more about Pasture Raised Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
-                  Learn More
-                </span>
-              </div>
-            </Link>
-
-            {/* Organic */}
-            <Link href="/products/organic" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <SimpleImageSlider
-                images={organicImages}
-                label="Organic"
-                gradientFrom="from-green-50"
-                gradientTo="to-emerald-100"
-                autoplayDelay={4000}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Organic Eggs</h3>
-                <p className="text-gray-600 mb-4">
-                  Certified organic eggs from chickens fed only organic, non-GMO feed.
-                </p>
-                <span role="button" aria-label="Learn more about Organic Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
-                  Learn More
-                </span>
-              </div>
-            </Link>
-
-            {/* Free Range */}
-            <Link href="/products/free-range" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <SimpleImageSlider
-                images={freeRangeImages}
-                label="Free Range"
-                gradientFrom="from-rose-50"
-                gradientTo="to-red-100"
-                autoplayDelay={4500}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Free Range</h3>
-                <p className="text-gray-600 mb-4">
-                  Chickens with access to outdoor areas, producing high-quality eggs.
-                </p>
-                <span role="button" aria-label="Learn more about Free Range Eggs" className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md">
-                  Learn More
-                </span>
-              </div>
-            </Link>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Signature Product</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We specialize in one thing: exceptional eggs. Choose from four farming methods to find the perfect match for your values and taste.
+            </p>
           </div>
+
+          {/* Single Prominent Fresh Bibinii Eggs Card */}
+          <Link href="/products/fresh-bibinii-eggs" className="group block bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-transparent transition-all duration-300 hover:ring-yellow-400 hover:shadow-[0_0_32px_#FDE04780] hover:scale-[1.02]">
+            <div className="relative h-80 overflow-hidden">
+              {/* Combined image slider showing all egg types */}
+              <SimpleImageSlider
+                images={[
+                  ...heritageImages.slice(0, 1),
+                  ...pastureImages.slice(0, 1),
+                  ...organicImages.slice(0, 1),
+                  ...freeRangeImages.slice(0, 1)
+                ]}
+                label="Fresh Bibinii Eggs"
+                gradientFrom="from-yellow-50"
+                gradientTo="to-amber-100"
+                autoplayDelay={2500}
+              />
+            </div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Fresh Bibinii Eggs</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                Premium eggs from Ghanaian farmers, available in Heritage, Pasture Raised, Organic, and Free Range varieties.
+                Each farming method offers unique benefits while maintaining our commitment to quality and freshness.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">Heritage</span>
+                <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">Pasture Raised</span>
+                <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Organic</span>
+                <span className="px-3 py-1 bg-rose-100 text-rose-800 rounded-full text-sm font-medium">Free Range</span>
+              </div>
+              <span role="button" aria-label="Explore Fresh Bibinii Eggs varieties" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-yellow-400 text-white font-semibold shadow-sm group-hover:shadow-md transition-shadow text-lg">
+                Explore Our Egg Varieties →
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
-      {/* Quality Promise */}
+      {/* Why Choose Fresh Bibinii Eggs */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Quality Promise</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Fresh Bibinii Eggs?</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Every egg we produce meets the highest standards of quality, nutrition, and ethical farming practices.
+              We focus on one product and do it exceptionally well. Every Fresh Bibinii Egg meets the highest standards of quality, nutrition, and ethical farming practices.
             </p>
           </div>
           
@@ -170,9 +130,9 @@ export default function ProductsPage() {
               <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🐔</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Happy Chickens</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
               <p className="text-gray-600">
-                Our chickens live in spacious, natural environments with access to fresh air and sunshine.
+                Every Fresh Bibinii Egg is carefully inspected and meets our strict quality standards for freshness and nutrition.
               </p>
             </div>
             
@@ -180,9 +140,9 @@ export default function ProductsPage() {
               <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Natural Feed</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Locally Sourced</h3>
               <p className="text-gray-600">
-                We use only the finest natural and organic feeds, free from harmful chemicals and additives.
+                Supporting Ghanaian farmers and communities while providing you with the freshest eggs possible.
               </p>
             </div>
             

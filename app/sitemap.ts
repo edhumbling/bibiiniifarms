@@ -16,6 +16,7 @@ export default async function sitemap() {
     "/find",
     "/press",
     "/products",
+    "/products/fresh-bibinii-eggs",
     "/products/heritage",
     "/products/pasture-raised",
     "/products/organic",
