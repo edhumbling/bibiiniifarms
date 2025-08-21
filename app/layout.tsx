@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingFindButton from "./components/FloatingFindButton";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import UTMTracker from "./components/UTMTracker";
 
 const interSans = Inter({
   variable: "--font-geist-sans",
@@ -151,6 +152,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Microsoft Clarity */}
         <div className="min-h-dvh flex flex-col">
+          {/* UTM Tracking */}
+          <UTMTracker />
           {/* Header */}
           <Header />
           {/* Main */}
