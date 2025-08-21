@@ -109,10 +109,13 @@ export default function Footer() {
             <Link href="/sitemap" className="hover:underline whitespace-nowrap">Sitemap</Link>
           </div>
           <div className="opacity-90 text-center md:text-right w-full md:w-auto md:ml-auto">
+            <p className="mb-1">
+              Black man, feed yourself. Ghana, feed yourself. We connect farmers directly to customers — reducing waste and making local food affordable and traceable.
+            </p>
             Made with Love ❤️ by{" "}
-            <a 
-              href="https://www.linkedin.com/in/edhumbling" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/edhumbling"
+              target="_blank"
               rel="noopener noreferrer"
               className="font-semibold transition-colors"
               style={{ color: '#fdc700', textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.4)' }}

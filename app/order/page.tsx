@@ -31,7 +31,7 @@ export default function OrderPage() {
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Order Eggs</h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Choose a one-time delivery or set up a weekly subscription. We’ll confirm availability and delivery window by SMS/WhatsApp. Payment on delivery available.
+              Buy fresh, traceable eggs directly from Ghanaian farmers. Choose one-time delivery or weekly subscription — we’ll confirm availability and a delivery window by SMS/WhatsApp. Payment on delivery available.
             </p>
           </div>
         </div>

@@ -121,7 +121,7 @@ export default function CareersPage() {
               Join Our Team
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Build a meaningful career while helping create a more sustainable and ethical food system.
+              Build a meaningful career powering Ghana’s food independence — with digital innovation, smart logistics, and farmer-first impact.
             </p>
           </div>
         </div>

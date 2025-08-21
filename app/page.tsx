@@ -39,7 +39,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-4 text-lg text-neutral-700 max-w-3xl mx-auto">
-                We deliver fresh, Ghana-grown eggs directly from local poultry farmers to your home or business — fighting imports, feeding communities, and protecting livelihoods.
+                Black man, feed yourself. Ghana, feed yourself. We connect farmers directly to families, schools, restaurants, and businesses — cutting out middlemen, reducing waste, and making local food affordable and traceable.
               </p>
             </Reveal>
             <Reveal delay={0.4}>
@@ -67,7 +67,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">
-                We unite poultry farmers across Ghana into one strong network, delivering fresh eggs straight from farm to table.
+                We unite farmers across Ghana into one strong network — giving farmers fair prices and customers fresher, safer food with doorstep delivery or pickup hubs.
               </p>
             </Reveal>
           </div>

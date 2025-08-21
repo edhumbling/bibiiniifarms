@@ -104,32 +104,77 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story – Protecting Ghana's Farmers, Feeding Our Future</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story – Bibinii Farms</h2>
           </div>
 
           <div className="max-w-4xl mx-auto space-y-6 text-gray-600">
-            <p className="text-lg">
-              Across Ghana, local poultry farmers are under threat. In 2023 alone, over 2,195 metric tons of imported eggs — often cheaper and less traceable — entered our markets. The result? Local farmers struggle to compete, food security is at risk, markets shrink, and young people turn away from agriculture.
+            <p className="text-lg font-semibold text-gray-900">
+              Black man, feed yourself. Ghana, feed yourself.
             </p>
+
+            <p className="text-lg">
+              For too long, Ghana has depended on imports to fill our plates — eggs, rice, corn, chicken, tomatoes, and vegetables that travel thousands of miles before reaching our tables. Cheaper on the surface, but costly for our people:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-lg">
+              <li>Farmers can’t compete with heavily subsidized imports.</li>
+              <li>Youth see no future in agriculture.</li>
+              <li>Ghana loses billions of cedis to foreign producers.</li>
+              <li>Up to 30–50% of Ghana’s fruits and vegetables rot after harvest because of poor logistics and lack of buyers.</li>
+            </ul>
 
             <p className="text-lg font-semibold text-gray-900">
-              We refuse to let that be Ghana's story.
+              This is not just about food. It’s about dignity, pride, and national security.
             </p>
 
+            <h3 className="text-2xl font-bold text-brand-deep mt-4">Our Solution</h3>
             <p className="text-lg">
-              Bibinii Farms was founded to fight for the farmer and feed the community. We are farmers ourselves, so we know the early mornings, the sound of the hens, and the care in every egg collected. Our model is rooted in Ubuntu — "I am because we are." When our farmers thrive, our communities thrive.
+              Bibinii Farms is building a digital-first farming platform that transforms how Ghanaians grow, sell, and consume food:
             </p>
+            <ul className="list-disc pl-6 space-y-2 text-lg">
+              <li>
+                <span className="font-semibold text-gray-900">For Farmers –</span> Farmers across the country can post their produce directly to the platform, reaching customers without middlemen and reducing waste from unsold goods.
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">For Customers –</span> Families, schools, restaurants, and businesses buy fresh, traceable food conveniently, with doorstep delivery or pickup hubs.
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">For Communities –</span> Bibinii Farms aggregates and buys directly from farmers, grading, packaging, and redistributing food before it spoils. We also run our own farm to guarantee supply where demand outpaces production.
+              </li>
+            </ul>
 
             <p className="text-lg">
-              We unite poultry farmers across Ghana — from rural smallholders to large-scale producers — into one strong network. Using fair pricing, strict quality checks, and route-optimized logistics, we connect them directly to households, restaurants, schools, NGOs, and shops. No middlemen driving down prices. No weeks without sales. Just fresh, quality Ghana-grown eggs delivered or ready for pickup — straight from farm to table.
+              This is more than logistics.
             </p>
+            <p className="text-lg">It is <span className="font-semibold text-gray-900">Ubuntu</span>: we rise together when our farmers rise.</p>
+            <p className="text-lg">It is <span className="font-semibold text-gray-900">Sankofa</span>: reclaiming traditional wisdom while embracing innovation.</p>
+            <p className="text-lg">It is <span className="font-semibold text-gray-900">Sustainability</span>: protecting our land, our people, and our future generations.</p>
 
-            <p className="text-lg">
-              Guided by Sankofa, we honor traditional farming wisdom while embracing innovation. Guided by Sustainability, we protect the environment and ensure a future for the next generation of Ghanaian farmers.
-            </p>
+            <h3 className="text-2xl font-bold text-gray-900 mt-6">Why Choose Bibinii Farms?</h3>
+            <ul className="list-disc pl-6 space-y-2 text-lg">
+              <li><span className="font-semibold text-gray-900">Pride in Ghana –</span> Every meal supports our farmers and celebrates food grown on Ghanaian soil.</li>
+              <li><span className="font-semibold text-gray-900">Strength for Farmers –</span> Transparent pricing, prompt payments, and reduced post-harvest waste.</li>
+              <li><span className="font-semibold text-gray-900">Security for the Nation –</span> Less dependence on imports, more jobs for youth, and stronger local food systems.</li>
+              <li><span className="font-semibold text-gray-900">Choice & Convenience –</span> Doorstep delivery or pickup hubs tailored for families and institutions.</li>
+              <li><span className="font-semibold text-gray-900">Modern Innovation –</span> Digital payments, traceable supply chains, and smart logistics that ensure food is sold before it spoils.</li>
+            </ul>
+
+            <h3 className="text-2xl font-bold text-brand-deep mt-6">Impact – Today</h3>
+            <ul className="list-disc pl-6 space-y-2 text-lg">
+              <li><span className="font-semibold text-gray-900">Post-Harvest Waste Reduction –</span> Bibinii Farms directly tackles Ghana’s 30–50% food loss problem by creating fast, reliable market access.</li>
+              <li><span className="font-semibold text-gray-900">Technology Advantage –</span> Our platform integrates farmer listings, aggregation, and logistics so produce doesn’t sit unsold.</li>
+              <li><span className="font-semibold text-gray-900">Value Alignment –</span> Our mission supports Ghana’s national priorities: food security, youth employment, and import reduction.</li>
+            </ul>
+
+            <h3 className="text-2xl font-bold text-brand-deep mt-6">Impact – Tomorrow</h3>
+            <p className="text-lg">By 2026, Bibinii Farms will:</p>
+            <ul className="list-disc pl-6 space-y-2 text-lg">
+              <li>Partner with 100+ farmers nationwide to stabilize markets.</li>
+              <li>Deliver 100,000 discounted food baskets to schools and NGOs.</li>
+              <li>Train 500 youth in agritech and logistics to future-proof Ghana’s workforce.</li>
+            </ul>
 
             <p className="text-lg font-semibold text-brand-deep">
-              When you buy from Bibinii Farms, you're not just getting fresher, safer eggs — you're making a choice that supports local jobs, strengthens food security, and keeps Ghana's agricultural heritage alive.
+              Every crate, every basket, every delivery is a statement: Ghana can feed itself.
             </p>
           </div>
         </div>
