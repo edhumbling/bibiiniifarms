@@ -8,6 +8,31 @@ export const metadata: Metadata = {
   description: "Our Heritage eggs come from time-honored breeds with deep golden yolks and rich flavor.",
 };
 
+
+  {/* Schema.org JSON-LD: Product (Heritage Eggs) */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: "Heritage Eggs",
+        brand: { "@type": "Brand", name: "Bibinii Farms" },
+        image: [
+          "https://ik.imagekit.io/spj5u0tzx/e4c0ee8d-c0e0-4116-b9c2-ecd52c99fa74.png"
+        ],
+        description: "Our Heritage eggs come from time-honored breeds with deep golden yolks and rich flavor.",
+        category: "Eggs",
+        url: "https://bibiniifarms.com/products/heritage/",
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          priceCurrency: "GHS",
+          url: "https://bibiniifarms.com/order",
+        }
+      })
+    }}
+  />
 export default function HeritageProductPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -22,7 +47,7 @@ export default function HeritageProductPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/10" />
-        
+
         <div className="absolute inset-0 flex items-center justify-center text-center px-4">
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-md">Heritage Eggs</h1>
         </div>

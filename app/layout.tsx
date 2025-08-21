@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
-        
+
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-DG69TPH7LF"></script>
         <script
@@ -83,17 +83,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google tag (gtag.js) */}
-        
+
         <link rel="preconnect" href="https://ik.imagekit.io" />
+        {/* Schema.org JSON-LD: Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Bibinii Farms",
+              url: "https://bibiniifarms.com",
+              logo: "https://bibiniifarms.com/bibinii%20logo%20text%20white.svg",
+              description:
+                "Digital-first platform connecting Ghanaian farmers to families, schools, restaurants, and businesses—fresh, traceable food with smart logistics.",
+              areaServed: "GH",
+              slogan: "Feed Yourself. Feed Ghana.",
+            }),
+          }}
+        />
+
+        {/* Schema.org JSON-LD: WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Bibinii Farms",
+              url: "https://bibiniifarms.com",
+              inLanguage: "en",
+              publisher: {
+                "@type": "Organization",
+                name: "Bibinii Farms",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://bibiniifarms.com/bibini%20logo%20text%20white.svg",
+                },
+              },
+            }),
+          }}
+        />
 
       </head>
       <body className={`${interSans.variable} ${geistMono.variable} ${dmSerifText.variable} antialiased bg-white`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MVMQG76N"
-            height="0" 
-            width="0" 
+            height="0"
+            width="0"
             style={{display: 'none', visibility: 'hidden'}}
           />
         </noscript>

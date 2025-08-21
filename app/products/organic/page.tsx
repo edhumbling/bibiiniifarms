@@ -8,6 +8,31 @@ export const metadata: Metadata = {
   description: "Certified organic eggs from hens fed organic, non-GMO feed—clean and simple.",
 };
 
+
+  {/* Schema.org JSON-LD: Product (Organic Eggs) */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: "Organic Eggs",
+        brand: { "@type": "Brand", name: "Bibinii Farms" },
+        image: [
+          "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png"
+        ],
+        description: "Certified organic eggs from hens fed organic, non-GMO feed—clean and simple.",
+        category: "Eggs",
+        url: "https://bibiniifarms.com/products/organic/",
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          priceCurrency: "GHS",
+          url: "https://bibiniifarms.com/order",
+        }
+      })
+    }}
+  />
 export default function OrganicProductPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -22,7 +47,7 @@ export default function OrganicProductPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/10" />
-        
+
         <div className="absolute inset-0 flex items-center justify-center text-center px-4">
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-md">Organic Eggs</h1>
         </div>

@@ -8,9 +8,36 @@ export const metadata: Metadata = {
   description: "Pasture raised eggs from hens that roam freely on open Ghanaian pastures.",
 };
 
+
 export default function PastureRaisedProductPage() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Schema.org JSON-LD: Product (Pasture Raised Eggs) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Pasture Raised Eggs",
+            brand: { "@type": "Brand", name: "Bibinii Farms" },
+            image: [
+              "https://ik.imagekit.io/spj5u0tzx/ffd9ba1f-da29-4d49-83c4-32f9c5e026b2.png",
+              "https://ik.imagekit.io/spj5u0tzx/4f78c028-f6a9-474e-bd9b-caacf48b406e.png",
+              "https://ik.imagekit.io/spj5u0tzx/bd9a7edf-0f8b-47c9-af6c-76820da5f78b.png"
+            ],
+            description: "Pasture raised eggs from hens that roam freely on open Ghanaian pastures.",
+            category: "Eggs",
+            url: "https://bibiniifarms.com/products/pasture-raised/",
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              priceCurrency: "GHS",
+              url: "https://bibiniifarms.com/order",
+            }
+          })
+        }}
+      />
       <BackToProductsButton />
       <section className="relative h-[70vh] overflow-hidden">
         <Image
@@ -22,7 +49,7 @@ export default function PastureRaisedProductPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/10" />
-        
+
         <div className="absolute inset-0 flex items-center justify-center text-center px-4">
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-md">Pasture Raised</h1>
         </div>
