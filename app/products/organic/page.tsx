@@ -8,34 +8,33 @@ export const metadata: Metadata = {
   description: "Certified organic eggs from hens fed organic, non-GMO feed—clean and simple.",
 };
 
-
-  {/* Schema.org JSON-LD: Product (Organic Eggs) */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: "Organic Eggs",
-        brand: { "@type": "Brand", name: "Bibinii Farms" },
-        image: [
-          "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png"
-        ],
-        description: "Certified organic eggs from hens fed organic, non-GMO feed—clean and simple.",
-        category: "Eggs",
-        url: "https://bibiniifarms.com/products/organic/",
-        offers: {
-          "@type": "Offer",
-          availability: "https://schema.org/InStock",
-          priceCurrency: "GHS",
-          url: "https://bibiniifarms.com/order",
-        }
-      })
-    }}
-  />
 export default function OrganicProductPage() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Schema.org JSON-LD: Product (Organic Eggs) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Organic Eggs",
+            brand: { "@type": "Brand", name: "Bibinii Farms" },
+            image: [
+              "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png"
+            ],
+            description: "Certified organic eggs from hens fed organic, non-GMO feed—clean and simple.",
+            category: "Eggs",
+            url: "https://bibiniifarms.com/products/organic/",
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              priceCurrency: "GHS",
+              url: "https://bibiniifarms.com/order",
+            }
+          })
+        }}
+      />
       <BackToProductsButton />
       <section className="relative h-[70vh] overflow-hidden">
         <Image

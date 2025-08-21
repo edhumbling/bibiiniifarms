@@ -5,26 +5,45 @@ import { useEffect, useState } from "react";
 
 export default function BackToProductsButton() {
   const [hiddenNearFooter, setHiddenNearFooter] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const footer = document.querySelector("footer");
-    if (!footer) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setHiddenNearFooter(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "0px 0px -20% 0px",
-        threshold: 0,
-      }
-    );
-
-    observer.observe(footer);
-    return () => observer.disconnect();
+    setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
+    try {
+      const footer = document.querySelector("footer");
+      if (!footer) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (entry) {
+            setHiddenNearFooter(entry.isIntersecting);
+          }
+        },
+        {
+          root: null,
+          rootMargin: "0px 0px -20% 0px",
+          threshold: 0,
+        }
+      );
+
+      observer.observe(footer);
+      return () => {
+        try {
+          observer.disconnect();
+        } catch (error) {
+          // Ignore cleanup errors
+        }
+      };
+    } catch (error) {
+      console.warn('BackToProductsButton observer error:', error);
+    }
+  }, [isMounted]);
 
   return (
     <div className={`fixed z-30 top-24 left-4 transition-opacity duration-200 ${hiddenNearFooter ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
