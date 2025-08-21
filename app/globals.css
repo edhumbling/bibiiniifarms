@@ -332,3 +332,19 @@ footer a:hover { color: #fdc700; }
 @media (min-width: 1024px) {
   .footer-marquee-text { font-size: 36vw; }
 }
+
+/* Fade in up animation for Reveal component */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}

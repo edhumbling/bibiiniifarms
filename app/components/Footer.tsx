@@ -43,10 +43,21 @@ export default function Footer() {
               </ul>
             </div>
             <div>
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
               <ul className="space-y-3 text-lg font-semibold">
-                <li><Link href="/products/fresh-bibinii-eggs" className="hover:underline">Fresh Bibinii Eggs</Link></li>
-                <li><Link href="/order" className="hover:underline">Order Now</Link></li>
-                <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
+                <li><Link href="/products" className="hover:underline">Eggs</Link></li>
+                <li>
+                  <span className="text-white/60 cursor-not-allowed">
+                    Catfish
+                    <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                  </span>
+                </li>
+                <li>
+                  <span className="text-white/60 cursor-not-allowed">
+                    Vegetables
+                    <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                  </span>
+                </li>
               </ul>
             </div>
             <div className="hidden lg:block">
