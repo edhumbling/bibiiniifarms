@@ -2,7 +2,8 @@ import {withSentryConfig} from '@sentry/nextjs';
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Temporarily disable static export to allow middleware
+  // output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true,

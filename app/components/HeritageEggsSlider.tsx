@@ -2,7 +2,7 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const heritageImages = [
   "https://ik.imagekit.io/spj5u0tzx/e4c0ee8d-c0e0-4116-b9c2-ecd52c99fa74.png",
@@ -12,20 +12,49 @@ const heritageImages = [
 ];
 
 export default function HeritageEggsSlider() {
+  const [isMounted, setIsMounted] = useState(false);
+  const autoplayRef = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
+    {
       loop: true,
       align: 'center',
       containScroll: 'trimSnaps'
     },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+    [autoplayRef.current]
   );
 
   useEffect(() => {
-    if (emblaApi) {
-      // Optional: Add any additional setup here
+    setIsMounted(true);
+
+    return () => {
+      // Cleanup autoplay when component unmounts
+      if (autoplayRef.current) {
+        autoplayRef.current.destroy();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (emblaApi && isMounted) {
+      // Setup embla after component is mounted
+      try {
+        // Just ensure the API is ready, don't try to add error handlers
+        emblaApi.reInit();
+      } catch (error) {
+        console.warn('Embla setup error:', error);
+      }
     }
-  }, [emblaApi]);
+  }, [emblaApi, isMounted]);
+
+  // Don't render carousel until mounted to prevent hydration issues
+  if (!isMounted) {
+    return (
+      <div className="h-48 bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg overflow-hidden relative flex items-center justify-center">
+        <span className="text-gray-600 text-lg font-semibold">Heritage</span>
+      </div>
+    );
+  }
 
   return (
     <div className="embla h-48 bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg overflow-hidden relative">

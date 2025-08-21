@@ -2,7 +2,7 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const pastureImages: string[] = [
   "https://ik.imagekit.io/spj5u0tzx/ecec0f4c-6899-4e0d-be4d-704c992e444a.png",
@@ -12,20 +12,49 @@ const pastureImages: string[] = [
 ];
 
 export default function PastureRaisedSlider() {
+  const [isMounted, setIsMounted] = useState(false);
+  const autoplayRef = useRef(Autoplay({ delay: 3500, stopOnInteraction: false })); // Slightly different delay
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
       align: "center",
       containScroll: "trimSnaps",
     },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+    [autoplayRef.current]
   );
 
   useEffect(() => {
-    if (emblaApi) {
-      // Optional future hooks
+    setIsMounted(true);
+
+    return () => {
+      // Cleanup autoplay when component unmounts
+      if (autoplayRef.current) {
+        autoplayRef.current.destroy();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (emblaApi && isMounted) {
+      // Setup embla after component is mounted
+      try {
+        // Just ensure the API is ready, don't try to add error handlers
+        emblaApi.reInit();
+      } catch (error) {
+        console.warn('Embla setup error:', error);
+      }
     }
-  }, [emblaApi]);
+  }, [emblaApi, isMounted]);
+
+  // Don't render carousel until mounted to prevent hydration issues
+  if (!isMounted) {
+    return (
+      <div className="h-48 bg-gradient-to-br from-emerald-50 to-green-100 rounded-lg overflow-hidden relative flex items-center justify-center">
+        <span className="text-gray-600 text-lg font-semibold">Pasture Raised</span>
+      </div>
+    );
+  }
 
   return (
     <div className="embla h-48 bg-gradient-to-br from-emerald-50 to-green-100 rounded-lg overflow-hidden relative">

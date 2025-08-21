@@ -1,11 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
-import HeritageEggsSlider from "@/app/components/HeritageEggsSlider";
-import PastureRaisedSlider from "@/app/components/PastureRaisedSlider";
-import OrganicSlider from "@/app/components/OrganicSlider";
-import FreeRangeSlider from "@/app/components/FreeRangeSlider";
+import SimpleImageSlider from "@/app/components/SimpleImageSlider";
 import { Metadata } from "next";
+
+// Fallback image data for simple sliders
+const heritageImages = [
+  "https://ik.imagekit.io/spj5u0tzx/e4c0ee8d-c0e0-4116-b9c2-ecd52c99fa74.png",
+  "https://ik.imagekit.io/spj5u0tzx/e59d3863-a25b-44e5-b25e-7d7b26d4bd47.png",
+  "https://ik.imagekit.io/spj5u0tzx/b1d02124-c55b-4a68-9e47-e0a1b83c934a.png",
+  "https://ik.imagekit.io/spj5u0tzx/3d7e14c1-f5f7-48c4-bf46-41b920b9c853.png",
+];
+
+const pastureImages = [
+  "https://ik.imagekit.io/spj5u0tzx/ecec0f4c-6899-4e0d-be4d-704c992e444a.png",
+  "https://ik.imagekit.io/spj5u0tzx/ffd9ba1f-da29-4d49-83c4-32f9c5e026b2.png",
+  "https://ik.imagekit.io/spj5u0tzx/01e09a5a-34c5-4f73-87db-e71b8e417b9a.png",
+  "https://ik.imagekit.io/spj5u0tzx/36e9f18e-af3f-4142-afae-c82367a4c9d2.png",
+];
+
+const organicImages = [
+  "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png",
+  "https://ik.imagekit.io/spj5u0tzx/7bb1da60-e133-431d-98fe-3e848c1d9d7d.png",
+  "https://ik.imagekit.io/spj5u0tzx/3ce750cc-6daf-47e3-a0be-6882e0b99e8d.png",
+  "https://ik.imagekit.io/spj5u0tzx/08736235-50b1-4b81-967e-0859062b469e.png",
+];
+
+const freeRangeImages = [
+  "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png",
+  "https://ik.imagekit.io/spj5u0tzx/58d50bc1-9375-4845-a900-7cacf14f8d5e.png",
+  "https://ik.imagekit.io/spj5u0tzx/93b8d1a9-f6cd-4855-80c9-f2672736f107.png",
+  "https://ik.imagekit.io/spj5u0tzx/c4cbec47-f40c-4200-b7f8-341b44337812.png",
+];
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Products",
@@ -48,7 +74,13 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Heritage Eggs */}
             <Link href="/products/heritage" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <HeritageEggsSlider />
+              <SimpleImageSlider
+                images={heritageImages}
+                label="Heritage"
+                gradientFrom="from-amber-50"
+                gradientTo="to-orange-100"
+                autoplayDelay={3000}
+              />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Heritage Eggs</h3>
                 <p className="text-gray-600 mb-4">
@@ -62,7 +94,13 @@ export default function ProductsPage() {
 
             {/* Pasture Raised */}
             <Link href="/products/pasture-raised" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <PastureRaisedSlider />
+              <SimpleImageSlider
+                images={pastureImages}
+                label="Pasture Raised"
+                gradientFrom="from-emerald-50"
+                gradientTo="to-green-100"
+                autoplayDelay={3500}
+              />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Pasture Raised</h3>
                 <p className="text-gray-600 mb-4">
@@ -76,7 +114,13 @@ export default function ProductsPage() {
 
             {/* Organic */}
             <Link href="/products/organic" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <OrganicSlider />
+              <SimpleImageSlider
+                images={organicImages}
+                label="Organic"
+                gradientFrom="from-green-50"
+                gradientTo="to-emerald-100"
+                autoplayDelay={4000}
+              />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Organic Eggs</h3>
                 <p className="text-gray-600 mb-4">
@@ -90,7 +134,13 @@ export default function ProductsPage() {
 
             {/* Free Range */}
             <Link href="/products/free-range" className="group block bg-white rounded-lg shadow-lg overflow-hidden ring-1 ring-transparent transition hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04780]">
-              <FreeRangeSlider />
+              <SimpleImageSlider
+                images={freeRangeImages}
+                label="Free Range"
+                gradientFrom="from-rose-50"
+                gradientTo="to-red-100"
+                autoplayDelay={4500}
+              />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Free Range</h3>
                 <p className="text-gray-600 mb-4">
