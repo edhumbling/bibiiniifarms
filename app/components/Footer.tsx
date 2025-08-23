@@ -60,7 +60,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="hidden lg:block">
+            <div>
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Pillars of Impact</h3>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
