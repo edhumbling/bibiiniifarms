@@ -28,6 +28,11 @@ export default async function sitemap() {
     "/privacy",
     "/terms",
     "/sitemap",
+    "/pillars/quality-standards",
+    "/pillars/farmer-empowerment",
+    "/pillars/national-impact",
+    "/pillars/green-sustainability",
+    "/pillars/technology-innovation",
   ];
 
   const blogRoutes = blogPosts.map((post) => `/blog/${post.id}`);

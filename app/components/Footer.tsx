@@ -61,11 +61,13 @@ export default function Footer() {
               </ul>
             </div>
             <div className="hidden lg:block">
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">Pillars of Impact</h3>
               <ul className="space-y-3 text-lg font-semibold">
-                <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
-                <li><Link href="/careers" className="hover:underline">Careers</Link></li>
-                <li><Link href="/press" className="hover:underline">Press</Link></li>
-                <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+                <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
+                <li><Link href="/pillars/farmer-empowerment" className="hover:underline">Farmer Empowerment</Link></li>
+                <li><Link href="/pillars/national-impact" className="hover:underline">National Impact</Link></li>
+                <li><Link href="/pillars/green-sustainability" className="hover:underline">Green Sustainability</Link></li>
+                <li><Link href="/pillars/technology-innovation" className="hover:underline">Technology and Innovation</Link></li>
               </ul>
             </div>
           </div>
