@@ -203,7 +203,7 @@ export default function Header() {
                     </a>
 
                     {/* Social Icons */}
-                    <div className="flex space-x-4 pt-4 bg-black/90 p-3 rounded-full ring-1 ring-white/10">
+                    <div className="flex space-x-4 pt-4">
                       <a href="https://www.facebook.com/share/15Ap6uHpB8/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#fdc700] hover:text-[#fdc700] transition-colors" aria-label="Facebook">
                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.5 1.7-1.5h1.4V5c-.7-.1-1.6-.2-2.5-.2-2.5 0-4.1 1.5-4.1 4.2V11H7v3h3v8h3.5z"/>
