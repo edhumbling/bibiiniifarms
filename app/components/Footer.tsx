@@ -32,6 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 items-start">
           {/* Link columns */}
           <div className="order-1 col-span-1 lg:order-none lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Main Navigation - Left Column */}
             <div>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Products</Link></li>
@@ -42,7 +43,9 @@ export default function Footer() {
                 <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
               </ul>
             </div>
-            <div>
+
+            {/* Products Column - Hidden on mobile, shown on md+ */}
+            <div className="hidden md:block">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Eggs</Link></li>
@@ -60,6 +63,8 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+
+            {/* Pillars of Impact - Right Column on mobile, middle on md+ */}
             <div>
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Pillars of Impact</h3>
               <ul className="space-y-3 text-lg font-semibold">
@@ -71,8 +76,6 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-
-
 
           {/* Right sidebar: socials + Buy Now */}
           <aside className="order-2 col-span-1 flex flex-col items-end lg:items-end gap-6 lg:order-none">
@@ -99,6 +102,40 @@ export default function Footer() {
               <Image src={OrderNowLogo} alt="Order Now" className="h-12 w-auto" />
             </Link>
           </aside>
+        </div>
+
+        {/* Secondary Navigation - Mobile Only (2-column layout) */}
+        <div className="mt-8 lg:hidden grid grid-cols-2 gap-8">
+          {/* Products Column - Mobile Only */}
+          <div>
+            <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
+            <ul className="space-y-3 text-lg font-semibold">
+              <li><Link href="/products" className="hover:underline">Eggs</Link></li>
+              <li>
+                <span className="text-white/60 cursor-not-allowed">
+                  Catfish
+                  <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                </span>
+              </li>
+              <li>
+                <span className="text-white/60 cursor-not-allowed">
+                  Vegetables
+                  <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Secondary Navigation - Opposite Pillars of Impact */}
+          <div>
+            <h3 className="text-lg font-bold mb-3 text-yellow-400">More</h3>
+            <ul className="space-y-3 text-lg font-semibold">
+              <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
+              <li><Link href="/careers" className="hover:underline">Careers</Link></li>
+              <li><Link href="/press" className="hover:underline">Press</Link></li>
+              <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom bar */}
