@@ -31,7 +31,20 @@ export default function Footer() {
         {/* Top area: nav columns */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 items-start">
           {/* Link columns */}
-          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Main Navigation - Desktop Only */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">Navigation</h3>
+              <ul className="space-y-3 text-lg font-semibold">
+                <li><Link href="/products" className="hover:underline">Products</Link></li>
+                <li><Link href="/farms" className="hover:underline">Our Farms</Link></li>
+                <li><Link href="/become-farmer" className="hover:underline">Become a Farmer</Link></li>
+                <li><Link href="/about" className="hover:underline">About</Link></li>
+                <li><Link href="/blog" className="hover:underline">Blog</Link></li>
+                <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
+              </ul>
+            </div>
+
             {/* Products Column - Hidden on mobile, shown on md+ */}
             <div className="hidden md:block">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
