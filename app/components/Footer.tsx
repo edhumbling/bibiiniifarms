@@ -29,9 +29,9 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12">
         {/* Top area: nav columns */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 items-start">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 items-start">
           {/* Link columns */}
-          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
+          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 md:gap-4 lg:gap-6">
             {/* Main Navigation - Desktop Only */}
             <div className="hidden md:block">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Navigation</h3>
