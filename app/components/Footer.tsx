@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Top area: nav columns */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 items-start">
           {/* Link columns */}
-          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
             {/* Main Navigation - Desktop Only */}
             <div className="hidden md:block">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Navigation</h3>
@@ -74,6 +74,17 @@ export default function Footer() {
                 <li><Link href="/pillars/national-impact" className="hover:underline">National Impact</Link></li>
                 <li><Link href="/pillars/green-sustainability" className="hover:underline">Green Sustainability</Link></li>
                 <li><Link href="/pillars/technology-innovation" className="hover:underline">Technology and Innovation</Link></li>
+              </ul>
+            </div>
+
+            {/* More Column - Desktop Only */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">More</h3>
+              <ul className="space-y-3 text-lg font-semibold">
+                <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
+                <li><Link href="/careers" className="hover:underline">Careers</Link></li>
+                <li><Link href="/press" className="hover:underline">Press</Link></li>
+                <li><Link href="/contact" className="hover:underline">Contact</Link></li>
               </ul>
             </div>
           </div>
