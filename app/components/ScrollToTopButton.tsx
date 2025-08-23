@@ -28,7 +28,7 @@ export default function ScrollToTopButton() {
         type="button"
         aria-label="Scroll to top"
         onClick={handleClick}
-        className="h-12 w-12 rounded-full bg-white/90 backdrop-blur shadow-lg ring-1 ring-black/10 hover:bg-white transition-colors flex items-center justify-center"
+        className="h-12 w-12 rounded-full bg-black text-[#fdc700] shadow-lg ring-1 ring-white/10 hover:bg-black/90 transition-colors flex items-center justify-center"
       >
         <svg
           width="22"

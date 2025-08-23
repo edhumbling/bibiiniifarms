@@ -11,7 +11,7 @@ function SocialIcon({ label, href, children }: { label: string; href: string; ch
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white hover:bg-gray-100 transition-colors"
+      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-black text-[#fdc700] hover:bg-black/90 transition-colors"
     >
       {children}
     </a>
@@ -87,7 +87,7 @@ export default function Footer() {
             {/* Logo for visual identity on small screens */}
             <Image src={Logo} alt="Bibinii Farms" className="h-12 w-auto lg:hidden" />
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 bg-black/90 p-2 rounded-full ring-1 ring-white/10">
               {/* Minimal inline icons */}
               <SocialIcon label="Instagram" href="https://www.instagram.com/bibiniifarms?igsh=eHRrOGpicHU0MmRk&utm_source=qr">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-yellow-400"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 17.8 2.8 2.8 0 0 0 12 9.2zm5.5-.9a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2z"/></svg>
