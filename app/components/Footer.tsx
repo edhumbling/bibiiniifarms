@@ -31,68 +31,61 @@ export default function Footer() {
         {/* Top area: nav columns */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 items-start">
           {/* Link columns */}
-          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 space-y-8 md:space-y-0">
-            {/* First row: Navigation, Products, Pillars of Impact */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {/* Main Navigation - Desktop Only */}
-              <div className="hidden md:block">
-                <h3 className="text-lg font-bold mb-3 text-yellow-400">Navigation</h3>
-                <ul className="space-y-3 text-lg font-semibold">
-                  <li><Link href="/products" className="hover:underline">Products</Link></li>
-                  <li><Link href="/farms" className="hover:underline">Our Farms</Link></li>
-                  <li><Link href="/become-farmer" className="hover:underline">Become a Farmer</Link></li>
-                  <li><Link href="/about" className="hover:underline">About</Link></li>
-                  <li><Link href="/blog" className="hover:underline">Blog</Link></li>
-                  <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
-                </ul>
-              </div>
-
-              {/* Products Column - Hidden on mobile, shown on md+ */}
-              <div className="hidden md:block">
-                <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
-                <ul className="space-y-3 text-lg font-semibold">
-                  <li><Link href="/products" className="hover:underline">Eggs</Link></li>
-                  <li>
-                    <span className="text-white/60 cursor-not-allowed">
-                      Catfish
-                      <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span className="text-white/60 cursor-not-allowed">
-                      Vegetables
-                      <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Pillars of Impact - Right Column on mobile, middle on md+ */}
-              <div className="hidden md:block">
-                <h3 className="text-sm lg:text-lg font-bold mb-2 lg:mb-3 text-yellow-400">Pillars of Impact</h3>
-                <ul className="space-y-2 lg:space-y-3 text-sm lg:text-lg font-semibold">
-                  <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
-                  <li><Link href="/pillars/farmer-empowerment" className="hover:underline">Farmer Empowerment</Link></li>
-                  <li><Link href="/pillars/national-impact" className="hover:underline">National Impact</Link></li>
-                  <li><Link href="/pillars/green-sustainability" className="hover:underline">Green Sustainability</Link></li>
-                  <li><Link href="/pillars/technology-innovation" className="hover:underline">Technology and Innovation</Link></li>
-                </ul>
-              </div>
+          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
+            {/* Main Navigation - Desktop Only */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">Navigation</h3>
+              <ul className="space-y-3 text-lg font-semibold">
+                <li><Link href="/products" className="hover:underline">Products</Link></li>
+                <li><Link href="/farms" className="hover:underline">Our Farms</Link></li>
+                <li><Link href="/become-farmer" className="hover:underline">Become a Farmer</Link></li>
+                <li><Link href="/about" className="hover:underline">About</Link></li>
+                <li><Link href="/blog" className="hover:underline">Blog</Link></li>
+                <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
+              </ul>
             </div>
 
-            {/* Second row: More section with proper spacing */}
+            {/* Products Column - Hidden on mobile, shown on md+ */}
             <div className="hidden md:block">
-              <div className="flex justify-center lg:justify-end">
-                <div className="w-48">
-                  <h3 className="text-lg font-bold mb-3 text-yellow-400">More</h3>
-                  <ul className="space-y-3 text-lg font-semibold">
-                    <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
-                    <li><Link href="/careers" className="hover:underline">Careers</Link></li>
-                    <li><Link href="/press" className="hover:underline">Press</Link></li>
-                    <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-                  </ul>
-                </div>
-              </div>
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
+              <ul className="space-y-3 text-lg font-semibold">
+                <li><Link href="/products" className="hover:underline">Eggs</Link></li>
+                <li>
+                  <span className="text-white/60 cursor-not-allowed">
+                    Catfish
+                    <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                  </span>
+                </li>
+                <li>
+                  <span className="text-white/60 cursor-not-allowed">
+                    Vegetables
+                    <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Pillars of Impact - Right Column on mobile, middle on md+ */}
+            <div className="hidden md:block">
+              <h3 className="text-sm lg:text-lg font-bold mb-2 lg:mb-3 text-yellow-400">Pillars of Impact</h3>
+              <ul className="space-y-2 lg:space-y-3 text-sm lg:text-lg font-semibold">
+                <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
+                <li><Link href="/pillars/farmer-empowerment" className="hover:underline">Farmer Empowerment</Link></li>
+                <li><Link href="/pillars/national-impact" className="hover:underline">National Impact</Link></li>
+                <li><Link href="/pillars/green-sustainability" className="hover:underline">Green Sustainability</Link></li>
+                <li><Link href="/pillars/technology-innovation" className="hover:underline">Technology and Innovation</Link></li>
+              </ul>
+            </div>
+
+            {/* More Column - Desktop Only */}
+            <div className="hidden md:block">
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">More</h3>
+              <ul className="space-y-3 text-lg font-semibold">
+                <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
+                <li><Link href="/careers" className="hover:underline">Careers</Link></li>
+                <li><Link href="/press" className="hover:underline">Press</Link></li>
+                <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+              </ul>
             </div>
           </div>
 
