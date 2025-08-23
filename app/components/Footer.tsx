@@ -29,11 +29,11 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12">
         {/* Top area: nav columns */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 items-start">
-          {/* Link columns */}
-          <div className="order-1 col-span-1 lg:order-none lg:col-span-2 grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 md:gap-4 lg:gap-6">
+        <div className="flex justify-center">
+          {/* Link columns - Centered and evenly spaced */}
+          <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 xl:gap-20">
             {/* Main Navigation - Desktop Only */}
-            <div className="hidden md:block">
+            <div className="hidden md:block text-center md:text-left">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Navigation</h3>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Products</Link></li>
@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
 
             {/* Products Column - Hidden on mobile, shown on md+ */}
-            <div className="hidden md:block">
+            <div className="hidden md:block text-center md:text-left">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">Products</h3>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/products" className="hover:underline">Eggs</Link></li>
@@ -66,9 +66,9 @@ export default function Footer() {
             </div>
 
             {/* Pillars of Impact - Right Column on mobile, middle on md+ */}
-            <div className="hidden md:block">
-              <h3 className="text-sm lg:text-lg font-bold mb-2 lg:mb-3 text-yellow-400">Pillars of Impact</h3>
-              <ul className="space-y-2 lg:space-y-3 text-sm lg:text-lg font-semibold">
+            <div className="hidden md:block text-center md:text-left">
+              <h3 className="text-lg font-bold mb-3 text-yellow-400">Pillars of Impact</h3>
+              <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
                 <li><Link href="/pillars/farmer-empowerment" className="hover:underline">Farmer Empowerment</Link></li>
                 <li><Link href="/pillars/national-impact" className="hover:underline">National Impact</Link></li>
@@ -78,7 +78,7 @@ export default function Footer() {
             </div>
 
             {/* More Column - Desktop Only */}
-            <div className="hidden md:block">
+            <div className="hidden md:block text-center md:text-left">
               <h3 className="text-lg font-bold mb-3 text-yellow-400">More</h3>
               <ul className="space-y-3 text-lg font-semibold">
                 <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
@@ -88,11 +88,6 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-
-          {/* Right sidebar: socials + Buy Now - Moved to bottom */}
-          <aside className="order-2 col-span-1 flex flex-col items-end lg:items-end gap-6 lg:order-none">
-            {/* This will be moved to bottom section */}
-          </aside>
         </div>
 
         {/* Secondary Navigation - Mobile Only (2-column layout) */}
