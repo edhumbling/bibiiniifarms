@@ -65,7 +65,7 @@ export default function Footer() {
             </div>
 
             {/* Pillars of Impact - Right Column on mobile, middle on md+ */}
-            <div>
+            <div className="hidden md:block">
               <h3 className="text-sm lg:text-lg font-bold mb-2 lg:mb-3 text-yellow-400">Pillars of Impact</h3>
               <ul className="space-y-2 lg:space-y-3 text-sm lg:text-lg font-semibold">
                 <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
