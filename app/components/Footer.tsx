@@ -84,36 +84,67 @@ export default function Footer() {
         </div>
 
         {/* Secondary Navigation - Mobile Only (2-column layout) */}
-        <div className="mt-6 lg:hidden grid grid-cols-2 gap-6">
-          {/* Products Column - Mobile Only */}
-          <div>
-            <h3 className="text-sm font-bold mb-2 text-yellow-400">Products</h3>
-            <ul className="space-y-2 text-sm font-semibold">
-              <li><Link href="/products" className="hover:underline">Eggs</Link></li>
-              <li>
-                <span className="text-white/60 cursor-not-allowed">
-                  Catfish
-                  <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
-                </span>
-              </li>
-              <li>
-                <span className="text-white/60 cursor-not-allowed">
-                  Vegetables
-                  <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
-                </span>
-              </li>
-            </ul>
+        <div className="mt-6 lg:hidden space-y-6">
+          {/* First row: Products and Pillars of Impact */}
+          <div className="grid grid-cols-2 gap-6">
+            {/* Products Column - Mobile Only */}
+            <div>
+              <h3 className="text-xs font-bold mb-2 text-yellow-400">Products</h3>
+              <ul className="space-y-2 text-xs font-semibold">
+                <li><Link href="/products" className="hover:underline">Eggs</Link></li>
+                <li>
+                  <span className="text-white/60 cursor-not-allowed">
+                    Catfish
+                    <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                  </span>
+                </li>
+                <li>
+                  <span className="text-white/60 cursor-not-allowed">
+                    Vegetables
+                    <sup className="text-yellow-400 text-xs ml-1 font-normal">Coming Soon</sup>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Pillars of Impact - Aligned with Products */}
+            <div>
+              <h3 className="text-xs font-bold mb-2 text-yellow-400">Pillars of Impact</h3>
+              <ul className="space-y-2 text-xs font-semibold">
+                <li><Link href="/pillars/quality-standards" className="hover:underline">Quality Standards</Link></li>
+                <li><Link href="/pillars/farmer-empowerment" className="hover:underline">Farmer Empowerment</Link></li>
+                <li><Link href="/pillars/national-impact" className="hover:underline">National Impact</Link></li>
+                <li><Link href="/pillars/green-sustainability" className="hover:underline">Green Sustainability</Link></li>
+                <li><Link href="/pillars/technology-innovation" className="hover:underline">Technology & Innovation</Link></li>
+              </ul>
+            </div>
           </div>
 
-          {/* Secondary Navigation - Opposite Pillars of Impact */}
-          <div>
-            <h3 className="text-sm font-bold mb-2 text-yellow-400">More</h3>
-            <ul className="space-y-2 text-sm font-semibold">
-              <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
-              <li><Link href="/careers" className="hover:underline">Careers</Link></li>
-              <li><Link href="/press" className="hover:underline">Press</Link></li>
-              <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-            </ul>
+          {/* Second row: Navigation and More */}
+          <div className="grid grid-cols-2 gap-6">
+            {/* Main Navigation - Left Column */}
+            <div>
+              <h3 className="text-xs font-bold mb-2 text-yellow-400">Navigation</h3>
+              <ul className="space-y-2 text-xs font-semibold">
+                <li><Link href="/products" className="hover:underline">Products</Link></li>
+                <li><Link href="/farms" className="hover:underline">Our Farms</Link></li>
+                <li><Link href="/become-farmer" className="hover:underline">Become a Farmer</Link></li>
+                <li><Link href="/about" className="hover:underline">About</Link></li>
+                <li><Link href="/blog" className="hover:underline">Blog</Link></li>
+                <li><Link href="/store-locator" className="hover:underline">Store Locator</Link></li>
+              </ul>
+            </div>
+
+            {/* Secondary Navigation - Opposite Navigation */}
+            <div>
+              <h3 className="text-xs font-bold mb-2 text-yellow-400">More</h3>
+              <ul className="space-y-2 text-xs font-semibold">
+                <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
+                <li><Link href="/careers" className="hover:underline">Careers</Link></li>
+                <li><Link href="/press" className="hover:underline">Press</Link></li>
+                <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
 
