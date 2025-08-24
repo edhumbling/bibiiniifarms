@@ -225,6 +225,19 @@ export default function Header() {
                         </svg>
                       </a>
                     </div>
+
+                    {/* Sales Support Text */}
+                    <div className="mt-6">
+                      <p className="text-white/90 text-base">
+                        For sales support and inquiries: Call{" "}
+                        <a 
+                          href="tel:+233543474770" 
+                          className="text-[#fdc700] hover:text-yellow-300 transition-colors font-semibold"
+                        >
+                          +233 54 347 4770
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

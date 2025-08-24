@@ -182,6 +182,19 @@ export default function Footer() {
               <Image src={OrderNowLogo} alt="Order Now" className="h-6 w-auto sm:h-8 lg:h-10" />
             </Link>
           </div>
+
+          {/* Sales Support Text */}
+          <div className="text-center mt-4">
+            <p className="text-white/90 text-sm sm:text-base">
+              For sales support and inquiries: Call{" "}
+              <a 
+                href="tel:+233543474770" 
+                className="text-brand-egg hover:text-yellow-300 transition-colors font-semibold"
+              >
+                +233 54 347 4770
+              </a>
+            </p>
+          </div>
         </div>
 
         {/* Bottom bar */}
