@@ -187,12 +187,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-6 lg:mt-8 flex flex-col md:flex-row md:flex-nowrap items-center md:justify-start gap-4 md:gap-10 text-sm text-white/90">
           <div className="flex items-center gap-3 whitespace-nowrap">
-            <span>© {new Date().getFullYear()} Bibinii Farms. All rights reserved.</span>
+            <span>made with love by aidel</span>
           </div>
           <div className="flex items-center gap-6 whitespace-nowrap md:ml-8">
-            <Link href="/privacy" className="hover:underline whitespace-nowrap">Privacy Policy</Link>
-            <Link href="/terms" className="hover:underline whitespace-nowrap">Terms of Service</Link>
-            <Link href="/sitemap" className="hover:underline whitespace-nowrap">Sitemap</Link>
+            <Link href="/privacy" className="hover:underline whitespace-nowrap text-xs md:text-sm">Privacy Policy</Link>
+            <Link href="/terms" className="hover:underline whitespace-nowrap text-xs md:text-sm">Terms of Service</Link>
+            <Link href="/sitemap" className="hover:underline whitespace-nowrap text-xs md:text-sm">Sitemap</Link>
           </div>
           <div className="opacity-90 text-center md:text-right w-full md:w-auto md:ml-auto">
 
