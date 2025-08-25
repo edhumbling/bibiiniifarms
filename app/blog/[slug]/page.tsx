@@ -99,8 +99,8 @@ export default async function BlogPostPage({
               {post.title}
             </h1>
             
-            {/* Author Byline - CNN/WSJ Style */}
-            <div className="flex items-center justify-center space-x-4 mb-4">
+            {/* Author Byline - CNN/WSJ Style - Compact */}
+            <div className="flex items-center justify-center space-x-4 mb-2">
               {post.author?.image && (
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
                   <Image
@@ -122,7 +122,8 @@ export default async function BlogPostPage({
               </div>
             </div>
             
-            <p className="text-sm text-gray-600">
+            {/* Publishing Date - Closer to Author */}
+            <p className="text-xs text-gray-500 mb-2">
               Published on {new Date(post.publishedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',

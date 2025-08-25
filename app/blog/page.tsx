@@ -106,7 +106,7 @@ export default async function BlogPage() {
               <p className="text-gray-600">Check back soon for exciting content from Bibinii Farms!</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {posts.map((post) => {
                 const postImageUrl = post.image
                   ? urlFor(post.image)?.width(400).height(300).url()
@@ -124,43 +124,123 @@ export default async function BlogPage() {
                         ?.substring(0, 150) + '...'
                     : 'Click to read this blog post...');
 
+                const authorImageUrl = post.author?.image
+                  ? urlFor(post.author.image)?.width(32).height(32).url()
+                  : null;
+
                 return (
-                  <article key={post._id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="relative h-48 w-full">
-                      <Image 
-                        src={postImageUrl} 
-                        alt={post.title} 
-                        fill 
-                        className="object-cover" 
-                        sizes="(max-width: 768px) 100vw, 33vw" 
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow capitalize">
-                          {post.category?.replace('-', ' ') || 'Blog Post'}
-                        </span>
-                        <span className="text-sm text-gray-500">5 min read</span>
+                  <Link key={post._id} href={`/blog/${post.slug.current}`} className="block">
+                    <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer h-full">
+                      {/* Mobile: Two-column layout, Desktop: Standard */}
+                      <div className="md:block">
+                        {/* Desktop Layout */}
+                        <div className="hidden md:block">
+                          <div className="relative h-48 w-full">
+                            <Image 
+                              src={postImageUrl} 
+                              alt={post.title} 
+                              fill 
+                              className="object-cover" 
+                              sizes="(max-width: 768px) 50vw, 33vw" 
+                            />
+                          </div>
+                          <div className="p-6">
+                            <div className="flex items-center justify-between mb-3">
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow capitalize">
+                                {post.category?.replace('-', ' ') || 'Blog Post'}
+                              </span>
+                              <span className="text-sm text-gray-500">5 min read</span>
+                            </div>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                              {post.title}
+                            </h2>
+                            <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
+                              {excerpt}
+                            </p>
+                            
+                            {/* Author & Date Section - Compact */}
+                            <div className="flex items-center space-x-3">
+                              {authorImageUrl && (
+                                <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+                                  <Image
+                                    src={authorImageUrl}
+                                    alt={post.author.name}
+                                    width={32}
+                                    height={32}
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              )}
+                              <div className="min-w-0 flex-1">
+                                <p className="text-xs font-medium text-gray-900 truncate">
+                                  {post.author?.name || 'Bibinii Farms Team'}
+                                </p>
+                                <p className="text-xs text-gray-500">
+                                  {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                                    month: 'short', 
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                  })}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Mobile Layout - Two Column Design */}
+                        <div className="md:hidden flex h-32">
+                          {/* Left: Image */}
+                          <div className="relative w-32 flex-shrink-0">
+                            <Image 
+                              src={postImageUrl} 
+                              alt={post.title} 
+                              fill 
+                              className="object-cover rounded-l-lg" 
+                              sizes="128px" 
+                            />
+                          </div>
+                          
+                          {/* Right: Content */}
+                          <div className="flex-1 p-4 flex flex-col justify-between">
+                            <div>
+                              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow capitalize mb-2">
+                                {post.category?.replace('-', ' ') || 'Blog'}
+                              </span>
+                              <h2 className="text-sm font-bold text-gray-900 line-clamp-2 leading-tight mb-1">
+                                {post.title}
+                              </h2>
+                            </div>
+                            
+                            {/* Author & Date - Mobile Compact */}
+                            <div className="flex items-center space-x-2 mt-auto">
+                              {authorImageUrl && (
+                                <div className="w-6 h-6 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+                                  <Image
+                                    src={authorImageUrl}
+                                    alt={post.author.name}
+                                    width={24}
+                                    height={24}
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              )}
+                              <div className="min-w-0 flex-1">
+                                <p className="text-xs text-gray-600 truncate">
+                                  {post.author?.name || 'Bibinii Farms Team'}
+                                </p>
+                                <p className="text-xs text-gray-500">
+                                  {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                                    month: 'short', 
+                                    day: 'numeric'
+                                  })}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
-                        {post.title}
-                      </h2>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
-                        {excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-500">
-                          {new Date(post.publishedAt).toLocaleDateString()}
-                        </span>
-                        <Link
-                          href={`/blog/${post.slug.current}`}
-                          className="text-emerald-glow hover:brightness-110 font-medium text-sm"
-                        >
-                          Read More →
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
+                    </article>
+                  </Link>
                 );
               })}
             </div>
