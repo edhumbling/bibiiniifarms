@@ -29,6 +29,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasScrolledOnceOnBlog, setHasScrolledOnceOnBlog] = useState(false);
 
   useEffect(() => {
     // Force header to show immediately on specific routes
@@ -40,16 +41,33 @@ export default function Header() {
     }
 
     const handleScroll = () => {
-      // Adjust threshold by route so header appears after hero on blog page
+      // Header behavior: on individual blog posts, once the user scrolls, keep header background for the session
       const baseThreshold = Math.max(160, window.innerHeight * 0.6);
-      const blogThreshold = 120;
-      const threshold = pathname.startsWith('/blog') ? blogThreshold : baseThreshold;
+      const isBlogPost = pathname.startsWith('/blog/');
+      const threshold = isBlogPost ? 0 : baseThreshold;
+
+      if (isBlogPost) {
+        const scrolled = window.scrollY > threshold; // threshold 0 => any scroll
+        if (scrolled && !hasScrolledOnceOnBlog) {
+          setHasScrolledOnceOnBlog(true);
+        }
+        setIsScrolled(scrolled || hasScrolledOnceOnBlog);
+        return;
+      }
+
       setIsScrolled(window.scrollY > threshold);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname, hasScrolledOnceOnBlog]);
+
+  // Reset sticky blog header memory when leaving blog post routes
+  useEffect(() => {
+    if (!pathname.startsWith('/blog/')) {
+      setHasScrolledOnceOnBlog(false);
+    }
   }, [pathname]);
 
   return (

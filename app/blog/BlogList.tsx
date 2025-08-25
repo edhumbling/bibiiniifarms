@@ -42,7 +42,7 @@ export default function BlogList({ initialPosts }: { initialPosts: any[] }) {
                   onClick={() => setSelectedCategory(category.value)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
                     category.value === selectedCategory
-                      ? "bg-emerald-glow text-white shadow-sm"
+                      ? "bg-brand-egg text-ink shadow-sm ring-1 ring-black/10 hover:brightness-95"
                       : "bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200"
                   }`}
                 >
@@ -60,7 +60,7 @@ export default function BlogList({ initialPosts }: { initialPosts: any[] }) {
                 onClick={() => setSelectedCategory(category.value)}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
                   category.value === selectedCategory
-                    ? "bg-emerald-glow text-white shadow-sm"
+                    ? "bg-brand-egg text-ink shadow-sm ring-1 ring-black/10 hover:brightness-95"
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200"
                 }`}
               >

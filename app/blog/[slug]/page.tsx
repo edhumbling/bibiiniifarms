@@ -172,21 +172,23 @@ export default async function BlogPostPage({
         </section>
       ) : null}
 
-      {/* Back to Blog CTA */}
-      <section className="py-12 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Enjoyed this post?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Check out more stories and insights from Bibinii Farms.
-          </p>
-          <Link 
-            href="/blog" 
-            className="inline-flex items-center justify-center px-6 py-3 bg-emerald-glow text-white rounded-full font-semibold hover:brightness-110 transition-all"
-          >
-            Read More Posts
-          </Link>
+      {/* Back to Blog CTA - redesigned */}
+      <section className="py-12">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-black/5 bg-white shadow-sm p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900">Enjoyed this post?</h2>
+                <p className="mt-1 text-gray-700">Check out more stories and insights from Bibinii Farms.</p>
+              </div>
+              <Link
+                href="/blog"
+                className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-6 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95 transition-all"
+              >
+                Read More Posts
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

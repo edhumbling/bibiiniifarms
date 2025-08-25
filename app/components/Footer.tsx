@@ -184,15 +184,17 @@ export default function Footer() {
           </div>
 
           {/* Sales Support Text */}
-          <div className="text-center mt-4">
-            <p className="text-white/90 text-sm sm:text-base">
-              For sales support and inquiries: Call{" "}
-              <a 
-                href="tel:+233543474770" 
-                className="text-brand-egg hover:text-yellow-300 transition-colors font-semibold"
-              >
-                +233 54 347 4770
-              </a>
+          <div className="text-center mt-4 px-4">
+            <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+              <span className="block sm:inline">For sales support and inquiries:</span>{" "}
+              <span className="block sm:inline">Call {" "}
+                <a 
+                  href="tel:+233543474770" 
+                  className="text-brand-egg hover:text-yellow-300 transition-colors font-semibold break-words"
+                >
+                  +233 54 347 4770
+                </a>
+              </span>
             </p>
           </div>
         </div>
