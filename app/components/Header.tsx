@@ -29,7 +29,6 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hasScrolledOnceOnBlog, setHasScrolledOnceOnBlog] = useState(false);
 
   useEffect(() => {
     // Force header to show immediately on specific routes
@@ -41,43 +40,26 @@ export default function Header() {
     }
 
     const handleScroll = () => {
-      // Header behavior
-      // - Blog post (/blog/[slug]): any scroll locks background for the session
-      // - Blog index (/blog): transparent over hero (60vh), then show background
-      // - Other pages: show after general threshold
+      // Desired behavior:
+      // - Desktop (>=768px): behave like products page everywhere (transparent over hero, then show after threshold)
+      // - Mobile (<768px): keep green from start ONLY on individual blog posts; otherwise use threshold behavior
+      const isMobile = window.innerWidth < 768;
       const isBlogPost = pathname.startsWith('/blog/');
-      const isBlogIndex = pathname === '/blog';
-      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
-      const blogIndexThreshold = Math.round(window.innerHeight * 0.6); // hero is h-[60vh]
-      const threshold = isBlogPost ? 0 : (isBlogIndex ? blogIndexThreshold : baseThreshold);
 
-      if (isBlogPost) {
-        const scrolled = window.scrollY > threshold; // threshold 0 => any scroll
-        if (scrolled && !hasScrolledOnceOnBlog) {
-          setHasScrolledOnceOnBlog(true);
-        }
-        setIsScrolled(scrolled || hasScrolledOnceOnBlog);
+      // Mobile blog post: always show green from start
+      if (isMobile && isBlogPost) {
+        setIsScrolled(true);
         return;
       }
 
-      setIsScrolled(window.scrollY > threshold);
+      // General threshold behavior (products-style)
+      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
+      setIsScrolled(window.scrollY > baseThreshold);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [pathname, hasScrolledOnceOnBlog]);
-
-  // Reset sticky blog header memory when leaving blog post routes
-  useEffect(() => {
-    if (!pathname.startsWith('/blog/')) {
-      setHasScrolledOnceOnBlog(false);
-      // Ensure main blog index (/blog) behaves with original threshold and does not stay locked
-      if (pathname === '/blog') {
-        const baseThreshold = Math.max(160, window.innerHeight * 0.6);
-        setIsScrolled(window.scrollY > baseThreshold);
-      }
-    }
   }, [pathname]);
 
   return (
