@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "../sanity/client";
@@ -22,11 +22,31 @@ const categories = [
 
 export default function BlogList({ initialPosts }: { initialPosts: any[] }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [pageSize, setPageSize] = useState(9); // default desktop
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Determine page size based on viewport: 5 on mobile (<640px), 9 otherwise
+  useEffect(() => {
+    const setSize = () => setPageSize(window.innerWidth < 640 ? 5 : 9);
+    setSize();
+    window.addEventListener("resize", setSize);
+    return () => window.removeEventListener("resize", setSize);
+  }, []);
+
+  // Reset to first page when category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
 
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "all") return initialPosts;
     return initialPosts.filter((p) => p.category === selectedCategory);
   }, [initialPosts, selectedCategory]);
+
+  const totalPages = Math.ceil((filteredPosts?.length || 0) / pageSize) || 1;
+  const pageStart = (currentPage - 1) * pageSize;
+  const pageEnd = pageStart + pageSize;
+  const visiblePosts = filteredPosts.slice(pageStart, pageEnd);
 
   return (
     <>
@@ -87,7 +107,7 @@ export default function BlogList({ initialPosts }: { initialPosts: any[] }) {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {filteredPosts.map((post) => {
+              {visiblePosts.map((post) => {
                 const postImageUrl = post.image
                   ? urlFor(post.image)?.width(400).height(300).url()
                   : "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=400&h=300&fit=crop";
@@ -172,6 +192,66 @@ export default function BlogList({ initialPosts }: { initialPosts: any[] }) {
                   </Link>
                 );
               })}
+            </div>
+          )}
+
+          {/* Pagination */}
+          {filteredPosts.length > pageSize && (
+            <div className="mt-10 flex items-center justify-center gap-2">
+              <button
+                aria-label="Previous page"
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                className={`px-3 py-2 rounded-md text-sm font-medium border ${
+                  currentPage === 1
+                    ? "text-gray-400 border-gray-200 cursor-not-allowed"
+                    : "text-gray-700 border-gray-300 hover:bg-gray-100"
+                }`}
+                disabled={currentPage === 1}
+              >
+                Prev
+              </button>
+
+              {/* Page numbers - show up to 7 */}
+              {Array.from({ length: totalPages }).slice(0, totalPages).map((_, idx) => {
+                const page = idx + 1;
+                // Windowed display around current page
+                const show =
+                  page === 1 ||
+                  page === totalPages ||
+                  Math.abs(page - currentPage) <= 2 ||
+                  (currentPage <= 3 && page <= 5) ||
+                  (currentPage >= totalPages - 2 && page >= totalPages - 4);
+                if (!show) return idx === 1 || idx === totalPages - 2 ? (
+                  <span key={`dots-${idx}`} className="px-2 text-gray-400">…</span>
+                ) : null;
+                return (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`min-w-[2.25rem] h-9 px-3 py-2 rounded-md text-sm font-semibold border transition-colors ${
+                      currentPage === page
+                        ? "bg-brand-egg text-ink border-black/10"
+                        : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                    }`}
+                    aria-current={currentPage === page ? "page" : undefined}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
+
+              <button
+                aria-label="Next page"
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                className={`px-3 py-2 rounded-md text-sm font-medium border ${
+                  currentPage === totalPages
+                    ? "text-gray-400 border-gray-200 cursor-not-allowed"
+                    : "text-gray-700 border-gray-300 hover:bg-gray-100"
+                }`}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
             </div>
           )}
         </div>

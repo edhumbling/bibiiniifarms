@@ -67,6 +67,11 @@ export default function Header() {
   useEffect(() => {
     if (!pathname.startsWith('/blog/')) {
       setHasScrolledOnceOnBlog(false);
+      // Ensure main blog index (/blog) behaves with original threshold and does not stay locked
+      if (pathname === '/blog') {
+        const baseThreshold = Math.max(160, window.innerHeight * 0.6);
+        setIsScrolled(window.scrollY > baseThreshold);
+      }
     }
   }, [pathname]);
 
