@@ -2,6 +2,7 @@ import { PortableText, type SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "../../sanity/client";
+import { portableTextComponents } from "../../components/PortableTextComponents";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
@@ -106,7 +107,12 @@ export default async function BlogPostPage({
       <article className="py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-gray-700 leading-relaxed text-lg">
-            {Array.isArray(post.body) && <PortableText value={post.body} />}
+            {Array.isArray(post.body) && (
+              <PortableText 
+                value={post.body} 
+                components={portableTextComponents}
+              />
+            )}
           </div>
         </div>
       </article>
