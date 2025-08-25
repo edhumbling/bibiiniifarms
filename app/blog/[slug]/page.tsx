@@ -13,6 +13,12 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   slug,
   publishedAt,
   image,
+  author->{
+    name,
+    image,
+    position,
+    bio
+  },
   body
 }`;
 
@@ -89,10 +95,34 @@ export default async function BlogPostPage({
           )}
           
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               {post.title}
             </h1>
-            <p className="text-lg text-gray-600">
+            
+            {/* Author Byline - CNN/WSJ Style */}
+            <div className="flex items-center justify-center space-x-4 mb-4">
+              {post.author?.image && (
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                  <Image
+                    src={urlFor(post.author.image)?.width(48).height(48).url() || ''}
+                    alt={post.author.name}
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              )}
+              <div className="text-left">
+                <p className="text-sm font-medium text-gray-900">
+                  Written by: <span className="font-semibold">{post.author?.name || 'Bibinii Farms Team'}</span>
+                </p>
+                {post.author?.position && (
+                  <p className="text-xs text-gray-600">{post.author.position}</p>
+                )}
+              </div>
+            </div>
+            
+            <p className="text-sm text-gray-600">
               Published on {new Date(post.publishedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',

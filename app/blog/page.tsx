@@ -22,6 +22,11 @@ const POSTS_QUERY = `*[
   image,
   category,
   excerpt,
+  author->{
+    name,
+    image,
+    position
+  },
   body[0...3]
 }`;
 
