@@ -41,10 +41,15 @@ export default function Header() {
     }
 
     const handleScroll = () => {
-      // Header behavior: on individual blog posts, once the user scrolls, keep header background for the session
-      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
+      // Header behavior
+      // - Blog post (/blog/[slug]): any scroll locks background for the session
+      // - Blog index (/blog): transparent over hero (60vh), then show background
+      // - Other pages: show after general threshold
       const isBlogPost = pathname.startsWith('/blog/');
-      const threshold = isBlogPost ? 0 : baseThreshold;
+      const isBlogIndex = pathname === '/blog';
+      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
+      const blogIndexThreshold = Math.round(window.innerHeight * 0.6); // hero is h-[60vh]
+      const threshold = isBlogPost ? 0 : (isBlogIndex ? blogIndexThreshold : baseThreshold);
 
       if (isBlogPost) {
         const scrolled = window.scrollY > threshold; // threshold 0 => any scroll

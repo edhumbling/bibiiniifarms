@@ -108,16 +108,12 @@ export default async function BlogPostPage({
                   day: 'numeric',
                 })}
               </time>
-              {(post.author?.name || post.author?.position) ? (
-                <>
-                  <span className="text-gray-400">|</span>
-                  <p className="text-gray-800">
-                    <span className="text-gray-700">Written by:</span>{' '}
-                    <span className="font-semibold">{post.author?.name || 'Bibinii Farms Team'}</span>
-                    {post.author?.position ? <span className="text-gray-600">, {post.author.position}</span> : null}
-                  </p>
-                </>
-              ) : null}
+              <span className="text-gray-400">|</span>
+              <p className="text-gray-800">
+                <span className="text-gray-700">Written by:</span>{' '}
+                <span className="font-semibold">{post.author?.name || 'Bibinii Farms Team'}</span>
+                {post.author?.position ? <span className="text-gray-600">, {post.author.position}</span> : null}
+              </p>
             </div>
           </div>
         </div>
