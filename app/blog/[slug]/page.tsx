@@ -94,42 +94,31 @@ export default async function BlogPostPage({
             </div>
           )}
           
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-left">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               {post.title}
             </h1>
-            
-            {/* Author Byline - CNN/WSJ Style - Compact */}
-            <div className="flex items-center justify-center space-x-4 mb-2">
-              {post.author?.image && (
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                  <Image
-                    src={urlFor(post.author.image)?.width(48).height(48).url() || ''}
-                    alt={post.author.name}
-                    width={48}
-                    height={48}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              )}
-              <div className="text-left">
-                <p className="text-sm font-medium text-gray-900">
-                  Written by: <span className="font-semibold">{post.author?.name || 'Bibinii Farms Team'}</span>
-                </p>
-                {post.author?.position && (
-                  <p className="text-xs text-gray-600">{post.author.position}</p>
-                )}
-              </div>
+            <div className="border-t border-orange-500/30 border-dashed my-3" />
+            {/* Meta line: Date | Author */}
+            <div className="flex flex-wrap items-center gap-3 text-sm text-gray-700">
+              <time className="text-gray-800" dateTime={new Date(post.publishedAt).toISOString()}>
+                {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              {(post.author?.name || post.author?.position) ? (
+                <>
+                  <span className="text-gray-400">|</span>
+                  <p className="text-gray-800">
+                    <span className="text-gray-700">Written by:</span>{' '}
+                    <span className="font-semibold">{post.author?.name || 'Bibinii Farms Team'}</span>
+                    {post.author?.position ? <span className="text-gray-600">, {post.author.position}</span> : null}
+                  </p>
+                </>
+              ) : null}
             </div>
-            
-            {/* Publishing Date - Closer to Author */}
-            <p className="text-xs text-gray-500 mb-2">
-              Published on {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </p>
           </div>
         </div>
       </section>
@@ -147,6 +136,41 @@ export default async function BlogPostPage({
           </div>
         </div>
       </article>
+
+      {/* About the Author */}
+      {post.author?.bio && Array.isArray(post.author.bio) && post.author.bio.length > 0 ? (
+        <section className="py-4 sm:py-6">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="bg-white border rounded-lg p-5 sm:p-6">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">About the author</h3>
+              <div className="flex items-start gap-4">
+                {post.author?.image ? (
+                  <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+                    <Image
+                      src={urlFor(post.author.image)?.width(56).height(56).url() || ''}
+                      alt={post.author?.name || 'Author'}
+                      width={56}
+                      height={56}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                ) : null}
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-900">
+                    {post.author?.name || 'Bibinii Farms Team'}
+                  </p>
+                  {post.author?.position ? (
+                    <p className="text-sm text-gray-600 mb-2">{post.author.position}</p>
+                  ) : null}
+                  <div className="text-gray-700 text-sm leading-relaxed">
+                    <PortableText value={post.author.bio} components={portableTextComponents} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* Back to Blog CTA */}
       <section className="py-12 bg-gray-50">
