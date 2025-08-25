@@ -1,18 +1,50 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import { blogPosts } from "./data";
+import { type SanityDocument } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { client } from "../sanity/client";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Blog",
   description: "Stories, insights, and updates from the world of sustainable farming and ethical egg production.",
 };
 
-// blogPosts imported from data.ts
+const POSTS_QUERY = `*[
+  _type == "post"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]{
+  _id, 
+  title, 
+  slug, 
+  publishedAt,
+  image,
+  category,
+  excerpt,
+  body[0...3]
+}`;
 
-const categories = ["All", "Nutrition", "Sustainability", "Farmers", "Animal Welfare", "Education", "Recipes"];
+const { projectId, dataset } = client.config();
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset
+    ? imageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
 
-export default function BlogPage() {
+const options = { next: { revalidate: 30 } };
+
+const categories = [
+  { label: "All", value: "all" },
+  { label: "Nutrition", value: "nutrition" },
+  { label: "Sustainability", value: "sustainability" },
+  { label: "Farmers", value: "farmers" },
+  { label: "Animal Welfare", value: "animal-welfare" },
+  { label: "Education", value: "education" },
+  { label: "Recipes", value: "recipes" }
+];
+
+export default async function BlogPage() {
+  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -46,14 +78,14 @@ export default function BlogPage() {
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (
               <button
-                key={category}
+                key={category.value}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  category === "All"
+                  category.value === "all"
                     ? "bg-emerald-glow text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
-                {category}
+                {category.label}
               </button>
             ))}
           </div>
@@ -63,38 +95,71 @@ export default function BlogPage() {
       {/* Blog Posts Grid */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative h-48 w-full">
-                  <Image src={post.imageUrl} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow">
-                      {post.category}
-                    </span>
-                    <span className="text-sm text-gray-500">{post.readTime}</span>
-                  </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{post.date}</span>
-                    <Link
-                      href={`/blog/${post.id}`}
-                      className="text-emerald-glow hover:brightness-110 font-medium text-sm"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          {posts.length === 0 ? (
+            <div className="text-center py-12">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">No blog posts yet</h3>
+              <p className="text-gray-600">Check back soon for exciting content from Bibinii Farms!</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posts.map((post) => {
+                const postImageUrl = post.image
+                  ? urlFor(post.image)?.width(400).height(300).url()
+                  : "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=400&h=300&fit=crop";
+                
+                if (!postImageUrl) {
+                  return null; // Skip this post if no valid image URL
+                }
+                
+                const excerpt = post.excerpt || 
+                  (post.body && Array.isArray(post.body) 
+                    ? post.body.find((block: any) => block._type === 'block' && block.children)?.children
+                        ?.map((child: any) => child.text)
+                        ?.join('')
+                        ?.substring(0, 150) + '...'
+                    : 'Click to read this blog post...');
+
+                return (
+                  <article key={post._id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div className="relative h-48 w-full">
+                      <Image 
+                        src={postImageUrl} 
+                        alt={post.title} 
+                        fill 
+                        className="object-cover" 
+                        sizes="(max-width: 768px) 100vw, 33vw" 
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow capitalize">
+                          {post.category?.replace('-', ' ') || 'Blog Post'}
+                        </span>
+                        <span className="text-sm text-gray-500">5 min read</span>
+                      </div>
+                      <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                        {post.title}
+                      </h2>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">
+                          {new Date(post.publishedAt).toLocaleDateString()}
+                        </span>
+                        <Link
+                          href={`/blog/${post.slug.current}`}
+                          className="text-emerald-glow hover:brightness-110 font-medium text-sm"
+                        >
+                          Read More →
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 

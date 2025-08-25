@@ -1,6 +1,9 @@
-import { blogPosts } from "./blog/data";
+import { client } from "./sanity/client";
+import { type SanityDocument } from "next-sanity";
 
 export const dynamic = 'force-static';
+
+const POSTS_QUERY = `*[_type == "post" && defined(slug.current)]{slug}`;
 
 export default async function sitemap() {
   const staticRoutes = [
@@ -35,13 +38,21 @@ export default async function sitemap() {
     "/pillars/technology-innovation",
   ];
 
-  const blogRoutes = blogPosts.map((post) => `/blog/${post.id}`);
+  try {
+    const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY);
+    const blogRoutes = posts.map((post) => `/blog/${post.slug.current}`);
+    const allRoutes = [...staticRoutes, ...blogRoutes];
 
-  const allRoutes = [...staticRoutes, ...blogRoutes];
-
-  return allRoutes.map((route) => ({
-    url: `https://bibiniifarms.com${route}`,
-    lastModified: new Date(),
-  }));
+    return allRoutes.map((route) => ({
+      url: `https://bibiniifarms.com${route}`,
+      lastModified: new Date(),
+    }));
+  } catch (error) {
+    // Fallback to static routes only if Sanity query fails
+    return staticRoutes.map((route) => ({
+      url: `https://bibiniifarms.com${route}`,
+      lastModified: new Date(),
+    }));
+  }
 }
 

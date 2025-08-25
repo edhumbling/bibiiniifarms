@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { blogPosts } from "../blog/data";
 
 export const dynamic = "force-static";
 
@@ -129,18 +128,9 @@ export default function HumanSitemapPage() {
 
         <section className="mt-12">
           <h2 className="text-xl font-bold text-neutral-900 mb-3">Blog Posts</h2>
-          <p className="text-neutral-600 mb-4">Browse individual articles published on our blog.</p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {blogPosts.map((post) => (
-              <li key={post.id}>
-                <Link href={`/blog/${post.id}`} className="text-emerald-glow hover:brightness-110">
-                  {post.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="text-neutral-600 mb-4">Browse articles published on our blog.</p>
           <p className="mt-4">
-            Or visit the <Link href="/blog" className="text-emerald-glow hover:brightness-110">Blog index</Link> to filter by category.
+            Visit the <Link href="/blog" className="text-emerald-glow hover:brightness-110">Blog index</Link> to read our latest posts and filter by category.
           </p>
         </section>
       </div>
