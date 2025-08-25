@@ -1,15 +1,13 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Metadata } from "next";
+import { useState, useEffect } from "react";
 import { type SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "../sanity/client";
 
-export const metadata: Metadata = {
-  title: "Bibinii Farms • Blog",
-  description: "Stories, insights, and updates from the world of sustainable farming and ethical egg production.",
-};
+// Metadata will be handled by layout or parent component
 
 const POSTS_QUERY = `*[
   _type == "post"
@@ -48,8 +46,40 @@ const categories = [
   { label: "Recipes", value: "recipes" }
 ];
 
-export default async function BlogPage() {
-  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+export default function BlogPage() {
+  const [posts, setPosts] = useState<SanityDocument[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<SanityDocument[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+        const fetchedPosts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+        setPosts(fetchedPosts);
+        setFilteredPosts(fetchedPosts);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
+  useEffect(() => {
+    if (selectedCategory === "all") {
+      setFilteredPosts(posts);
+    } else {
+      setFilteredPosts(posts.filter(post => post.category === selectedCategory));
+    }
+  }, [selectedCategory, posts]);
+
+  const handleCategoryChange = (categoryValue: string) => {
+    setSelectedCategory(categoryValue);
+  };
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -77,17 +107,38 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Categories Filter */}
-      <section className="py-8 border-b border-gray-200">
+      {/* Categories Filter - Mobile Optimized */}
+      <section className="py-6 sm:py-8 border-b border-gray-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-2 justify-center">
+          {/* Mobile: Horizontal Scroll */}
+          <div className="sm:hidden">
+            <div className="flex space-x-3 overflow-x-auto pb-2 scrollbar-hide">
+              {categories.map((category) => (
+                <button
+                  key={category.value}
+                  onClick={() => handleCategoryChange(category.value)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
+                    category.value === selectedCategory
+                      ? "bg-emerald-glow text-white shadow-sm"
+                      : "bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200"
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          {/* Desktop: Centered Grid */}
+          <div className="hidden sm:flex flex-wrap gap-3 justify-center">
             {categories.map((category) => (
               <button
                 key={category.value}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  category.value === "all"
-                    ? "bg-emerald-glow text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                onClick={() => handleCategoryChange(category.value)}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
+                  category.value === selectedCategory
+                    ? "bg-emerald-glow text-white shadow-sm"
+                    : "bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200"
                 }`}
               >
                 {category.label}
@@ -98,16 +149,29 @@ export default async function BlogPage() {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {posts.length === 0 ? (
+          {loading ? (
             <div className="text-center py-12">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No blog posts yet</h3>
-              <p className="text-gray-600">Check back soon for exciting content from Bibinii Farms!</p>
+              <div className="inline-flex items-center space-x-2">
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-emerald-glow"></div>
+                <span className="text-gray-600">Loading blog posts...</span>
+              </div>
+            </div>
+          ) : filteredPosts.length === 0 ? (
+            <div className="text-center py-12">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {selectedCategory === "all" ? "No blog posts yet" : `No posts in ${categories.find(c => c.value === selectedCategory)?.label} category`}
+              </h3>
+              <p className="text-gray-600">
+                {selectedCategory === "all" 
+                  ? "Check back soon for exciting content from Bibinii Farms!" 
+                  : "Try selecting a different category or check back later."}
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {posts.map((post) => {
+              {filteredPosts.map((post) => {
                 const postImageUrl = post.image
                   ? urlFor(post.image)?.width(400).height(300).url()
                   : "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=400&h=300&fit=crop";
@@ -275,59 +339,7 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Featured Topics */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Popular Topics</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Explore our most popular content categories to learn more about sustainable farming and ethical food production.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🥚</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Nutrition</h3>
-              <p className="text-gray-600 text-sm">
-                Learn about the nutritional benefits of our eggs and healthy eating tips.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌱</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Sustainability</h3>
-              <p className="text-gray-600 text-sm">
-                Discover our environmental initiatives and sustainable farming practices.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">👨‍🌾</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Farmer Stories</h3>
-              <p className="text-gray-600 text-sm">
-                Meet the dedicated farmers who are part of our sustainable network.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🍳</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Recipes</h3>
-              <p className="text-gray-600 text-sm">
-                Delicious recipes that showcase the quality of our farm-fresh eggs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
