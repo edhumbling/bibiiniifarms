@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Logo from "../bibinii logo text white.svg";
 import OrderNowLogo from "../order now.svg";
 import HeaderBackground from "../header bar background.png";
@@ -28,26 +28,8 @@ const secondaryNav = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    // Force header to show immediately on specific routes
-    const shouldForceHeader = pathname.startsWith('/privacy') || pathname.startsWith('/terms');
-
-    if (shouldForceHeader) {
-      setIsScrolled(true);
-      return;
-    }
-
-    const handleScroll = () => {
-      // Make header green as soon as the user scrolls even 1px
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [pathname]);
+  // Always show green background (header bar) from initial render
+  const isScrolled = true;
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? '' : 'bg-transparent-force'}`}>

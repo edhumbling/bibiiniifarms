@@ -60,8 +60,8 @@ export default function OrderProducts() {
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Choose your eggs</h2>
-          <p className="text-gray-600">Tap a product and add how many crates you want.</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Choose your products</h2>
+          <p className="text-gray-600">Tap a product and choose how many you want.</p>
         </div>
 
         <div className="max-w-sm mx-auto grid grid-cols-1 sm:max-w-md md:max-w-none md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -132,7 +132,7 @@ export default function OrderProducts() {
         <div className="sm:hidden fixed bottom-4 inset-x-0 px-4 pointer-events-none">
           <div className="max-w-7xl mx-auto">
             <div className="pointer-events-auto rounded-full bg-emerald-600 text-white shadow-lg flex items-center justify-between px-4 py-3">
-              <span className="text-sm font-semibold">{totalItems} crates selected</span>
+              <span className="text-sm font-semibold">{totalItems} items selected</span>
               <a href="/cart" className="inline-flex items-center rounded-full bg-white text-emerald-700 px-4 py-1.5 font-semibold">
                 Checkout
               </a>
