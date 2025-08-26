@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import OrderForm from "@/app/components/OrderForm";
 import OrderProducts from "@/app/components/OrderProducts";
@@ -28,12 +29,22 @@ export default function OrderPage() {
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Order Eggs</h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Buy fresh, traceable eggs directly from Ghanaian farmers. Choose one-time delivery or weekly subscription — we’ll confirm availability and a delivery window by SMS/WhatsApp. Payment on delivery available.
-            </p>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="h-full w-full flex flex-col items-center justify-center text-center">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/signup"
+                className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-8 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95 transition-all"
+              >
+                Sign up
+              </Link>
+              <Link
+                href="/login"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white text-white px-8 py-3 font-semibold hover:bg-white hover:text-brand-deep transition-all"
+              >
+                Login
+              </Link>
+            </div>
           </div>
         </div>
       </section>

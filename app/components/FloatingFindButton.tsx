@@ -23,6 +23,8 @@ export default function FloatingFindButton() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Hide on order page
+  if (typeof window !== 'undefined' && window.location?.pathname === '/order') return null;
   if (!isVisible) return null;
 
   return (

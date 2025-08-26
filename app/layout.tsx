@@ -163,7 +163,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           {/* Footer */}
           <Footer />
           {/* Floating Find Bibinii Button */}
-          <FloatingFindButton />
+          {/* Hide on /order */}
+          {typeof window === 'undefined' ? null : (window.location?.pathname !== '/order' && (
+            <FloatingFindButton />
+          ))}
           {/* Scroll To Top Button */}
           <ScrollToTopButton />
         </div>

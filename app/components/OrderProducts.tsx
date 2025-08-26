@@ -44,7 +44,7 @@ export default function OrderProducts() {
           <p className="text-gray-600">Tap a product and add how many crates you want.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="max-w-sm mx-auto grid grid-cols-1 sm:max-w-md md:max-w-none md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {PRODUCTS.map((p) => {
             const selected = qtyById[p.id] || 0;
             const pending = pendingById[p.id] || 1;
