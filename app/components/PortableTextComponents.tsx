@@ -169,7 +169,8 @@ export const portableTextComponents: PortableTextComponents = {
     ),
     textColor: ({ children, value }) => {
       const style: React.CSSProperties = {};
-      if (value?.hex) style.color = value.hex;
+      const hex = (value && (value.hex || value)) as string | undefined;
+      if (hex) style.color = hex;
       return <span style={style}>{children}</span>;
     },
     link: ({ children, value }) => (
