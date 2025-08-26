@@ -167,28 +167,10 @@ export const portableTextComponents: PortableTextComponents = {
     em: ({ children }) => (
       <em className="italic">{children}</em>
     ),
-    underline: ({ children }) => (
-      <span className="underline underline-offset-2">{children}</span>
-    ),
-    "strike-through": ({ children }) => (
-      <span className="line-through">{children}</span>
-    ),
-    lead: ({ children }) => (
-      <span className="text-lg font-medium">{children}</span>
-    ),
-    small: ({ children }) => (
-      <span className="text-sm">{children}</span>
-    ),
-    spanStyle: ({ children, value }) => {
-      const { color, size } = value || {};
-      const sizeClass = size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-lg' : size === 'xl' ? 'text-xl' : '';
+    textColor: ({ children, value }) => {
       const style: React.CSSProperties = {};
-      if (color) style.color = color;
-      return (
-        <span className={`${sizeClass}`} style={style}>
-          {children}
-        </span>
-      );
+      if (value?.hex) style.color = value.hex;
+      return <span style={style}>{children}</span>;
     },
     link: ({ children, value }) => (
       <a
