@@ -6,6 +6,7 @@ import { portableTextComponents } from "../../components/PortableTextComponents"
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import ShareBar from "../ShareBar";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -167,6 +168,9 @@ export default async function BlogPostPage({
           </div>
         </section>
       ) : null}
+
+      {/* Share Bar */}
+      <ShareBar title={post.title} />
 
       {/* Back to Blog CTA - redesigned */}
       <section className="py-12">
