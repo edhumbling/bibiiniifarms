@@ -15,7 +15,7 @@ export default function OrderPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Top actions */}
-      <section className="bg-white pt-6 sm:pt-8">
+      <section className="bg-white pt-28 sm:pt-32 md:pt-36">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3">
             <Link

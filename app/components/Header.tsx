@@ -40,21 +40,8 @@ export default function Header() {
     }
 
     const handleScroll = () => {
-      // Desired behavior:
-      // - Desktop (>=768px): behave like products page everywhere (transparent over hero, then show after threshold)
-      // - Mobile (<768px): keep green from start ONLY on individual blog posts; otherwise use threshold behavior
-      const isMobile = window.innerWidth < 768;
-      const isBlogPost = pathname.startsWith('/blog/');
-
-      // Mobile blog post: always show green from start
-      if (isMobile && isBlogPost) {
-        setIsScrolled(true);
-        return;
-      }
-
-      // General threshold behavior (products-style)
-      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
-      setIsScrolled(window.scrollY > baseThreshold);
+      // Make header green as soon as the user scrolls even 1px
+      setIsScrolled(window.scrollY > 0);
     };
 
     handleScroll();
