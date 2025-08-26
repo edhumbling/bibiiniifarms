@@ -25,7 +25,7 @@ export default function SignUpPage() {
           </div>
         </div>
 
-        <h1 className="mt-4 text-center text-xl sm:text-2xl font-extrabold tracking-tight text-ink">BIBINII FARMS</h1>
+        <h1 className="mt-4 text-center text-xl sm:text-2xl font-extrabold tracking-tight text-ink">Bibinii Farms</h1>
         <p className="mt-2 text-center text-neutral-600">Sign up: verify phone number</p>
 
         <SignUpForm />
