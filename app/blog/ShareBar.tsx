@@ -86,9 +86,10 @@ export default function ShareBar({ title }: { title: string }) {
   return (
     <div className="py-4 sm:py-6">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-gray-800">Share:</span>
-          <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <span className="text-xs sm:text-sm font-medium text-gray-800 flex-shrink-0">Share:</span>
+          {/* Horizontal row with safe overflow on very small screens */}
+          <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto scrollbar-hide -mx-1 px-1">
             {items.map((item) => (
               <a
                 key={item.label}
@@ -96,20 +97,20 @@ export default function ShareBar({ title }: { title: string }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={item.label}
-                className="inline-flex items-center justify-center rounded-full w-9 h-9 shadow-sm hover:opacity-90 transition"
+                className="inline-flex items-center justify-center rounded-full w-8 h-8 sm:w-9 sm:h-9 shadow-sm hover:opacity-90 transition flex-shrink-0"
                 style={{ backgroundColor: item.bg }}
               >
-                {item.icon}
+                <span className="block w-4 h-4 sm:w-[18px] sm:h-[18px]">{item.icon}</span>
               </a>
             ))}
             <button
               type="button"
               onClick={copyLink}
               aria-label="Copy link"
-              className="inline-flex items-center justify-center rounded-full w-9 h-9 bg-gray-200 text-gray-800 hover:bg-gray-300 transition"
+              className="inline-flex items-center justify-center rounded-full w-8 h-8 sm:w-9 sm:h-9 bg-gray-200 text-gray-800 hover:bg-gray-300 transition flex-shrink-0"
               title="Copy link"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 8h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z" stroke="#111" strokeWidth="2"/>
                 <path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="#111" strokeWidth="2"/>
               </svg>
