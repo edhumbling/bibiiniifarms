@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import OrderForm from "@/app/components/OrderForm";
+import OrderProducts from "@/app/components/OrderProducts";
 import FooterBackground from "../footer background.svg";
 
 export const metadata: Metadata = {
@@ -37,8 +38,13 @@ export default function OrderPage() {
         </div>
       </section>
 
+      {/* Products to add to cart */}
+      <section className="py-10 sm:py-12">
+        <OrderProducts />
+      </section>
+
       {/* Order Form Section */}
-      <section className="py-16">
+      <section id="order-form" className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <OrderForm />
         </div>
