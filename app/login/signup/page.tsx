@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SignUpForm from "@/app/auth/SignUpForm";
+import BackButton from "@/app/components/BackButton";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Sign up",
@@ -12,6 +13,7 @@ export default function LoginSignUpPage() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center py-16 px-4">
       <div className="w-full max-w-md rounded-3xl border border-neutral-200 bg-white shadow-sm p-6 sm:p-8">
+        <BackButton href="/" label="Back" />
         <div className="flex items-center justify-center">
           <Image
             src="https://ik.imagekit.io/edhumbling/Bibinii%20Transparent%20logo.png"
