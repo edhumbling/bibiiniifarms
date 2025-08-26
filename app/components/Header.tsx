@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../bibinii logo text white.svg";
 import OrderNowLogo from "../order now.svg";
 import HeaderBackground from "../header bar background.png";
@@ -28,8 +28,35 @@ const secondaryNav = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  // Always show green background (header bar) from initial render
-  const isScrolled = true;
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    // Force header to show immediately on specific routes
+    const shouldForceHeader = pathname.startsWith('/privacy') || pathname.startsWith('/terms') || pathname.startsWith('/order');
+
+    if (shouldForceHeader) {
+      setIsScrolled(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      // Original behavior: threshold-based reveal, with mobile blog-post exception
+      const isMobile = window.innerWidth < 768;
+      const isBlogPost = pathname.startsWith('/blog/');
+
+      if (isMobile && isBlogPost) {
+        setIsScrolled(true);
+        return;
+      }
+
+      const baseThreshold = Math.max(160, window.innerHeight * 0.6);
+      setIsScrolled(window.scrollY > baseThreshold);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? '' : 'bg-transparent-force'}`}>
