@@ -13,15 +13,13 @@ export default function SignInPage() {
     <div className="min-h-screen bg-white flex items-center justify-center py-16 px-4">
       <div className="w-full max-w-md rounded-3xl border border-neutral-200 bg-white shadow-sm p-6 sm:p-8">
         <div className="flex items-center justify-center">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-neutral-100 ring-1 ring-black/10 overflow-hidden flex items-center justify-center">
-            <Image
-              src="/icon.svg"
-              alt="Bibinii Farms"
-              width={64}
-              height={64}
-              className="object-contain"
-            />
-          </div>
+          <Image
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Transparent%20logo.png"
+            alt="Bibinii Farms"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
         </div>
         <h1 className="mt-4 text-center text-xl sm:text-2xl font-extrabold tracking-tight text-ink">Bibinii Farms</h1>
         <p className="mt-2 text-center text-neutral-600">Sign in: verify phone number</p>

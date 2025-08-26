@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BackToProductsButton from "@/app/components/BackToProductsButton";
+import BackButtonGeneral from "@/app/components/BackToProductsButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function PastureRaisedProductPage() {
           })
         }}
       />
-      <BackToProductsButton />
+      <BackButtonGeneral />
       <section className="relative h-[70vh] overflow-hidden">
         <Image
           src="https://ik.imagekit.io/spj5u0tzx/ffd9ba1f-da29-4d49-83c4-32f9c5e026b2.png"

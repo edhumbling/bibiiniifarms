@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/app/components/Reveal";
-import BackToProductsButton from "@/app/components/BackToProductsButton";
+import BackButtonGeneral from "@/app/components/BackToProductsButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function NationalImpactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Back Button */}
-      <BackToProductsButton />
+      <BackButtonGeneral />
 
       {/* Hero Section */}
       <section className="relative h-[50vh] sm:h-[60vh] overflow-hidden bg-gradient-to-br from-red-600 to-rose-700">

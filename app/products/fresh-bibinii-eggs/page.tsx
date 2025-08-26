@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import SimpleImageSlider from "@/app/components/SimpleImageSlider";
-import BackToProductsButton from "@/app/components/BackToProductsButton";
+import BackButtonGeneral from "@/app/components/BackToProductsButton";
 import { Metadata } from "next";
 
 // Image data for each egg type
@@ -70,7 +70,7 @@ export default function FreshBibiniiEggsPage() {
         }}
       />
       
-      <BackToProductsButton />
+      <BackButtonGeneral />
       
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">

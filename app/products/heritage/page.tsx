@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BackToProductsButton from "@/app/components/BackToProductsButton";
+import BackButtonGeneral from "@/app/components/BackToProductsButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function HeritageProductPage() {
           })
         }}
       />
-      <BackToProductsButton />
+      <BackButtonGeneral />
       <section className="relative h-[70vh] overflow-hidden">
         <Image
           src="https://ik.imagekit.io/spj5u0tzx/e4c0ee8d-c0e0-4116-b9c2-ecd52c99fa74.png"
