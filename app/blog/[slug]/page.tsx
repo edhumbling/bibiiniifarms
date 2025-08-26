@@ -41,6 +41,38 @@ export async function generateMetadata({
   return {
     title: post?.title ? `${post.title} • Bibinii Farms Blog` : "Blog Post • Bibinii Farms",
     description: post?.title || "Read our latest blog post about sustainable farming and ethical egg production.",
+    openGraph: {
+      title: post?.title ? `${post.title} • Bibinii Farms Blog` : "Blog Post • Bibinii Farms",
+      description: post?.excerpt || "Explore more insights from Bibinii Farms.",
+      type: "article",
+      url: `https://bibiniifarms.com/blog/${post?.slug?.current ?? ""}`,
+      siteName: "Bibinii Farms",
+      images: post?.image
+        ? [
+            {
+              url: urlFor(post.image)?.width(1200).height(630).url() || "",
+              width: 1200,
+              height: 630,
+              alt: post?.title || "Bibinii Farms Blog",
+            },
+          ]
+        : [
+            {
+              url: "https://bibiniifarms.com/icon-1200x630.png",
+              width: 1200,
+              height: 630,
+              alt: "Bibinii Farms",
+            },
+          ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post?.title ? `${post.title} • Bibinii Farms Blog` : "Bibinii Farms Blog",
+      description: post?.excerpt || "Explore more insights from Bibinii Farms.",
+      images: post?.image
+        ? [urlFor(post.image)?.width(1200).height(630).url() || ""]
+        : ["https://bibiniifarms.com/icon-1200x630.png"],
+    },
   };
 }
 
