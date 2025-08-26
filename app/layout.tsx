@@ -2,10 +2,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Marcellus, Inter, DM_Serif_Text } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import FloatingFindButton from "./components/FloatingFindButton";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import AppShell from "./components/AppShell";
 import UTMTracker from "./components/UTMTracker";
 
 const interSans = Inter({
@@ -154,32 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div className="min-h-dvh flex flex-col">
           {/* UTM Tracking */}
           <UTMTracker />
-          {/* Conditionally hide Header/Footer on login routes */}
-          {typeof window !== 'undefined' && window.location?.pathname.startsWith('/login') ? (
-            <>
-              <main className="flex-1 bg-white font-amazon-ember">
-                {children}
-              </main>
-            </>
-          ) : (
-            <>
-              {/* Header */}
-              <Header />
-              {/* Main */}
-              <main className="flex-1 bg-white font-amazon-ember">
-                {children}
-              </main>
-              {/* Footer */}
-              <Footer />
-              {/* Floating Find Bibinii Button */}
-              {/* Hide on /order */}
-              {typeof window === 'undefined' ? null : (window.location?.pathname !== '/order' && (
-                <FloatingFindButton />
-              ))}
-              {/* Scroll To Top Button */}
-              <ScrollToTopButton />
-            </>
-          )}
+          <AppShell>{children}</AppShell>
         </div>
       </body>
     </html>
