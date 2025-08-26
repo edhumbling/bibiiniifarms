@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import LoginForm from "../auth/LoginForm";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Sign in",
@@ -27,31 +28,7 @@ export default function LoginPage() {
         <h1 className="mt-4 text-center text-xl sm:text-2xl font-extrabold tracking-tight text-ink">BIBINII FARMS</h1>
         <p className="mt-2 text-center text-neutral-600">Sign in: verify phone number</p>
 
-        <form
-          className="mt-6 grid gap-4"
-          onSubmit={(e) => {
-            e.preventDefault();
-            // TODO: trigger OTP request
-            alert("We will send you an OTP via SMS/WhatsApp shortly.");
-          }}
-        >
-          <div className="rounded-2xl ring-1 ring-neutral-300 focus-within:ring-brand-deep transition">
-            <input
-              type="tel"
-              inputMode="tel"
-              placeholder="Phone number"
-              className="w-full bg-transparent px-4 py-3 rounded-2xl outline-none text-ink"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="mt-2 inline-flex items-center justify-center rounded-full bg-emerald-600 text-white px-6 py-3 font-semibold hover:brightness-110 transition-all"
-          >
-            Verify phone number
-          </button>
-        </form>
+        <LoginForm />
 
         <div className="mt-6 rounded-2xl ring-1 ring-neutral-200 p-4 text-center">
           <span className="text-neutral-700">Don't have an account?</span>{" "}
