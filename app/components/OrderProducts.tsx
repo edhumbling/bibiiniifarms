@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Product = {
   id: string;
@@ -35,6 +35,26 @@ export default function OrderProducts() {
     setQtyById((s) => ({ ...s, [id]: (s[id] || 0) + (pendingById[id] || 1) }));
   const clear = (id: string) =>
     setQtyById((s) => ({ ...s, [id]: 0 }));
+
+  // Load persisted cart on mount
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("bf_cart");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") {
+          setQtyById(parsed);
+        }
+      }
+    } catch {}
+  }, []);
+
+  // Persist cart when it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem("bf_cart", JSON.stringify(qtyById));
+    } catch {}
+  }, [qtyById]);
 
   return (
     <div className="bg-white">
@@ -113,8 +133,8 @@ export default function OrderProducts() {
           <div className="max-w-7xl mx-auto">
             <div className="pointer-events-auto rounded-full bg-emerald-600 text-white shadow-lg flex items-center justify-between px-4 py-3">
               <span className="text-sm font-semibold">{totalItems} crates selected</span>
-              <a href="#order-form" className="inline-flex items-center rounded-full bg-white text-emerald-700 px-4 py-1.5 font-semibold">
-                Proceed
+              <a href="/cart" className="inline-flex items-center rounded-full bg-white text-emerald-700 px-4 py-1.5 font-semibold">
+                Checkout
               </a>
             </div>
           </div>
@@ -122,8 +142,8 @@ export default function OrderProducts() {
 
         {/* Inline proceed (desktop) */}
         <div className="hidden sm:flex items-center justify-end mt-6">
-          <a href="#order-form" className="inline-flex items-center rounded-full bg-emerald-600 text-white px-5 py-2 font-semibold hover:brightness-110">
-            Proceed to Order ({totalItems})
+          <a href="/cart" className="inline-flex items-center rounded-full bg-emerald-600 text-white px-5 py-2 font-semibold hover:brightness-110">
+            Checkout ({totalItems})
           </a>
         </div>
       </div>

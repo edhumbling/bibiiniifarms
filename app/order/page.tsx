@@ -14,35 +14,33 @@ export const metadata: Metadata = {
 export default function OrderPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <video
-            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_14_2025,%205_05%E2%80%AFPM.mp4"
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster={DEFAULT_HERO_POSTER}
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="h-full w-full flex items-center justify-center text-center">
-            <div className="flex flex-row flex-wrap gap-3">
+      {/* Top actions */}
+      <section className="bg-white pt-6 sm:pt-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-3">
+            <Link
+              href="/login/signup"
+              className="inline-flex items-center justify-center rounded-full px-6 sm:px-8 py-2.5 sm:py-3 font-semibold shadow-md ring-1 ring-black/10 bg-gradient-to-b from-[#ffe28a] to-[#ffd75e] text-ink border border-[#d1a54a] hover:brightness-95 transition-all"
+            >
+              Sign up
+            </Link>
+            <Link
+              href="/login/signin"
+              className="inline-flex items-center justify-center rounded-full px-6 sm:px-8 py-2.5 sm:py-3 font-semibold shadow-md ring-1 ring-black/10 bg-gradient-to-b from-emerald-600 to-emerald-700 text-white border border-emerald-700 hover:brightness-110 transition-all"
+            >
+              Login
+            </Link>
+          </div>
+          <div className="mt-2 text-center">
+            <p className="text-xs sm:text-sm text-neutral-700">
+              Create an account for faster checkout and order tracking
+            </p>
+            <div className="mt-2">
               <Link
-                href="/login/signup"
-                className="inline-flex items-center justify-center rounded-full bg-brand-egg text-ink px-8 py-3 font-semibold ring-1 ring-black/10 hover:brightness-95 transition-all"
+                href="#order-form"
+                className="inline-flex items-center justify-center rounded-full bg-white text-emerald-700 px-5 py-2 font-semibold ring-1 ring-emerald-200 hover:bg-emerald-50 transition-colors"
               >
-                Sign up
-              </Link>
-              <Link
-                href="/login/signin"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white text-white px-8 py-3 font-semibold hover:bg-white hover:text-brand-deep transition-all"
-              >
-                Login
+                Continue as guest
               </Link>
             </div>
           </div>
