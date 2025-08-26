@@ -26,7 +26,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <Header />
       <main className="flex-1 bg-white font-amazon-ember">{children}</main>
       <Footer />
-      {pathname !== "/order" ? <FloatingFindButton /> : null}
+      {!pathname.startsWith("/order") ? <FloatingFindButton /> : null}
       <ScrollToTopButton />
     </div>
   );

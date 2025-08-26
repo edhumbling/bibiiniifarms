@@ -6,6 +6,12 @@ export default function FloatingFindButton() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    // Do not render on any /order route
+    if (typeof window !== 'undefined' && window.location?.pathname.startsWith('/order')) {
+      setIsVisible(false);
+      return;
+    }
+
     const handleScroll = () => {
       // Get footer element
       const footer = document.querySelector('footer');
@@ -24,7 +30,7 @@ export default function FloatingFindButton() {
   }, []);
 
   // Hide on order page
-  if (typeof window !== 'undefined' && window.location?.pathname === '/order') return null;
+  if (typeof window !== 'undefined' && window.location?.pathname.startsWith('/order')) return null;
   if (!isVisible) return null;
 
   return (
