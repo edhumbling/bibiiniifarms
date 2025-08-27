@@ -16,11 +16,6 @@ function buildGoogleMapsEmbedUrlFromLatLng(center: LatLng, zoom: number) {
   return `https://maps.google.com/maps?q=${q}&z=${safeZoom}&ie=UTF8&iwloc=&output=embed`;
 }
 
-function buildGoogleMapsEmbedUrlFromQuery(query: string, zoom: number) {
-  const safeZoom = Math.min(Math.max(zoom, MIN_ZOOM), MAX_ZOOM);
-  return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${safeZoom}&ie=UTF8&iwloc=&output=embed`;
-}
-
 function toTelHref(num: string) {
   const digits = num.replace(/\D+/g, "");
   return `tel:+${digits}`;
@@ -34,17 +29,15 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
   const primaryStore = stores && stores.length > 0 ? stores[0] : null;
 
   useEffect(() => {
-    if (primaryStore) {
+    if (primaryStore?.lat && primaryStore?.lng) {
+      setCenter({ lat: primaryStore.lat, lng: primaryStore.lng });
+      setZoom(15);
+    } else if (primaryStore) {
       setZoom(14);
     }
   }, [primaryStore]);
 
-  const mapSrc = useMemo(() => {
-    if (primaryStore) {
-      return buildGoogleMapsEmbedUrlFromQuery(primaryStore.mapQuery, zoom);
-    }
-    return buildGoogleMapsEmbedUrlFromLatLng(center, zoom);
-  }, [primaryStore, center, zoom]);
+  const mapSrc = useMemo(() => buildGoogleMapsEmbedUrlFromLatLng(center, zoom), [center, zoom]);
 
   const locateMe = useCallback(() => {
     if (!('geolocation' in navigator)) {
@@ -73,10 +66,10 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
   const zoomIn = useCallback(() => setZoom((z) => Math.min(z + 1, MAX_ZOOM)), []);
   const zoomOut = useCallback(() => setZoom((z) => Math.max(z - 1, MIN_ZOOM)), []);
   const resetCenter = useCallback(() => {
-    setCenter(DEFAULT_CENTER);
-    setZoom(DEFAULT_ZOOM);
+    setCenter(primaryStore?.lat && primaryStore?.lng ? { lat: primaryStore.lat, lng: primaryStore.lng } : DEFAULT_CENTER);
+    setZoom(primaryStore?.lat && primaryStore?.lng ? 15 : DEFAULT_ZOOM);
     setStatus(null);
-  }, []);
+  }, [primaryStore]);
 
   return (
     <div className="relative h-[100vh]">
