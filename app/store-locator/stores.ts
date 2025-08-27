@@ -20,6 +20,6 @@ export const stores: Store[] = [
     lat: 5.60155,
     lng: -0.30487,
     phones: ["+233 54 347 4770"],
-    hours: "Mon-Fri: 9AM-5PM; Sat: Limited hours",
+    hours: "Mon-Fri: 9AM-5PM; Sat: 10AM-4PM",
   },
 ];

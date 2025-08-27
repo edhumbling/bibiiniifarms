@@ -16,6 +16,10 @@ function buildGoogleMapsEmbedUrlFromLatLng(center: LatLng, zoom: number) {
   return `https://maps.google.com/maps?q=${q}&z=${safeZoom}&ie=UTF8&iwloc=&output=embed`;
 }
 
+function buildGoogleMapsSearchUrlFromLatLng(center: LatLng) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(center.lat + ',' + center.lng)}`;
+}
+
 function toTelHref(num: string) {
   const digits = num.replace(/\D+/g, "");
   return `tel:+${digits}`;
@@ -40,28 +44,34 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
   const mapSrc = useMemo(() => buildGoogleMapsEmbedUrlFromLatLng(center, zoom), [center, zoom]);
 
   const locateMe = useCallback(() => {
-    if (!('geolocation' in navigator)) {
-      setStatus('Geolocation is not supported by your browser.');
-      return;
-    }
-    setStatus('Locating...');
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        setCenter({ lat: latitude, lng: longitude });
-        setZoom(13);
-        setStatus(null);
-      },
-      (err) => {
-        if (err.code === err.PERMISSION_DENIED) {
-          setStatus('Location permission denied.');
-        } else {
+    const zoomToMax = () => setZoom(MAX_ZOOM);
+    if ('geolocation' in navigator) {
+      setStatus('Locating...');
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude } = pos.coords;
+          setCenter({ lat: latitude, lng: longitude });
+          zoomToMax();
+          setStatus(null);
+        },
+        () => {
+          // Fallback to store center if available
+          if (primaryStore?.lat && primaryStore?.lng) {
+            setCenter({ lat: primaryStore.lat, lng: primaryStore.lng });
+            zoomToMax();
+          }
           setStatus('Unable to retrieve your location.');
-        }
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-    );
-  }, []);
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    } else {
+      if (primaryStore?.lat && primaryStore?.lng) {
+        setCenter({ lat: primaryStore.lat, lng: primaryStore.lng });
+        zoomToMax();
+      }
+      setStatus('Geolocation is not supported by your browser.');
+    }
+  }, [primaryStore]);
 
   const zoomIn = useCallback(() => setZoom((z) => Math.min(z + 1, MAX_ZOOM)), []);
   const zoomOut = useCallback(() => setZoom((z) => Math.max(z - 1, MIN_ZOOM)), []);
@@ -70,6 +80,8 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
     setZoom(primaryStore?.lat && primaryStore?.lng ? 15 : DEFAULT_ZOOM);
     setStatus(null);
   }, [primaryStore]);
+
+  const googleMapsViewUrl = useMemo(() => buildGoogleMapsSearchUrlFromLatLng(center), [center]);
 
   return (
     <div className="relative h-[100vh]">
@@ -103,6 +115,19 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
             {primaryStore.hours ? (
               <div className="text-xs text-gray-700">Hours: {primaryStore.hours}</div>
             ) : null}
+
+            {/* View on Google Maps */}
+            <div className="mt-2">
+              <a
+                href={googleMapsViewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-glow hover:underline"
+              >
+                View on Google Maps
+              </a>
+            </div>
+
             {status ? (
               <div className="mt-1 text-[11px] text-red-600">{status}</div>
             ) : null}
