@@ -97,8 +97,8 @@ export default function ProductsPage() {
               </div>
               <div className="p-3 sm:p-4 md:p-5">
                 <h3 className="text-sm sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Fresh Bibinii Eggs</h3>
-                <p className="hidden sm:block text-gray-600 mb-4">
-                  Premium eggs from Ghanaian farmers, available in Heritage, Pasture Raised, Organic, and Free Range varieties.
+                <p className="hidden sm:block text-gray-600 text-sm md:text-base mb-2">
+                  Premium eggs from Ghanaian farmers. Four varieties.
                 </p>
                 <div className="hidden sm:flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">Heritage</span>
@@ -133,8 +133,8 @@ export default function ProductsPage() {
                   Fresh Catfish
                   <sup className="text-yellow-400 text-[10px] sm:text-sm ml-1 font-normal">Coming Soon</sup>
                 </h3>
-                <p className="hidden sm:block text-gray-500 mb-4">
-                  Premium fresh catfish from local Ghanaian fish farms. Sustainably raised and delivered fresh to your door.
+                <p className="hidden sm:block text-gray-500 text-sm md:text-base mb-2">
+                  Fresh, sustainably raised catfish.
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   <span className="px-2 py-0.5 bg-blue-100 text-blue-600 rounded-full text-[10px] sm:text-xs font-medium opacity-60">Farm Fresh</span>
@@ -167,8 +167,8 @@ export default function ProductsPage() {
                   Fresh Vegetables
                   <sup className="text-yellow-400 text-[10px] sm:text-sm ml-1 font-normal">Coming Soon</sup>
                 </h3>
-                <p className="hidden sm:block text-gray-500 mb-4">
-                  Locally grown fresh vegetables from Ghanaian farmers. Organic and pesticide-free produce delivered fresh.
+                <p className="hidden sm:block text-gray-500 text-sm md:text-base mb-2">
+                  Locally grown, organic vegetables.
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   <span className="px-2 py-0.5 bg-green-100 text-green-600 rounded-full text-[10px] sm:text-xs font-medium opacity-60">Organic</span>
