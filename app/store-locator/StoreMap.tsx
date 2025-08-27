@@ -55,7 +55,6 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
           setStatus(null);
         },
         () => {
-          // Fallback to store center if available
           if (primaryStore?.lat && primaryStore?.lng) {
             setCenter({ lat: primaryStore.lat, lng: primaryStore.lng });
             zoomToMax();
@@ -75,11 +74,6 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
 
   const zoomIn = useCallback(() => setZoom((z) => Math.min(z + 1, MAX_ZOOM)), []);
   const zoomOut = useCallback(() => setZoom((z) => Math.max(z - 1, MIN_ZOOM)), []);
-  const resetCenter = useCallback(() => {
-    setCenter(primaryStore?.lat && primaryStore?.lng ? { lat: primaryStore.lat, lng: primaryStore.lng } : DEFAULT_CENTER);
-    setZoom(primaryStore?.lat && primaryStore?.lng ? 15 : DEFAULT_ZOOM);
-    setStatus(null);
-  }, [primaryStore]);
 
   const googleMapsViewUrl = useMemo(() => buildGoogleMapsSearchUrlFromLatLng(center), [center]);
 
@@ -122,7 +116,7 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
                 href={googleMapsViewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-glow hover:underline"
+                className="inline-flex items-center justify-center rounded-full bg-red-600 text-white px-4 py-2 text-xs font-semibold hover:bg-red-700 transition-colors"
               >
                 View on Google Maps
               </a>
@@ -150,20 +144,6 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
           aria-label="Zoom out"
         >
           −
-        </button>
-        <button
-          onClick={resetCenter}
-          className="w-9 h-9 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 text-[11px] font-semibold hover:bg-white"
-          aria-label="Reset view"
-        >
-          Rst
-        </button>
-        <button
-          onClick={locateMe}
-          className="w-9 h-9 rounded-lg bg-luminous-green text-white shadow flex items-center justify-center text-[11px] font-semibold hover:brightness-110"
-          aria-label="Locate me"
-        >
-          ▶
         </button>
       </div>
     </div>
