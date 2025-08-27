@@ -70,18 +70,18 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Product Range</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">Our Product Range</h2>
+            <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">
               Fresh, quality products from Ghanaian farmers. We're starting with exceptional eggs and expanding our offerings.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6 xl:gap-8">
             {/* Eggs - Available */}
-            <Link href="/products/fresh-bibinii-eggs" className="group block bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-gray-100 transition-all duration-300 hover:ring-yellow-400 hover:shadow-[0_0_24px_#FDE04760] hover:scale-[1.01]">
-              <div className="relative h-40 sm:h-56 md:h-64 overflow-hidden">
+            <Link href="/products/fresh-bibinii-eggs" className="group block bg-white rounded-xl shadow-sm overflow-hidden ring-1 ring-gray-100 transition-all duration-200 hover:ring-yellow-400 hover:shadow hover:scale-[1.01]">
+              <div className="relative aspect-square overflow-hidden">
                 <SimpleImageSlider
                   images={[
                     ...heritageImages.slice(0, 1),
@@ -95,98 +95,86 @@ export default function ProductsPage() {
                   autoplayDelay={2500}
                 />
               </div>
-              <div className="p-4 sm:p-5">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Fresh Bibinii Eggs</h3>
+              <div className="p-3 sm:p-4 md:p-5">
+                <h3 className="text-sm sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Fresh Bibinii Eggs</h3>
                 <p className="hidden sm:block text-gray-600 mb-4">
                   Premium eggs from Ghanaian farmers, available in Heritage, Pasture Raised, Organic, and Free Range varieties.
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="hidden sm:flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">Heritage</span>
                   <span className="px-2 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-medium">Pasture Raised</span>
                   <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Organic</span>
                   <span className="px-2 py-1 bg-rose-100 text-rose-800 rounded-full text-xs font-medium">Free Range</span>
                 </div>
-                <span className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-yellow-400 text-white font-semibold text-sm sm:text-base shadow-sm group-hover:shadow-md transition-shadow">
+                <span className="inline-flex items-center justify-center px-2.5 py-1.5 rounded-md bg-yellow-400 text-white font-semibold text-xs sm:text-sm shadow-sm group-hover:shadow-md transition-shadow">
                   Explore Varieties →
                 </span>
               </div>
             </Link>
 
             {/* Catfish - Coming Soon */}
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-gray-100 opacity-90 sm:opacity-60 cursor-not-allowed">
-              <div className="relative h-40 sm:h-56 md:h-64 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-sm overflow-hidden ring-1 ring-gray-100 opacity-90 sm:opacity-60 cursor-not-allowed">
+              <div className="relative aspect-square overflow-hidden">
                 <Image
                   src="https://ik.imagekit.io/humbling/9facc2ab-c35e-4c35-ba1a-dfa1ac0304d0.png"
                   alt="Fresh Catfish"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                 />
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-base sm:text-lg font-semibold bg-black/40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm">
-                    Fresh Catfish
-                  </span>
-                </div>
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
                   <span className="bg-yellow-400 text-white px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                     Coming Soon
                   </span>
                 </div>
               </div>
-              <div className="p-4 sm:p-5">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+              <div className="p-3 sm:p-4 md:p-5">
+                <h3 className="text-sm sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-3">
                   Fresh Catfish
-                  <sup className="text-yellow-400 text-xs sm:text-sm ml-1 font-normal">Coming Soon</sup>
+                  <sup className="text-yellow-400 text-[10px] sm:text-sm ml-1 font-normal">Coming Soon</sup>
                 </h3>
                 <p className="hidden sm:block text-gray-500 mb-4">
                   Premium fresh catfish from local Ghanaian fish farms. Sustainably raised and delivered fresh to your door.
                 </p>
-                <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                  <span className="px-2 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium opacity-60">Farm Fresh</span>
-                  <span className="px-2 py-1 bg-cyan-100 text-cyan-600 rounded-full text-xs font-medium opacity-60">Sustainable</span>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                  <span className="px-2 py-0.5 bg-blue-100 text-blue-600 rounded-full text-[10px] sm:text-xs font-medium opacity-60">Farm Fresh</span>
+                  <span className="px-2 py-0.5 bg-cyan-100 text-cyan-600 rounded-full text-[10px] sm:text-xs font-medium opacity-60">Sustainable</span>
                 </div>
-                <span className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gray-300 text-gray-500 font-semibold text-sm cursor-not-allowed">
+                <span className="inline-flex items-center justify-center px-2.5 py-1.5 rounded-md bg-gray-300 text-gray-500 font-semibold text-xs cursor-not-allowed">
                   Coming Soon
                 </span>
               </div>
             </div>
 
             {/* Vegetables - Coming Soon */}
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden ring-1 ring-gray-100 opacity-90 sm:opacity-60 cursor-not-allowed">
-              <div className="relative h-40 sm:h-56 md:h-64 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-sm overflow-hidden ring-1 ring-gray-100 opacity-90 sm:opacity-60 cursor-not-allowed">
+              <div className="relative aspect-square overflow-hidden">
                 <Image
                   src="https://ik.imagekit.io/humbling/df370119-a67f-4a67-916e-d11618bb1bba.png"
                   alt="Fresh Vegetables"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                 />
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-base sm:text-lg font-semibold bg-black/40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm">
-                    Fresh Vegetables
-                  </span>
-                </div>
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
                   <span className="bg-yellow-400 text-white px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                     Coming Soon
                   </span>
                 </div>
               </div>
-              <div className="p-4 sm:p-5">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+              <div className="p-3 sm:p-4 md:p-5">
+                <h3 className="text-sm sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-3">
                   Fresh Vegetables
-                  <sup className="text-yellow-400 text-xs sm:text-sm ml-1 font-normal">Coming Soon</sup>
+                  <sup className="text-yellow-400 text-[10px] sm:text-sm ml-1 font-normal">Coming Soon</sup>
                 </h3>
                 <p className="hidden sm:block text-gray-500 mb-4">
                   Locally grown fresh vegetables from Ghanaian farmers. Organic and pesticide-free produce delivered fresh.
                 </p>
-                <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                  <span className="px-2 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium opacity-60">Organic</span>
-                  <span className="px-2 py-1 bg-emerald-100 text-emerald-600 rounded-full text-xs font-medium opacity-60">Local</span>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                  <span className="px-2 py-0.5 bg-green-100 text-green-600 rounded-full text-[10px] sm:text-xs font-medium opacity-60">Organic</span>
+                  <span className="px-2 py-0.5 bg-emerald-100 text-emerald-600 rounded-full text-[10px] sm:text-xs font-medium opacity-60">Local</span>
                 </div>
-                <span className="inline-flex items-center justify-center px-3 py-2 rounded-md bg-gray-300 text-gray-500 font-semibold text-sm cursor-not-allowed">
+                <span className="inline-flex items-center justify-center px-2.5 py-1.5 rounded-md bg-gray-300 text-gray-500 font-semibold text-xs cursor-not-allowed">
                   Coming Soon
                 </span>
               </div>
