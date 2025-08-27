@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Store } from "./stores";
 
@@ -20,10 +19,6 @@ function buildGoogleMapsEmbedUrlFromLatLng(center: LatLng, zoom: number) {
 function buildGoogleMapsEmbedUrlFromQuery(query: string, zoom: number) {
   const safeZoom = Math.min(Math.max(zoom, MIN_ZOOM), MAX_ZOOM);
   return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${safeZoom}&ie=UTF8&iwloc=&output=embed`;
-}
-
-function buildGoogleMapsSearchUrl(query: string) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 function toTelHref(num: string) {
@@ -83,8 +78,6 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
     setStatus(null);
   }, []);
 
-  const storeSearchUrl = primaryStore ? buildGoogleMapsSearchUrl(primaryStore.mapQuery) : null;
-
   return (
     <div className="relative h-[100vh]">
       {/* Map Iframe */}
@@ -97,101 +90,62 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
         referrerPolicy="no-referrer-when-downgrade"
       />
 
-      {/* Top Center Overlay: Message + CTAs + Store Card */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10 px-4 w-full max-w-3xl">
-        <div className="bg-white/90 backdrop-blur rounded-xl shadow-lg px-6 py-4">
-          <div className="text-center">
-            <p className="text-sm md:text-base text-gray-800">
-              We are currently working on partnering with stores. In the meantime, you can order online.
-            </p>
-            <div className="mt-4 flex items-center justify-center gap-3 flex-wrap">
-              <button
-                onClick={locateMe}
-                className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-6 py-2.5 font-semibold hover:brightness-110 transition-colors"
-                aria-label="Find stores near me"
-              >
-                Find stores near me
-              </button>
-              <Link
-                href="/order"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-6 py-2.5 font-semibold hover:bg-emerald-glow/10 transition-colors"
-              >
-                Order online
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full text-emerald-glow px-4 py-2 font-semibold hover:underline"
-              >
-                Contact us
-              </Link>
-            </div>
-          </div>
-
-          {primaryStore ? (
-            <div className="mt-5 border-t border-gray-200 pt-4">
-              <div className="flex items-start justify-between gap-6">
-                <div>
-                  <div className="text-sm uppercase tracking-wide text-gray-500 font-semibold">Featured store</div>
-                  <div className="text-lg font-bold text-gray-900">{primaryStore.name}</div>
-                  <div className="text-sm text-gray-700">{primaryStore.addressLine}</div>
-                  <div className="text-sm text-gray-700">Ghana Post GPS: {primaryStore.ghanaPostGps}</div>
-                  {primaryStore.phones && primaryStore.phones.length ? (
-                    <div className="text-sm text-gray-700 mt-2">
-                      Phone: {primaryStore.phones.map((p, idx) => (
-                        <a key={p} href={toTelHref(p)} className="text-emerald-glow hover:underline">
-                          {p}{idx < primaryStore.phones!.length - 1 ? ', ' : ''}
-                        </a>
-                      ))}
-                    </div>
-                  ) : null}
-                  {primaryStore.hours ? (
-                    <div className="text-sm text-gray-700">Hours: {primaryStore.hours}</div>
-                  ) : null}
-                </div>
-                <div className="flex items-center gap-2">
-                  {storeSearchUrl ? (
-                    <a
-                      href={storeSearchUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-4 py-2 text-sm font-semibold hover:brightness-110 transition-colors"
-                    >
-                      Open in Google Maps
-                    </a>
-                  ) : null}
-                </div>
+      {/* Compact Store Card (top-left) */}
+      {primaryStore ? (
+        <div className="absolute top-4 left-4 z-10">
+          <div className="bg-white/90 backdrop-blur rounded-lg shadow px-4 py-3 max-w-sm">
+            <div className="text-[10px] uppercase tracking-wide text-gray-500 font-semibold">Store</div>
+            <div className="text-base font-semibold text-gray-900">{primaryStore.name}</div>
+            <div className="text-xs text-gray-700">{primaryStore.addressLine}</div>
+            <div className="text-xs text-gray-700">Ghana Post GPS: {primaryStore.ghanaPostGps}</div>
+            {primaryStore.phones && primaryStore.phones.length ? (
+              <div className="text-xs text-gray-700 mt-1">
+                Phone: {primaryStore.phones.map((p, idx) => (
+                  <a key={p} href={toTelHref(p)} className="text-emerald-glow hover:underline">
+                    {p}{idx < primaryStore.phones!.length - 1 ? ', ' : ''}
+                  </a>
+                ))}
               </div>
-            </div>
-          ) : null}
-
-          {status ? (
-            <div className="mt-2 text-sm text-red-600">{status}</div>
-          ) : null}
+            ) : null}
+            {primaryStore.hours ? (
+              <div className="text-xs text-gray-700">Hours: {primaryStore.hours}</div>
+            ) : null}
+            {status ? (
+              <div className="mt-1 text-[11px] text-red-600">{status}</div>
+            ) : null}
+          </div>
         </div>
-      </div>
+      ) : null}
 
       {/* Top Right Overlay: Controls */}
-      <div className="absolute top-6 right-6 z-10 flex flex-col gap-2">
+      <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
         <button
           onClick={zoomIn}
-          className="w-10 h-10 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 font-bold hover:bg-white"
+          className="w-9 h-9 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 font-bold hover:bg-white"
           aria-label="Zoom in"
         >
           +
         </button>
         <button
           onClick={zoomOut}
-          className="w-10 h-10 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 font-bold hover:bg-white"
+          className="w-9 h-9 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 font-bold hover:bg-white"
           aria-label="Zoom out"
         >
           −
         </button>
         <button
           onClick={resetCenter}
-          className="w-10 h-10 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 text-xs font-semibold hover:bg-white"
+          className="w-9 h-9 rounded-lg bg-white/90 backdrop-blur shadow flex items-center justify-center text-gray-900 text-[11px] font-semibold hover:bg-white"
           aria-label="Reset view"
         >
           Rst
+        </button>
+        <button
+          onClick={locateMe}
+          className="w-9 h-9 rounded-lg bg-luminous-green text-white shadow flex items-center justify-center text-[11px] font-semibold hover:brightness-110"
+          aria-label="Locate me"
+        >
+          ▶
         </button>
       </div>
     </div>
