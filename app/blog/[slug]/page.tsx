@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import ShareBar from "../ShareBar";
+import BlogNavigation from "../BlogNavigation";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -203,6 +204,12 @@ export default async function BlogPostPage({
 
       {/* Share Bar */}
       <ShareBar title={post.title} />
+
+      {/* Blog Navigation - Previous/Next Posts */}
+      <BlogNavigation
+        currentPostSlug={post.slug.current}
+        currentPostPublishedAt={post.publishedAt}
+      />
 
       {/* Back to Blog CTA - redesigned */}
       <section className="py-12">
