@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src="https://ik.imagekit.io/humbling/Bibinii%20Promo%20Vid%20final.mp4"
+            src="https://ik.imagekit.io/humbling/Promo%20Video%202.0%20-%20Bibinii%20Farms-8-28-2025,%207-16%E2%80%AFAM.mp4"
             className="w-full h-full object-cover"
             autoPlay
             muted
