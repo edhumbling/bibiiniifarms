@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Store } from "./stores";
+import dynamic from "next/dynamic";
 
 type LatLng = { lat: number; lng: number };
 
@@ -29,6 +30,8 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
   const [center, setCenter] = useState<LatLng>(DEFAULT_CENTER);
   const [zoom, setZoom] = useState<number>(DEFAULT_ZOOM);
   const [status, setStatus] = useState<string | null>(null);
+  const apiKey = typeof window !== 'undefined' ? (process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '') : '';
+  const GoogleMap = useMemo(() => dynamic(() => import('./GoogleMap'), { ssr: false }), []);
 
   const primaryStore = stores && stores.length > 0 ? stores[0] : null;
 
@@ -79,15 +82,25 @@ export default function StoreMap({ stores }: { stores?: Store[] }) {
 
   return (
     <div className="relative h-[100vh]">
-      {/* Map Iframe */}
-      <iframe
-        title="Bibinii Stores Map"
-        src={mapSrc}
-        className="absolute inset-0 w-full h-full border-0"
-        loading="lazy"
-        allowFullScreen
-        referrerPolicy="no-referrer-when-downgrade"
-      />
+      {/* Map: Prefer Google Maps JS with custom logo pin if API key available; else fallback to iframe */}
+      {apiKey ? (
+        <GoogleMap
+          apiKey={apiKey}
+          center={center}
+          zoom={zoom}
+          marker={primaryStore?.lat && primaryStore?.lng ? { lat: primaryStore.lat, lng: primaryStore.lng, title: primaryStore.name } : undefined}
+          className="absolute inset-0 w-full h-full"
+        />
+      ) : (
+        <iframe
+          title="Bibinii Stores Map"
+          src={mapSrc}
+          className="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      )}
 
       {/* Compact Store Card (top-left) */}
       {primaryStore ? (
