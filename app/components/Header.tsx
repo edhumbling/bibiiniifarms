@@ -235,10 +235,11 @@ export default function Header() {
                     {/* Sales Support Text */}
                     <div className="mt-6">
                       <p className="text-white/90 text-base">
-                        For sales support and inquiries: Call{" "}
+                        For sales support and inquiries: Call
+                        <br className="hidden lg:block" />
                         <a 
                           href="tel:+233543474770" 
-                          className="text-[#fdc700] hover:text-yellow-300 transition-colors font-semibold"
+                          className="text-[#fdc700] hover:text-yellow-300 transition-colors font-semibold lg:inline-block"
                         >
                           +233 54 347 4770
                         </a>
