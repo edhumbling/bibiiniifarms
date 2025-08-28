@@ -40,8 +40,8 @@ export default function BlogNavigation({ currentPostSlug, currentPostPublishedAt
         }`;
 
         const [prevResult, nextResult] = await Promise.all([
-          client.fetch(prevQuery, { currentPublishedAt }),
-          client.fetch(nextQuery, { currentPublishedAt })
+          client.fetch(prevQuery, { currentPublishedAt: currentPostPublishedAt }),
+          client.fetch(nextQuery, { currentPublishedAt: currentPostPublishedAt })
         ]);
 
         setPrevPost(prevResult || null);
