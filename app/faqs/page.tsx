@@ -265,8 +265,8 @@ export default function FAQsPage() {
                       >
                         <span className="text-base sm:text-lg font-semibold text-gray-900 pr-4">{item.q}</span>
                         <span
-                          className={`ml-4 inline-flex h-8 w-8 items-center justify-center rounded-full ring-1 ring-black/10 text-2xl leading-none transition-colors ${
-                            isOpen ? "bg-emerald-glow text-white" : "bg-white text-emerald-glow"
+                          className={`ml-4 inline-flex h-8 w-8 items-center justify-center rounded ring-1 ring-black/10 text-2xl leading-none transition-colors ${
+                            isOpen ? "bg-emerald-glow text-black" : "bg-white text-emerald-glow"
                           }`}
                           aria-hidden
                         >
