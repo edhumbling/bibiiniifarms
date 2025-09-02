@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 type FAQItem = { q: string; a: React.ReactNode };
 type FAQSection = { title: string; items: FAQItem[] };
@@ -217,10 +218,25 @@ export default function FAQsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="pt-24 pb-8 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Bibinii Farms – Frequently Asked Questions (FAQs)</h1>
-          <p className="mt-2 text-gray-700">Everything you need to know as a customer, farmer, or business.</p>
+      <section className="relative h-[60vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <video
+            src="https://ik.imagekit.io/edhumbling/Bibinii%20Hen%20House%20Video%203-8_15_2025,%207_24%E2%80%AFPM.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={DEFAULT_HERO_POSTER}
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="h-full w-full flex flex-col items-center justify-center text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Frequently Asked Questions</h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">Everything you need to know as a customer, farmer, or business.</p>
+          </div>
         </div>
       </section>
 
