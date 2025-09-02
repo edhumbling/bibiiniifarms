@@ -14,7 +14,7 @@ export default function JobsEmbed() {
 
   return (
     <div className="flex justify-center">
-      <div className="relative w-[800px] min-h-[700px]">
+      <div className="relative w-full max-w-[1000px] min-h-[480px] sm:min-h-[560px] md:min-h-[640px] lg:min-h-[700px]">
         {/* Loading overlay */}
         <div
           className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
@@ -35,14 +35,12 @@ export default function JobsEmbed() {
 
         {/* Embedded Jobs iframe */}
         <iframe
-          width="800px"
-          height="700px"
           src="https://app.dover.com/jobs/bibiniifarms?embed=1"
           title="Bibinii Farms jobs — Dover"
           frameBorder="0"
           loading="lazy"
           onLoad={() => setLoaded(true)}
-          className={`transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`w-full h-[480px] sm:h-[560px] md:h-[640px] lg:h-[700px] transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
         />
       </div>
     </div>
