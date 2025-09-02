@@ -1,8 +1,6 @@
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const JobsEmbed = dynamic(() => import("./JobsEmbed"), { ssr: false });
+import JobsEmbed from "./JobsEmbed";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Careers",
