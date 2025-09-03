@@ -36,6 +36,14 @@ export default function RequestCallForm() {
             phone: form.phone,
             requested_at: new Date().toISOString(),
           });
+          // Post a notification to admins via a server-side route (uses REST API key)
+          try {
+            await fetch("/api/onesignal/notify", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ fullName: form.fullName, email: form.email, phone: form.phone }),
+            });
+          } catch {}
         } catch (e) {
           // ignore tagging errors to not block UX
         }
