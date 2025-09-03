@@ -1,98 +1,10 @@
-import Link from "next/link";
 import { Metadata } from "next";
 import { DEFAULT_HERO_POSTER } from "@/app/constants/media";
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Press",
-  description: "Latest news, press releases, and media resources from Bibinii Farms.",
+  description: "Press and media inquiries for Bibinii Farms.",
 };
-
-const pressReleases = [
-  {
-    id: 1,
-    title: "Bibinii Farms Expands Sustainable Egg Production Network",
-    date: "March 20, 2024",
-    excerpt: "Company announces partnership with 15 new family farms, increasing sustainable egg production capacity by 40%.",
-    category: "Expansion"
-  },
-  {
-    id: 2,
-    title: "New Regenerative Agriculture Initiative Launched",
-    date: "March 10, 2024",
-    excerpt: "Bibinii Farms introduces comprehensive soil health program across all partner farms, targeting carbon sequestration goals.",
-    category: "Sustainability"
-  },
-  {
-    id: 3,
-    title: "Award Recognition for Animal Welfare Excellence",
-    date: "February 28, 2024",
-    excerpt: "Bibinii Farms receives prestigious Humane Farm Animal Care certification for outstanding animal welfare practices.",
-    category: "Awards"
-  },
-  {
-    id: 4,
-    title: "Direct-to-Consumer Platform Reaches 10,000 Customers",
-    date: "February 15, 2024",
-    excerpt: "Online ordering platform celebrates milestone with expanded delivery areas and new subscription options.",
-    category: "Business"
-  }
-];
-
-const mediaKit = [
-  {
-    title: "Company Logos",
-    description: "High-resolution logos in various formats",
-    fileType: "ZIP (PNG, SVG, EPS)"
-  },
-  {
-    title: "Product Images",
-    description: "Professional photos of our egg products",
-    fileType: "ZIP (JPG, PNG)"
-  },
-  {
-    title: "Farm Photos",
-    description: "Images of our sustainable farming operations",
-    fileType: "ZIP (JPG)"
-  },
-  {
-    title: "Executive Headshots",
-    description: "Professional photos of leadership team",
-    fileType: "ZIP (JPG)"
-  },
-  {
-    title: "Company Fact Sheet",
-    description: "Key statistics and company information",
-    fileType: "PDF"
-  },
-  {
-    title: "Sustainability Report",
-    description: "Annual environmental impact report",
-    fileType: "PDF"
-  }
-];
-
-const awards = [
-  {
-    year: "2024",
-    award: "Humane Farm Animal Care Certification",
-    organization: "Certified Humane"
-  },
-  {
-    year: "2023",
-    award: "Sustainable Agriculture Leadership Award",
-    organization: "National Sustainable Agriculture Coalition"
-  },
-  {
-    year: "2023",
-    award: "Best New Food Product",
-    organization: "Regional Food Awards"
-  },
-  {
-    year: "2022",
-    award: "Environmental Excellence Award",
-    organization: "State Department of Agriculture"
-  }
-];
 
 export default function PressPage() {
   return (
@@ -124,226 +36,40 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* Press Contact */}
+      {/* Press Contact - Direct to Pearl */}
       <section className="py-12 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Media Contact</h2>
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-semibold text-gray-900">Sarah Martinez</p>
-                    <p className="text-gray-600">Director of Communications</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-600">📧 info@bibiniifarms.com</p>
-                    <p className="text-gray-600">📞 (555) 123-4567</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">
-                      Available Monday-Friday, 9 AM - 5 PM EST
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Facts</h2>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Founded:</span> 2015</p>
-                  <p><span className="font-semibold">Headquarters:</span> Rural Valley, State</p>
-                  <p><span className="font-semibold">Partner Farms:</span> 50+</p>
-                  <p><span className="font-semibold">Employees:</span> 150+</p>
-                  <p><span className="font-semibold">Products:</span> Heritage, Pasture Raised, Organic, Free Range Eggs</p>
-                  <p><span className="font-semibold">Distribution:</span> Regional (5 states)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Press Releases */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Press Releases</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Stay updated with our latest company news and announcements.
+          <div className="bg-white p-8 rounded-lg shadow-sm max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Press & Media Inquiries</h2>
+            <p className="text-gray-600 mb-6">
+              For press or related inquiries, please reach out to <span className="font-semibold">Pearl</span>.
             </p>
-          </div>
-
-          <div className="space-y-6">
-            {pressReleases.map((release) => (
-              <article key={release.id} className="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-glow/10 text-emerald-glow">
-                        {release.category}
-                      </span>
-                      <span className="text-sm text-gray-500">{release.date}</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{release.title}</h3>
-                    <p className="text-gray-600 mb-4">{release.excerpt}</p>
-                    <Link
-                      href={`/press/${release.id}`}
-                      className="text-emerald-glow hover:brightness-110 font-medium"
-                    >
-                      Read Full Release →
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              href="/press/archive"
-              className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-8 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors"
-            >
-              View All Press Releases
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Media Kit */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Media Kit</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Download high-quality assets and company information for your stories.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mediaKit.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">{item.fileType}</span>
-                  <button className="bg-luminous-green text-white px-4 py-2 rounded text-sm font-medium hover:brightness-110 transition-colors">
-                    Download
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Awards & Recognition */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Awards & Recognition</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Recognition for our commitment to sustainable farming and animal welfare.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {awards.map((award, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-emerald-glow/10 rounded-full flex items-center justify-center">
-                    <span className="text-emerald-glow font-bold">{award.year}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900">{award.award}</h3>
-                    <p className="text-gray-600">{award.organization}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* In the News */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">In the News</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Recent media coverage and mentions of Bibinii Farms.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="mb-4">
-                <span className="text-sm text-gray-500">Farm & Food Weekly</span>
-                <p className="text-sm text-gray-400">March 25, 2024</p>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                "The Future of Sustainable Egg Production"
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Feature article highlighting Bibinii Farms' innovative approach to regenerative agriculture...
-              </p>
-              <a href="#" className="text-emerald-glow hover:brightness-110 font-medium text-sm">
-                Read Article →
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="mailto:info@bibiniifarms.com?subject=Press%20Inquiry%20(Attn:%20Pearl)"
+                className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-6 py-3 font-semibold hover:brightness-110 transition-colors"
+              >
+                <span className="mr-2">📧</span>
+                Email
+              </a>
+              <a
+                href="tel:+233543474770"
+                className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-6 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors"
+              >
+                <span className="mr-2">📞</span>
+                Call
+              </a>
+              <a
+                href="https://wa.me/233543474770?text=Hello%20Bibinii%20Farms%20Press%20Team%20(Attn:%20Pearl).%20I%27d%20like%20to%20request%20press%20information.%20Thank%20you."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-6 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 mr-2" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.55 4.1 1.5 5.83L0 24l6.35-1.67A11.95 11.95 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.1-3.48-8.52zM12 21.6c-1.71 0-3.3-.46-4.67-1.26l-.34-.2-3.77 1 1.01-3.67-.22-.37A9.6 9.6 0 012.4 12c0-5.29 4.3-9.6 9.6-9.6 2.57 0 4.95 1 6.76 2.8A9.54 9.54 0 0121.6 12c0 5.3-4.31 9.6-9.6 9.6zm5.51-7.15c-.3-.15-1.78-.88-2.05-.98-.27-.1-.45-.15-.63.15-.18.3-.72.98-.88 1.18-.17.2-.32.22-.6.07-.3-.15-1.24-.46-2.36-1.47-.87-.78-1.46-1.75-1.63-2.02-.17-.27-.02-.42.13-.57.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.68-1.64-.93-2.24-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.35-.28.28-1.05 1.04-1.05 2.5 0 1.46 1.08 2.86 1.23 3.05.15.2 2.09 3.18 5.06 4.47.71.3 1.27.49 1.7.63.72.23 1.36.19 1.87.12.58-.08 1.76-.72 2.02-1.42.26-.7.26-1.29.18-1.42-.08-.13-.29-.21-.59-.36z"/></svg>
+                WhatsApp
               </a>
             </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="mb-4">
-                <span className="text-sm text-gray-500">Local Business Journal</span>
-                <p className="text-sm text-gray-400">March 18, 2024</p>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                "Regional Company Leads in Animal Welfare"
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Profile of Bibinii Farms' commitment to ethical farming practices and community impact...
-              </p>
-              <a href="#" className="text-emerald-glow hover:brightness-110 font-medium text-sm">
-                Read Article →
-              </a>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="mb-4">
-                <span className="text-sm text-gray-500">Sustainable Food Network</span>
-                <p className="text-sm text-gray-400">March 12, 2024</p>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                "Farm-to-Table Success Story"
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                How Bibinii Farms is revolutionizing the connection between farmers and consumers...
-              </p>
-              <a href="#" className="text-emerald-glow hover:brightness-110 font-medium text-sm">
-                Read Article →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Working on a Story?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            We're happy to provide additional information, arrange interviews, or connect you with our farmers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:info@bibiniifarms.com"
-              className="inline-flex items-center justify-center rounded-full bg-luminous-green text-white px-8 py-3 font-semibold hover:brightness-95 transition-all"
-            >
-              Contact Press Team
-            </a>
-            <button className="inline-flex items-center justify-center rounded-full border border-emerald-glow text-emerald-glow px-8 py-3 font-semibold hover:bg-emerald-glow/10 transition-colors">
-              Schedule Interview
-            </button>
+            <p className="text-sm text-gray-500 mt-4">info@bibiniifarms.com • +233 54 347 4770</p>
           </div>
         </div>
       </section>
