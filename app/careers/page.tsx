@@ -66,7 +66,20 @@ export default function CareersPage() {
 
           <div className="text-center mt-2 mb-6">
             <h3 className="text-2xl font-semibold text-gray-900">Available Positions</h3>
-            <p className="text-gray-600 mt-1">Browse open roles below. If none are listed, <span className="font-semibold">No positions available at this time</span>.</p>
+            <p className="text-gray-600 mt-1">
+              Browse open roles below. If no roles appear, it means there are currently no openings. You can still
+              check back soon or visit our jobs portal directly.
+              {" "}
+              <a
+                href="https://app.dover.com/jobs/bibiniifarms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-glow underline"
+              >
+                View jobs portal
+              </a>
+              .
+            </p>
           </div>
 
           <JobsEmbed />
