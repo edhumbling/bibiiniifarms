@@ -91,9 +91,9 @@ export default function ContactPage() {
       {/* Contact Methods */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16">
             {contactMethods.map((method, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center bg-white/50 backdrop-blur-md border border-white/60 rounded-xl p-6 shadow-sm">
                 <div className="w-16 h-16 bg-emerald-glow/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">{method.icon}</span>
                 </div>
