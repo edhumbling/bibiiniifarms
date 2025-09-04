@@ -94,13 +94,19 @@ export default function Header() {
           </Link>
         </div>
 
-                 {/* Right: Order Now Logo - positioned very near right edge */}
-         <div className="flex justify-end">
+                 {/* Right: Cart + Order Now - positioned very near right edge */}
+         <div className="flex justify-end items-center gap-2">
+           <Link href="/order" aria-label="Cart" className="inline-flex items-center justify-center rounded-full bg-white/90 text-[#050000] hover:bg-white transition-colors h-9 w-9 sm:h-10 sm:w-10">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M6 8h12v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z" fill="#47ff2f" stroke="#050000" strokeWidth="2"/>
+               <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#050000" strokeWidth="2" strokeLinecap="butt"/>
+             </svg>
+           </Link>
            <Link
              href="/order"
              className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
            >
-             <Image src={OrderNowLogo} alt="Order Now" className="h-10 sm:h-12 w-auto" />
+             <Image src={OrderNowLogo} alt="Order Now" className="h-8 sm:h-10 w-auto" />
            </Link>
          </div>
       </div>
@@ -133,11 +139,17 @@ export default function Header() {
                   <div className="flex justify-center">
                     <Image src={Logo} alt="Bibinii Farms" className="h-10 w-auto" priority />
                   </div>
-                                     <div className="flex justify-end">
-                     <Link href="/order" onClick={() => setOpen(false)} className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200">
-                       <Image src={OrderNowLogo} alt="Order Now" className="h-10 sm:h-12 w-auto" />
-                     </Link>
-                   </div>
+                                     <div className="flex justify-end items-center gap-2">
+                    <Link href="/order" aria-label="Cart" onClick={() => setOpen(false)} className="inline-flex items-center justify-center rounded-full bg-white/90 text-[#050000] hover:bg-white transition-colors h-9 w-9 sm:h-10 sm:w-10">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 8h12v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z" fill="#47ff2f" stroke="#050000" strokeWidth="2"/>
+                        <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#050000" strokeWidth="2" strokeLinecap="butt"/>
+                      </svg>
+                    </Link>
+                    <Link href="/order" onClick={() => setOpen(false)} className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200">
+                      <Image src={OrderNowLogo} alt="Order Now" className="h-8 sm:h-10 w-auto" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
