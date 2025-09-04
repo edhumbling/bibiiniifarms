@@ -18,39 +18,9 @@ export default function RequestCallForm() {
     setForm((prev) => ({ ...prev, [key]: value }));
   }
 
-  async function tagOneSignal() {
-    // OneSignal v16 uses window.OneSignalDeferred pattern initialized globally
-    try {
-      // @ts-expect-error - OneSignalDeferred injected globally
-      const deferred = window.OneSignalDeferred as any[] | undefined;
-      if (!deferred) return;
-      deferred.push(async function (OneSignal: any) {
-        try {
-          // Ensure user is identified and subscribe prompt may appear based on site settings
-          await OneSignal.login?.(form.email || form.phone || form.fullName);
-          await OneSignal.User.addTags({
-            origin: "become_farmer",
-            request_type: "call",
-            full_name: form.fullName,
-            email: form.email,
-            phone: form.phone,
-            requested_at: new Date().toISOString(),
-          });
-          // Post a notification to admins via a server-side route (uses REST API key)
-          try {
-            await fetch("/api/onesignal/notify", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ fullName: form.fullName, email: form.email, phone: form.phone }),
-            });
-          } catch {}
-        } catch (e) {
-          // ignore tagging errors to not block UX
-        }
-      });
-    } catch {
-      // noop
-    }
+  async function submitRequest() {
+    // Placeholder for future backend integration
+    await new Promise((r) => setTimeout(r, 300));
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -61,7 +31,7 @@ export default function RequestCallForm() {
       return;
     }
     startTransition(async () => {
-      await tagOneSignal();
+      await submitRequest();
       setSubmitted(true);
     });
   }

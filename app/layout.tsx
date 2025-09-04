@@ -125,27 +125,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       </head>
       <body className={`${interSans.variable} ${geistMono.variable} ${dmSerifText.variable} antialiased bg-white`}>
-        {/* OneSignal Web Push */}
-        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.OneSignalDeferred = window.OneSignalDeferred || [];
-              OneSignalDeferred.push(async function(OneSignal){
-                try {
-                  await OneSignal.init({
-                    appId: "853923d5-9c43-4d27-8930-7439ca74e14c",
-                    safari_web_id: "web.onesignal.auto.68a78e72-ca6b-43d3-aa15-83c87cfb9ced",
-                    notifyButton: { enable: true },
-                  });
-                } catch (e) {
-                  // ignore init errors
-                }
-              });
-            `,
-          }}
-        />
-        {/* End OneSignal */}
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
