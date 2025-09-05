@@ -29,6 +29,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     // Force header to show immediately on specific routes
@@ -57,6 +58,38 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
+
+  useEffect(() => {
+    const computeFromStorage = () => {
+      try {
+        const raw = localStorage.getItem("bf_cart");
+        if (!raw) { setCartCount(0); return; }
+        const parsed = JSON.parse(raw) as Record<string, number> | null;
+        if (!parsed || typeof parsed !== "object") { setCartCount(0); return; }
+        const total = Object.values(parsed).reduce((a, b) => a + (b || 0), 0);
+        setCartCount(total);
+      } catch { setCartCount(0); }
+    };
+
+    computeFromStorage();
+
+    const onCustom = (e: any) => {
+      if (e && e.detail && typeof e.detail.total === "number") {
+        setCartCount(e.detail.total);
+      } else {
+        computeFromStorage();
+      }
+    };
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "bf_cart") computeFromStorage();
+    };
+    window.addEventListener("bf_cart_updated", onCustom as EventListener);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener("bf_cart_updated", onCustom as EventListener);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled || open ? '' : 'bg-transparent-force'}`}>
@@ -96,11 +129,16 @@ export default function Header() {
 
                  {/* Right: Cart + Order Now - positioned very near right edge */}
          <div className="flex justify-end items-center gap-2">
-           <Link href="/order" aria-label="Cart" className="inline-flex items-center justify-center rounded-full bg-white/90 text-[#050000] hover:bg-white transition-colors h-9 w-9 sm:h-10 sm:w-10">
+           <Link href="/order" aria-label="Cart" className="relative inline-flex items-center justify-center rounded-full bg-white/90 text-[#050000] hover:bg-white transition-colors h-9 w-9 sm:h-10 sm:w-10">
              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M6 8h12v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z" fill="#47ff2f" stroke="#050000" strokeWidth="2"/>
                <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#050000" strokeWidth="2" strokeLinecap="butt"/>
              </svg>
+             {cartCount > 0 ? (
+               <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-red-600 text-white text-[10px] leading-[18px] text-center font-bold border-2 border-white">
+                 {cartCount}
+               </span>
+             ) : null}
            </Link>
            <Link
              href="/order"
@@ -140,11 +178,16 @@ export default function Header() {
                     <Image src={Logo} alt="Bibinii Farms" className="h-10 w-auto" priority />
                   </div>
                                      <div className="flex justify-end items-center gap-2">
-                    <Link href="/order" aria-label="Cart" onClick={() => setOpen(false)} className="inline-flex items-center justify-center rounded-full bg-white/90 text-[#050000] hover:bg-white transition-colors h-9 w-9 sm:h-10 sm:w-10">
+                    <Link href="/order" aria-label="Cart" onClick={() => setOpen(false)} className="relative inline-flex items-center justify-center rounded-full bg-white/90 text-[#050000] hover:bg-white transition-colors h-9 w-9 sm:h-10 sm:w-10">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 8h12v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z" fill="#47ff2f" stroke="#050000" strokeWidth="2"/>
                         <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#050000" strokeWidth="2" strokeLinecap="butt"/>
                       </svg>
+                      {cartCount > 0 ? (
+                        <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-red-600 text-white text-[10px] leading-[18px] text-center font-bold border-2 border-white">
+                          {cartCount}
+                        </span>
+                      ) : null}
                     </Link>
                     <Link href="/order" onClick={() => setOpen(false)} className="inline-flex items-center justify-center hover:scale-105 transition-transform duration-200">
                       <Image src={OrderNowLogo} alt="Order Now" className="h-8 sm:h-10 w-auto" />

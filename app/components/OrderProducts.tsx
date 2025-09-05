@@ -53,6 +53,13 @@ export default function OrderProducts() {
   useEffect(() => {
     try {
       localStorage.setItem("bf_cart", JSON.stringify(qtyById));
+      const total = Object.values(qtyById).reduce((a, b) => a + (b || 0), 0);
+      // Notify listeners (e.g., header) that cart changed
+      window.dispatchEvent(
+        new CustomEvent("bf_cart_updated", {
+          detail: { total, qtyById },
+        })
+      );
     } catch {}
   }, [qtyById]);
 
