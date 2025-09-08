@@ -85,8 +85,6 @@ export default function ProductsPage() {
                 <SimpleImageSlider
                   images={[
                     ...heritageImages.slice(0, 1),
-                    ...pastureImages.slice(0, 1),
-                    ...organicImages.slice(0, 1),
                     ...freeRangeImages.slice(0, 1)
                   ]}
                   label="Fresh Bibinii Eggs"
@@ -102,8 +100,6 @@ export default function ProductsPage() {
                 </p>
                 <div className="hidden sm:flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">Heritage</span>
-                  <span className="px-2 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-medium">Pasture Raised</span>
-                  <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Organic</span>
                   <span className="px-2 py-1 bg-rose-100 text-rose-800 rounded-full text-xs font-medium">Free Range</span>
                 </div>
                 <span className="inline-flex items-center justify-center px-2.5 py-1.5 rounded-md bg-yellow-400 text-white font-semibold text-xs sm:text-sm shadow-sm group-hover:shadow-md transition-shadow">

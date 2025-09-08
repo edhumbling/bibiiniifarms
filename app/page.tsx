@@ -40,7 +40,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-4 text-lg text-neutral-700 max-w-3xl mx-auto">
-                Black man, feed yourself. Ghana, feed yourself. We connect farmers directly to families, schools, restaurants, and businesses — cutting out middlemen, reducing waste, and making local food affordable and traceable.
+                Ghanaians, feed yourselves. Ghana, feed yourself. We connect farmers directly to families, schools, restaurants, and businesses — cutting out middlemen, reducing waste, and making local food affordable and traceable.
               </p>
             </Reveal>
             <Reveal delay={0.4}>

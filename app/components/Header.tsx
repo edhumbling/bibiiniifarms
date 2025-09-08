@@ -312,18 +312,6 @@ export default function Header() {
                     <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Heritage</span>
                   </Link>
 
-                  {/* Organic */}
-                  <Link href="/products/organic" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                    <img src="https://ik.imagekit.io/spj5u0tzx/3.png" alt="Organic" className="h-28 md:h-32 w-auto object-contain" loading="lazy" />
-                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Organic</span>
-                  </Link>
-
-                  {/* Pasture Raised */}
-                  <Link href="/products/pasture-raised" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
-                    <img src="https://ik.imagekit.io/spj5u0tzx/2.png" alt="Pasture Raised" className="h-28 md:h-32 w-auto object-contain" loading="lazy" />
-                    <span className="text-white text-base font-medium group-hover:text-brand-egg transition-colors">Pasture</span>
-                  </Link>
-
                   {/* Range (new 4th) */}
                   <Link href="/products/free-range" onClick={() => setOpen(false)} className="group flex flex-col items-center gap-3">
                     <img src="https://ik.imagekit.io/spj5u0tzx/4.png" alt="Range" className="h-28 md:h-32 w-auto object-contain" loading="lazy" />

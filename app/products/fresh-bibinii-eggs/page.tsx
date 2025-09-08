@@ -13,19 +13,7 @@ const heritageImages = [
   "https://ik.imagekit.io/spj5u0tzx/3d7e14c1-f5f7-48c4-bf46-41b920b9c853.png",
 ];
 
-const pastureImages = [
-  "https://ik.imagekit.io/spj5u0tzx/ecec0f4c-6899-4e0d-be4d-704c992e444a.png",
-  "https://ik.imagekit.io/spj5u0tzx/ffd9ba1f-da29-4d49-83c4-32f9c5e026b2.png",
-  "https://ik.imagekit.io/spj5u0tzx/01e09a5a-34c5-4f73-87db-e71b8e417b9a.png",
-  "https://ik.imagekit.io/spj5u0tzx/36e9f18e-af3f-4142-afae-c82367a4c9d2.png",
-];
-
-const organicImages = [
-  "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png",
-  "https://ik.imagekit.io/spj5u0tzx/7bb1da60-e133-431d-98fe-3e848c1d9d7d.png",
-  "https://ik.imagekit.io/spj5u0tzx/3ce750cc-6daf-47e3-a0be-6882e0b99e8d.png",
-  "https://ik.imagekit.io/spj5u0tzx/08736235-50b1-4b81-967e-0859062b469e.png",
-];
+// Removed Pasture Raised and Organic image sets
 
 const freeRangeImages = [
   "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png",
@@ -36,7 +24,7 @@ const freeRangeImages = [
 
 export const metadata: Metadata = {
   title: "Bibinii Farms • Fresh Bibinii Eggs",
-  description: "Fresh, traceable eggs from Ghanaian farmers. Choose from Heritage, Pasture Raised, Organic, and Free Range varieties.",
+  description: "Fresh, traceable eggs from Ghanaian farmers. Choose from Heritage and Free Range varieties.",
 };
 
 export default function FreshBibiniiEggsPage() {
@@ -53,11 +41,9 @@ export default function FreshBibiniiEggsPage() {
             brand: { "@type": "Brand", name: "Bibinii Farms" },
             image: [
               "https://ik.imagekit.io/spj5u0tzx/e4c0ee8d-c0e0-4116-b9c2-ecd52c99fa74.png",
-              "https://ik.imagekit.io/spj5u0tzx/ffd9ba1f-da29-4d49-83c4-32f9c5e026b2.png",
-              "https://ik.imagekit.io/spj5u0tzx/ce2576a8-7084-45e9-99b2-2aee706561fc.png",
               "https://ik.imagekit.io/spj5u0tzx/c4cbec47-f40c-4200-b7f8-341b44337812.png"
             ],
-            description: "Fresh, traceable eggs from Ghanaian farmers. Choose from Heritage, Pasture Raised, Organic, and Free Range varieties.",
+            description: "Fresh, traceable eggs from Ghanaian farmers. Choose from Heritage and Free Range varieties.",
             category: "Eggs",
             url: "https://bibiniifarms.com/products/fresh-bibinii-eggs/",
             offers: {
@@ -125,7 +111,7 @@ export default function FreshBibiniiEggsPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your Preferred Farming Method</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Learn about our different farming approaches and choose the eggs that align with your preferences.
+              Learn about our different approaches and choose the eggs that align with your preferences.
             </p>
           </div>
           
@@ -150,54 +136,6 @@ export default function FreshBibiniiEggsPage() {
                   className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-semibold"
                 >
                   Learn more about Heritage →
-                </Link>
-              </div>
-            </div>
-
-            {/* Pasture Raised */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <SimpleImageSlider
-                images={pastureImages}
-                label="Pasture Raised"
-                gradientFrom="from-emerald-50"
-                gradientTo="to-green-100"
-                autoplayDelay={3500}
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Pasture Raised</h3>
-                <p className="text-gray-600 mb-4">
-                  Chickens roam freely on open pastures, expressing natural behaviors and resulting in 
-                  nutrient-dense eggs with firm whites and bright yolks.
-                </p>
-                <Link 
-                  href="/products/pasture-raised" 
-                  className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-semibold"
-                >
-                  Learn more about Pasture Raised →
-                </Link>
-              </div>
-            </div>
-
-            {/* Organic */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <SimpleImageSlider
-                images={organicImages}
-                label="Organic"
-                gradientFrom="from-green-50"
-                gradientTo="to-emerald-100"
-                autoplayDelay={4000}
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Organic Eggs</h3>
-                <p className="text-gray-600 mb-4">
-                  Certified organic eggs from chickens fed only organic, non-GMO feed. A commitment to 
-                  transparency, care, and responsible land stewardship.
-                </p>
-                <Link 
-                  href="/products/organic" 
-                  className="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-semibold"
-                >
-                  Learn more about Organic →
                 </Link>
               </div>
             </div>

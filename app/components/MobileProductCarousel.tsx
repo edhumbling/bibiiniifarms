@@ -12,18 +12,6 @@ const products = [
   {
     href: "/products/fresh-bibinii-eggs",
     name: "Fresh Bibinii Eggs",
-    subtitle: "Organic Variety",
-    image: "https://ik.imagekit.io/spj5u0tzx/3.png"
-  },
-  {
-    href: "/products/fresh-bibinii-eggs",
-    name: "Fresh Bibinii Eggs",
-    subtitle: "Pasture Raised Variety",
-    image: "https://ik.imagekit.io/spj5u0tzx/2.png"
-  },
-  {
-    href: "/products/fresh-bibinii-eggs",
-    name: "Fresh Bibinii Eggs",
     subtitle: "Free Range Variety",
     image: "https://ik.imagekit.io/spj5u0tzx/4.png"
   }
