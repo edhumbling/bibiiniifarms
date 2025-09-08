@@ -96,7 +96,7 @@ export default function ProductsPage() {
               <div className="p-3 sm:p-4 md:p-5">
                 <h3 className="text-sm sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Fresh Bibinii Eggs</h3>
                 <p className="hidden sm:block text-gray-600 text-sm md:text-base mb-2">
-                  Premium eggs from Ghanaian farmers. Four varieties.
+                  Premium eggs from Ghanaian farmers. Two varieties.
                 </p>
                 <div className="hidden sm:flex flex-wrap gap-2 mb-4">
                   <span className="px-2 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">Heritage</span>

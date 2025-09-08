@@ -79,7 +79,7 @@ export default function FreshBibiniiEggsPage() {
               Fresh Bibinii Eggs
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl">
-              Premium eggs from Ghanaian farmers, available in four distinct varieties to suit your preferences
+              Premium eggs from Ghanaian farmers, available in two distinct varieties to suit your preferences
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function FreshBibiniiEggsPage() {
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            One Product, Four Ways to Enjoy
+            One Product, Two Ways to Enjoy
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             At Bibinii Farms, we specialize in fresh, traceable eggs. Our farming methods vary to give you options 

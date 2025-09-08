@@ -52,7 +52,7 @@ export default function ImageCarousel() {
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Bibinii and Love for Poultry</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Black communities have a deep, generational love for animals that reflects the beautiful scenes of growing up alongside them. These moments capture the essence of our heritage—where caring for chickens and livestock isn't just farming, it's family tradition, community bonding, and the foundation of sustainable living passed down through generations.
+          Ghanaian communities have a deep, generational love for animals that reflects the beautiful scenes of growing up alongside them. These moments capture the essence of our Ghanaian heritage—where caring for chickens and livestock isn't just farming; it's family tradition, community bonding, and the foundation of sustainable living passed down through generations.
         </p>
       </div>
       
