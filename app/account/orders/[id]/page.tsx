@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function OrderDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default function OrderDetailPage({ params }: any) {
+  const { id } = params || {};
   const [order, setOrder] = useState<any>(null);
 
   useEffect(() => {

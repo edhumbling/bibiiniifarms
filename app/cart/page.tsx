@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { computeTotals, formatGhs } from "@/app/utils/pricing";
 
 type Item = { id: string; name: string };
 
@@ -25,6 +26,7 @@ export default function CartPage() {
 
   const items = useMemo(() => Object.entries(qtyById).filter(([, q]) => q > 0), [qtyById]);
   const totalQty = useMemo(() => items.reduce((a, [, q]) => a + q, 0), [items]);
+  const totals = useMemo(() => computeTotals(totalQty), [totalQty]);
 
   function update(id: string, q: number) {
     setQtyById((s) => ({ ...s, [id]: Math.max(0, q) }));
@@ -65,9 +67,11 @@ export default function CartPage() {
               );
             })}
 
-            <div className="flex items-center justify-between rounded-2xl border border-neutral-200 bg-white p-4 sm:p-6">
-              <div className="text-neutral-700">Total items</div>
-              <div className="text-ink font-bold">{totalQty}</div>
+            <div className="rounded-2xl border border-neutral-200 bg-white p-4 sm:p-6 space-y-2">
+              <div className="flex items-center justify-between"><span className="text-neutral-700">Total crates</span><span className="text-ink font-bold">{totalQty}</span></div>
+              <div className="flex items-center justify-between"><span className="text-neutral-700">Subtotal (GH₵55 x {totalQty})</span><span className="text-ink font-bold">{formatGhs(totals.subtotal)}</span></div>
+              <div className="flex items-center justify-between"><span className="text-neutral-700">Delivery (GH₵1.50 x {totalQty})</span><span className="text-ink font-bold">{formatGhs(totals.delivery)}</span></div>
+              <div className="border-t pt-2 flex items-center justify-between"><span className="text-ink font-semibold">Total</span><span className="text-ink font-extrabold">{formatGhs(totals.total)}</span></div>
             </div>
 
             <div className="flex items-center justify-between gap-3">

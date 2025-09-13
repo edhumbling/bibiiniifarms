@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { computeTotals, formatGhs } from "@/app/utils/pricing";
 
 export default function CheckoutPage() {
   const [qtyById, setQtyById] = useState<Record<string, number>>({});
@@ -17,6 +18,7 @@ export default function CheckoutPage() {
 
   const items = useMemo(() => Object.entries(qtyById).filter(([, q]) => q > 0), [qtyById]);
   const totalQty = useMemo(() => items.reduce((a, [, q]) => a + q, 0), [items]);
+  const totals = useMemo(() => computeTotals(totalQty), [totalQty]);
 
   function placeOrder() {
     setPlacing(true);
@@ -74,9 +76,11 @@ export default function CheckoutPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 flex items-center justify-between text-ink font-bold">
-                  <span>Total items</span>
-                  <span>{totalQty}</span>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center justify-between text-sm"><span className="text-neutral-700">Total crates</span><span className="text-ink font-bold">{totalQty}</span></div>
+                  <div className="flex items-center justify-between text-sm"><span className="text-neutral-700">Subtotal (GH₵55 x {totalQty})</span><span className="text-ink font-bold">{formatGhs(totals.subtotal)}</span></div>
+                  <div className="flex items-center justify-between text-sm"><span className="text-neutral-700">Delivery (GH₵1.50 x {totalQty})</span><span className="text-ink font-bold">{formatGhs(totals.delivery)}</span></div>
+                  <div className="border-t pt-2 flex items-center justify-between"><span className="text-ink font-semibold">Total</span><span className="text-ink font-extrabold">{formatGhs(totals.total)}</span></div>
                 </div>
                 <button onClick={placeOrder} disabled={placing || !address} className="mt-4 w-full inline-flex items-center justify-center rounded-full bg-emerald-600 text-white px-6 py-2 font-semibold hover:brightness-110 disabled:opacity-60">Place order</button>
                 <p className="mt-2 text-xs text-neutral-500">Demo flow. No payment required.</p>
