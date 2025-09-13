@@ -52,12 +52,17 @@ export default function AccountPage() {
   if (!isAuthed) return null;
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+    <div className="min-h-screen bg-white pt-28 sm:pt-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">Your Account</h1>
-            <p className="text-neutral-600">Signed in as <span className="font-semibold">{phone}</span></p>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-neutral-100 ring-1 ring-black/10 overflow-hidden flex items-center justify-center">
+              <img src="/bibinii logo white text.svg" alt="Profile" className="w-8 h-8 object-contain invert" />
+            </div>
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">Your Account</h1>
+              <p className="text-neutral-600">Signed in as <span className="font-semibold">{phone}</span></p>
+            </div>
           </div>
           <div className="flex gap-3">
             <Link href="/order" className="inline-flex items-center rounded-full bg-brand-egg text-ink px-5 py-2 font-semibold ring-1 ring-black/10 hover:brightness-95">Start a new order</Link>

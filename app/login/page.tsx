@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center py-16 px-4">
+    <div className="min-h-screen bg-white flex items-center justify-center pt-28 sm:pt-32 pb-10 px-4">
       <div className="w-full max-w-md rounded-3xl border border-neutral-200 bg-white shadow-sm p-6 sm:p-8">
         <BackButton href="/" label="Back" />
         {/* Avatar / Logo */}

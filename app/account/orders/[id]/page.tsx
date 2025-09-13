@@ -18,8 +18,8 @@ export default function OrderDetailPage({ params }: any) {
 
   if (!order) {
     return (
-      <div className="min-h-screen bg-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10">
+      <div className="min-h-screen bg-white pt-28 sm:pt-32">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pb-10">
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">Order {id}</h1>
           <p className="mt-2 text-neutral-600">Order not found.</p>
         </div>
@@ -28,10 +28,15 @@ export default function OrderDetailPage({ params }: any) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10">
+    <div className="min-h-screen bg-white pt-28 sm:pt-32">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pb-10">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">Order {order.id}</h1>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-neutral-100 ring-1 ring-black/10 overflow-hidden flex items-center justify-center">
+              <img src="/bibinii logo white text.svg" alt="Profile" className="w-6 h-6 object-contain invert" />
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">Order {order.id}</h1>
+          </div>
           <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${order.status === 'Delivered' ? 'bg-emerald-50 text-emerald-700' : order.status === 'Processing' ? 'bg-yellow-50 text-yellow-700' : 'bg-neutral-100 text-neutral-700'}`}>{order.status}</span>
         </div>
         <div className="mt-2 text-neutral-600 text-sm">Placed on {order.date}</div>

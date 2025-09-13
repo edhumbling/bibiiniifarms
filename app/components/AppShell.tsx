@@ -12,9 +12,11 @@ const FloatingFindButton = dynamic(() => import("./FloatingFindButton"), { ssr: 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isLoginRoute = pathname.startsWith("/login");
+  const isSignupRoute = pathname.startsWith("/signup");
+  const isAccountRoute = pathname.startsWith("/account");
   const isStoreLocatorRoute = pathname.startsWith("/store-locator");
 
-  if (isLoginRoute) {
+  if (isLoginRoute || isSignupRoute || isAccountRoute) {
     return (
       <div className="min-h-dvh flex flex-col">
         <main className="flex-1 bg-white font-amazon-ember">{children}</main>
@@ -26,7 +28,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh flex flex-col">
       <Header />
       <main className="flex-1 bg-white font-amazon-ember">{children}</main>
-      {!isStoreLocatorRoute && <Footer />}
+      {!(isStoreLocatorRoute || isSignupRoute || isAccountRoute) && <Footer />}
       {!pathname.startsWith("/order") && !isStoreLocatorRoute ? <FloatingFindButton /> : null}
       <ScrollToTopButton />
     </div>
