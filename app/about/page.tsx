@@ -335,19 +335,6 @@ export default function AboutPage() {
                   technology into one platform that strengthens Ghana's food security.
                 </p>
               </div>
-
-              <div className="bg-white p-6 sm:p-8 rounded-lg shadow-sm border">
-                <h4 className="text-lg sm:text-xl font-bold text-brand-deep mb-2">Kenneth Amoako</h4>
-                <p className="text-brand-deep font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Partnerships & Growth Architect</p>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  Kenneth plays a central role in expanding Bibinii Farms through strong partnerships and market 
-                  alliances. He is passionate about collaboration and believes agriculture becomes powerful when 
-                  people and institutions work together. At Bibinii Farms, he develops strategies that unite farmers, 
-                  schools, businesses, and corporate buyers, ensuring mutual value across the supply chain. His 
-                  work transforms partnerships into engines of growth that push the mission of a self-sufficient 
-                  Ghana forward.
-                </p>
-              </div>
             </div>
           </div>
 
@@ -377,16 +364,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="bg-white p-5 sm:p-6 rounded-lg shadow-sm border">
-                <h4 className="text-base sm:text-lg font-bold text-brand-deep mb-2">Emmanuel Owusu Okyere</h4>
-                <p className="text-brand-deep font-semibold mb-3 text-xs sm:text-sm">Board Member & Logistics Lead</p>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                  Emmanuel brings a dual role to Bibinii Farms as both Board Member and Logistics Lead. On the 
-                  board, he contributes to governance and strategic planning. In operations, he manages land 
-                  development, facility planning, and transport systems that reduce food waste and ensure reliable 
-                  supply chains. His position bridges high-level decision-making with on-the-ground execution.
-                </p>
-              </div>
+              
             </div>
           </div>
 
